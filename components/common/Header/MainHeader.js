@@ -1,23 +1,29 @@
 import Link from "next/link";
-import navlink from "./navLink";
+import MenuIcon from "./MenuIcon";
+import MobileMenu from "./MobileMenu";
 import SearchBar from "./SearchBar";
+import navlink from "./navLink";
 
 const MainHeader = () => {
   return (
-    <header className="bg-header w-full h-[50px] z-50 sticky top-0">
-      <div className="w-full h-full container mx-auto">
+    <header className="bg-header w-full h-auto py-[8px] lg:py-0 lg:h-[50px] z-50 sticky top-0">
+      <div className="w-full h-full container mx-auto px-2 sm:px-0">
         <div className="w-full h-full flex items-center justify-between">
           {/* logo */}
-          <div className="">
+          <div className="hidden sm:flex">
             <h4 className="text-primary text-xl">Daily Blogs</h4>
           </div>
+          {/* mobile logo */}
+          <div className="sm:hidden flex pr-2 sm:pr-0">
+            <h4 className="text-primary text-xl">Daily</h4>
+          </div>
           {/* search bar */}
-          <div className="">
-            <SearchBar/>
+          <div className="flex items-center">
+            <SearchBar />
           </div>
 
           {/* nav items */}
-          <div>
+          <div className="hidden lg:block">
             <ul className="flex items-center space-x-5 text-sm text-textBlack cursor-pointer">
               {navlink?.map((item, i) => (
                 <li
@@ -47,8 +53,12 @@ const MainHeader = () => {
               </li>
             </ul>
           </div>
+          {/* menu icon */}
+          <MenuIcon />
         </div>
       </div>
+      {/* mobile menu icon */}
+      <MobileMenu />
     </header>
   );
 };

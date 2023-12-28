@@ -5,7 +5,7 @@ const SearchBar = () => {
         <input
           type="text"
           placeholder="Search"
-          className=" w-[450px] rounded-l-md p-1 focus:outline-none bg-transparent"
+          className="w-full lg:w-[450px] rounded-l-md p-1 focus:outline-none bg-transparent"
         />
         <button type="submit" className="bg-primary rounded-r-md p-1 text-white">
           <svg

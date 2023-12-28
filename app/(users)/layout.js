@@ -1,3 +1,4 @@
+import Demo from "@/components/Demo";
 import MainHeader from "@/components/common/Header/MainHeader";
 import { Poppins } from "next/font/google";
 import "../globals.css";
