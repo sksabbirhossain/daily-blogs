@@ -1,11 +1,11 @@
 const SearchBar = () => {
   return (
     <form>
-      <div className="flex items-center border rounded-md border-primary">
+      <div className="flex items-center border rounded-md border-gray-400">
         <input
           type="text"
           placeholder="Search"
-          className="w-full lg:w-[450px] rounded-l-md p-1 focus:outline-none bg-transparent"
+          className="w-full lg:w-[450px] rounded-l-md p-1 focus:outline-none text-white bg-transparent"
         />
         <button type="submit" className="bg-primary rounded-r-md p-1 text-white">
           <svg

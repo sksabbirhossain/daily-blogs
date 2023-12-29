@@ -6,12 +6,12 @@ import navlink from "./navLink";
 
 const MainHeader = () => {
   return (
-    <header className="bg-header w-full h-auto py-[8px] lg:py-0 lg:h-[50px] z-50 sticky top-0">
+    <header className="bg-[#5c7c81] shadow-sm shadow-green-100 backdrop-blur transition-colors w-full h-auto py-[8px] lg:py-0 lg:h-[50px] z-50 sticky top-0">
       <div className="w-full h-full container mx-auto px-2 sm:px-0">
         <div className="w-full h-full flex items-center justify-between">
           {/* logo */}
           <div className="hidden sm:flex">
-            <h4 className="text-primary text-xl">Daily Blogs</h4>
+            <h4 className="text-primary text-xl text-yellow-50">Daily Blogs</h4>
           </div>
           {/* mobile logo */}
           <div className="sm:hidden flex pr-2 sm:pr-0">
@@ -27,13 +27,13 @@ const MainHeader = () => {
             <ul className="flex items-center space-x-5 text-sm text-textBlack cursor-pointer">
               {navlink?.map((item, i) => (
                 <li
-                  className="hover:text-primary duration-150 ease-linear"
+                  className="text-gray-300 hover:text-gray-400 duration-150 ease-linear"
                   key={i}
                 >
                   <Link href={item.link}>{item.name}</Link>
                 </li>
               ))}
-              <li className="hover:text-primary duration-150 ease-linear flex items-center">
+              <li className="text-gray-300 hover:text-gray-400 duration-150 ease-linear flex items-center">
                 <p>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"

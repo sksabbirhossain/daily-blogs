@@ -3,7 +3,7 @@ import Link from "next/link";
 import navlink from "./navLink";
 
 const MobileMenu = () => {
-  const mobileMenu = true;
+  const mobileMenu = false;
   return (
     <>
       {mobileMenu && (

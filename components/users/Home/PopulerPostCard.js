@@ -5,8 +5,8 @@ const PopulerPostCard = () => {
     <div className="space-y-2">
       <p className="text-xs font-bold">Travel</p>
       <h4 className="text-md font-medium">Design is the Mix of emotions</h4>
-      <p className="flex space-x-3 items-center text-xs">
-        <span className="flex items-center">
+      <p className="flex flex-wrap gap-1 space-x-3 items-center text-xs">
+        <span className="flex  items-center">
           <Image
             src="/blog.jpg"
             width={30}
@@ -16,7 +16,7 @@ const PopulerPostCard = () => {
           />{" "}
           Jenny kiaa
         </span>
-        <span className="flex items-center">
+        <span className="flex  items-center">
           <span>
             <svg
               xmlns="http://www.w3.org/2000/svg"

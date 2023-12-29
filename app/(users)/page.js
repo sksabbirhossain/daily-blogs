@@ -1,6 +1,5 @@
 import HeroSection from "@/components/users/Home/HeroSection";
 import RecentlyPostedSection from "@/components/users/Home/RecentlyPosted/RecentlyPostedSection";
-import Image from "next/image";
 
 export default function Home() {
   return (

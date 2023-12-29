@@ -1,3 +1,4 @@
+import Sidebar from "@/components/common/Sidebar/Sidebar";
 import React from "react";
 import RecentPostCard from "./RecentPostCard";
 
@@ -22,10 +23,9 @@ const RecentlyPostedSection = () => {
           </div>
         </div>
         <div className="md:col-span-1">
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quia sequi
-          exercitationem eaque aspernatur in modi perspiciatis esse dicta
-          laboriosam! Numquam magnam odit ipsum adipisci nisi sed porro aliquam
-          reiciendis nam!
+          <div className="">
+            <Sidebar />
+          </div>
         </div>
       </div>
     </section>

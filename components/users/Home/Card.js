@@ -5,8 +5,7 @@ import React from "react";
 const Card = () => {
   return (
     <Link href="/">
-      {" "}
-      <div className="space-y-1">
+      <div className="space-y-1 py-5 md:py-0">
         <p className="text-xs font-bold">Travel</p>
         <h2 className="text-2xl font-medium text-[#222]">
           set video playback speed with javascript
@@ -18,7 +17,7 @@ const Card = () => {
           height={250}
           className="rounded-md"
         />
-        <p className="flex space-x-3 items-center text-xs py-2">
+        <p className="flex flex-wrap gap-1 space-x-3 items-center text-xs py-2">
           <span className="flex items-center">
             <Image
               src="/blog.jpg"

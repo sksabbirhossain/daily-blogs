@@ -3,7 +3,7 @@ import React from "react";
 
 const RecentPostCard = () => {
   return (
-    <div className="flex gap-6">
+    <div className="sm:flex gap-6">
       <div className="">
         <Image
           src={"/blog.jpg"}
@@ -16,7 +16,7 @@ const RecentPostCard = () => {
       <div className="">
         <p className="text-xs font-light">Travel</p>
         <h1 className="text-lg font-medium">Design is the Mix of emotions</h1>
-        <p className="flex space-x-3 items-center text-xs py-2">
+        <p className="flex flex-wrap gap-1 space-x-3 items-center text-xs py-2">
           <span className="flex items-center">
             <Image
               src="/blog.jpg"
