@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import SocialIcon from "../SocialIcon/SocialIcon";
 
 const Footer = () => {
   return (
@@ -81,10 +82,11 @@ const Footer = () => {
                       </button>
                     </div>
                   </form>
-                  <div className="">
+                  <div className="space-y-2">
                     <h2 className="text-base text-[#222] font-semibold">
                       follow on:
                     </h2>
+                    <SocialIcon/>
                   </div>
                 </div>
               </div>

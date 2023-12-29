@@ -18,7 +18,7 @@ const MenuIcon = () => {
           <path
             strokeLinecap="round"
             strokeLinejoin="round"
-            d="M3.75 5.25h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5"
+            d="M3.75 6.75h16.5M3.75 12h16.5M12 17.25h8.25"
           />
         </svg>
       </button>
