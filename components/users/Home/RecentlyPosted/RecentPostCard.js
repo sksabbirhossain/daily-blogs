@@ -4,28 +4,32 @@ import React from "react";
 const RecentPostCard = () => {
   return (
     <div className="sm:flex gap-6">
-      <div className="">
+      <div className="pb-3 sm:pb-0">
         <Image
           src={"/blog.jpg"}
           alt="blog title"
           width={250}
           height={140}
-          className="rounded-md"
+          className="rounded-md w-full h-full object-cover max-h-[240px]"
         />
       </div>
       <div className="">
-        <p className="text-xs font-light">Travel</p>
-        <h1 className="text-lg font-medium">Design is the Mix of emotions</h1>
-        <p className="flex flex-wrap gap-1 space-x-3 items-center text-xs py-2">
+        <p className="text-xs text-[#00AAA1] font-semibold">Travel</p>
+        <h1 className="text-lg font-medium text-[#222]  w-full max-w-[450px]">
+          Design is the Mix of emotions
+        </h1>
+        <p className="flex flex-wrap gap-1 space-x-3 items-center text-xs py-2 text-[#777]">
           <span className="flex items-center">
-            <Image
-              src="/blog.jpg"
-              width={30}
-              height={30}
-              className="pr-1 rounded-[100%] object-cover"
-              alt="user"
-            />{" "}
-            Jenny kiaa
+            <span className="w-5 h-5">
+              <Image
+                src="/blog.jpg"
+                width={30}
+                height={30}
+                className="rounded-full w-full h-full"
+                alt="user"
+              />
+            </span>
+            <span className="ml-1">Jenny Kiaa</span>
           </span>
           <span className="flex items-center">
             <span>
@@ -66,7 +70,7 @@ const RecentPostCard = () => {
             3 min. to read
           </span>
         </p>
-        <p className="text-sm">
+        <p className="text-sm text-[#555] w-full max-w-[450px]">
           Did you come here for something in particular or just general
           Riker-bashing? And blowing into
         </p>

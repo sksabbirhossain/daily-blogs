@@ -3,18 +3,20 @@ import Image from "next/image";
 const PopulerPostCard = () => {
   return (
     <div className="space-y-2">
-      <p className="text-xs font-bold">Travel</p>
-      <h4 className="text-md font-medium">Design is the Mix of emotions</h4>
-      <p className="flex flex-wrap gap-1 space-x-3 items-center text-xs">
-        <span className="flex  items-center">
-          <Image
-            src="/blog.jpg"
-            width={30}
-            height={30}
-            className="pr-1 rounded-[100%] object-cover"
-            alt="user"
-          />{" "}
-          Jenny kiaa
+      <p className="text-xs font-bold text-[#00AAA1]">Travel</p>
+      <h4 className="text-md text-[#222] font-medium">Design is the Mix of emotions</h4>
+      <p className="flex flex-wrap gap-1 space-x-3 items-center text-xs text-[#777]">
+        <span className="flex items-center">
+          <span className="w-5 h-5">
+            <Image
+              src="/blog.jpg"
+              width={30}
+              height={30}
+              className="rounded-full w-full h-full"
+              alt="user"
+            />
+          </span>
+          <span className="ml-1">Jenny Kiaa</span>
         </span>
         <span className="flex  items-center">
           <span>
@@ -55,7 +57,7 @@ const PopulerPostCard = () => {
           3 min. to read
         </span>
       </p>
-      <p className="text-sm font-normal">
+      <p className="text-sm text-[#555] font-normal">
         Did you come here for something in particular or just general
         Riker-bashing? And blowing into maximum warp
       </p>

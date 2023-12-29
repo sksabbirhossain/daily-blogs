@@ -6,8 +6,8 @@ const Card = () => {
   return (
     <Link href="/">
       <div className="space-y-1 py-5 md:py-0">
-        <p className="text-xs font-bold">Travel</p>
-        <h2 className="text-2xl font-medium text-[#222]">
+        <p className="text-xs font-bold text-[#00AAA1]">Travel</p>
+        <h2 className="text-2xl pb-2 font-medium text-[#222]">
           set video playback speed with javascript
         </h2>
         <Image
@@ -17,16 +17,18 @@ const Card = () => {
           height={250}
           className="rounded-md"
         />
-        <p className="flex flex-wrap gap-1 space-x-3 items-center text-xs py-2">
+        <p className="flex flex-wrap gap-1 space-x-3 items-center text-[#777] text-xs py-2">
           <span className="flex items-center">
-            <Image
-              src="/blog.jpg"
-              width={30}
-              height={30}
-              className="pr-1 rounded-[100%] object-cover"
-              alt="user"
-            />{" "}
-            Jenny kiaa
+            <span className="w-5 h-5">
+              <Image
+                src="/blog.jpg"
+                width={30}
+                height={30}
+                className="rounded-full w-full h-full"
+                alt="user"
+              />
+            </span>
+            <span className="ml-1">Jenny Kiaa</span>
           </span>
           <span className="flex items-center">
             <span>
@@ -67,7 +69,7 @@ const Card = () => {
             3 min. to read
           </span>
         </p>
-        <p className="text-sm">
+        <p className="text-sm text-[#555]">
           Did you come here for something in particular or just general
           Riker-bashing? And blowing into
         </p>

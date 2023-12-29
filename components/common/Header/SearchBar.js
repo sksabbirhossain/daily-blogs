@@ -1,13 +1,13 @@
 const SearchBar = () => {
   return (
     <form>
-      <div className="flex items-center border rounded-md border-gray-400">
+      <div className="flex items-center border rounded-md border-[#00AAA1]">
         <input
           type="text"
           placeholder="Search"
-          className="w-full lg:w-[450px] rounded-l-md p-1 focus:outline-none text-white bg-transparent"
+          className="w-full lg:w-[450px] rounded-l-md p-1 focus:outline-none text-[#222] bg-transparent"
         />
-        <button type="submit" className="bg-primary rounded-r-md p-1 text-white">
+        <button type="submit" className="bg-primary rounded-r-md p-1 text-[#222]">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
