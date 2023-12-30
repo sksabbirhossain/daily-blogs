@@ -47,7 +47,7 @@ const Footer = () => {
                 <h2 className="text-xl text-[#222] font-medium">quick links</h2>
                 <div className="space-y-2 text-[#555] text-sm">
                   <p className="hover:text-[#00AAA1] duration-150 ease-out">
-                    <Link href={"/"}>FAQ</Link>
+                    <Link href={"/asked-question"}>FAQ</Link>
                   </p>
                   <p className="hover:text-[#00AAA1] duration-150 ease-out">
                     <Link href={"/"}>Terms & conditions</Link>
@@ -86,7 +86,7 @@ const Footer = () => {
                     <h2 className="text-base text-[#222] font-semibold">
                       follow on:
                     </h2>
-                    <SocialIcon/>
+                    <SocialIcon />
                   </div>
                 </div>
               </div>

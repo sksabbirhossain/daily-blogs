@@ -1,10 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
 
 const Card = () => {
+  const slug = "this-is-a-blog-details-page";
   return (
-    <Link href="/">
+    <Link href={`/blogs/${slug}`}>
       <div className="space-y-1 py-5 md:py-0">
         <p className="text-xs font-bold text-[#00AAA1]">Travel</p>
         <h2 className="text-2xl pb-2 font-medium text-[#222]">
@@ -13,9 +13,9 @@ const Card = () => {
         <Image
           src={"/blog.jpg"}
           alt={"blog title"}
-          width={350}
-          height={250}
-          className="rounded-md"
+          width={1000}
+          height={1000}
+          className="rounded-md object-cover w-full h-full max-h-[250px]"
         />
         <p className="flex flex-wrap gap-1 space-x-3 items-center text-[#777] text-xs py-2">
           <span className="flex items-center">

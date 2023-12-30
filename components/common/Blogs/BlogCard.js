@@ -1,11 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
 
 const BlogCard = () => {
+
+  const slug = "this-is-a-blog-details-page";
   return (
     <div className=" w-full max-w-[350px]">
-      <Link href="/">
+      <Link href={`/blogs/${slug}`}>
         <div className="space-y-3 py-5 md:py-0">
           <Image
             src={"/blog.jpg"}
