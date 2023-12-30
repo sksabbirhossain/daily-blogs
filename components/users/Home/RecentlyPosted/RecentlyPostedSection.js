@@ -5,11 +5,12 @@ import RecentPostCard from "./RecentPostCard";
 const RecentlyPostedSection = () => {
   return (
     <section className="container mx-auto">
-      <h2 className="text-xl font-medium">
-        <span className="bg-[#00AAA1] px-2 rounded text-white">Recently</span> Posted
-      </h2>
       <div className="grid md:gap-7 grid-cols-1 md:gird-cols-2 lg:grid-cols-3 py-7">
         <div className="md:col-span-2">
+          <h2 className="text-xl text-[#222] capitalize font-semibold pb-6">
+            <span className="text-[#00AAA1] pr-2 uppercase">Recently</span>
+            Posted
+          </h2>
           <div className="space-y-6">
             <RecentPostCard />
             <RecentPostCard />
@@ -22,7 +23,7 @@ const RecentlyPostedSection = () => {
             <RecentPostCard />
           </div>
         </div>
-        <div className="md:col-span-1">
+        <div className="md:col-span-1 pt-5 sm:pt-0">
           <div className="">
             <Sidebar />
           </div>

@@ -1,5 +1,6 @@
 import Footer from "@/components/common/Footer/Footer";
 import MainHeader from "@/components/common/Header/MainHeader";
+import MobileMenu from "@/utils/mobileMenuContext";
 import { Poppins } from "next/font/google";
 import "../globals.css";
 
@@ -17,9 +18,11 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={poppins.className}>
-        <MainHeader />
-        {children}
-        <Footer />
+        <MobileMenu>
+          <MainHeader />
+          {children}
+          <Footer />
+        </MobileMenu>
       </body>
     </html>
   );

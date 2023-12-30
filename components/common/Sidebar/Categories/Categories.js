@@ -3,7 +3,9 @@ import React from "react";
 const Categories = () => {
   return (
     <div className="space-y-5">
-      <h3 className="capitalize font-medium text-[21px]">Categories </h3>
+      <h2 className="text-xl text-[#222] font-semibold">
+        <span className="text-[#00AAA1] pr-2 capitalize">Categories</span>
+      </h2>
       <div className="space-y-5">
         <ul className="space-y-5">
           <li className="text-sm flex items-center justify-between border-b pb-1 border-dashed">

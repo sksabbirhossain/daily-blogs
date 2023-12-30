@@ -1,7 +1,10 @@
 const TodayUpdate = () => {
   return (
     <div className="space-y-5">
-      <h3 className="capitalize font-medium text-[21px]">Today’s update</h3>
+      <h2 className="text-xl text-[#222] font-semibold">
+        <span className="text-[#00AAA1] pr-2 uppercase">Today’s</span>
+        Update
+      </h2>
       <div className="space-y-4">
         <div className="flex gap-5 ">
           <div className="bg-[#F2F8F7] w-full h-full rounded-md flex items-center justify-center py-5">

@@ -1,3 +1,4 @@
+import SocialIcon from "@/components/common/SocialIcon/SocialIcon";
 import React from "react";
 
 const ContactUs = () => {
@@ -115,8 +116,9 @@ const ContactUs = () => {
                 <p>+886554 654654</p>
                 <p>9567 Turner Trace Apt. BC C3G8A4</p>
               </div>
-              <div className="">
-                <h4 className="text-sm font-medium ">Follow on:</h4>
+              <div className="space-y-3">
+                <h4 className="text-sm font-semibold ">Follow on:</h4>
+                <SocialIcon/>
               </div>
             </div>
           </div>

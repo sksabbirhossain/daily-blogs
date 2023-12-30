@@ -7,7 +7,7 @@ import navlink from "./navLink";
 
 const MainHeader = () => {
   return (
-    <header className="bg-[#cbf1f1]/80 shadow-sm shadow-[#00AAA1]/50 backdrop-blur transition-colors w-full h-auto py-[8px] lg:py-0 lg:h-[50px] z-50 sticky top-0">
+    <header className="bg-[#cbf1f1]/80 shadow-lg shadow-[#00AAA1]/20 backdrop-blur transition-colors w-full h-auto py-[8px] lg:py-0 lg:h-[50px] z-50 sticky top-0">
       <div className="w-full h-full container mx-auto px-2 sm:px-0">
         <div className="w-full h-full flex items-center justify-between">
           {/* logo */}

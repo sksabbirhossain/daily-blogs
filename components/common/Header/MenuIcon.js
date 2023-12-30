@@ -1,12 +1,12 @@
 "use client";
 
-import { useState } from "react";
+import useMobileMenu from "@/contexts/mobileMenuContext";
 
 const MenuIcon = () => {
-  const [mobileMenu, setMobileMenu] = useState(false);
+  const { mobileMenuHandler } = useMobileMenu();
   return (
     <div className="lg:hidden flex items-center ps-3 lg:ps-0">
-      <button onClick={() => setMobileMenu(!mobileMenu)}>
+      <button onClick={() => mobileMenuHandler()}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
