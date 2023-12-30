@@ -10,9 +10,6 @@ const TopAuthor = () => {
       </h2>
       <div className="space-y-5">
         <AuthorCard />
-        <AuthorCard />
-        <AuthorCard />
-        <AuthorCard />
       </div>
     </div>
   );

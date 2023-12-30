@@ -14,9 +14,9 @@ const AuthorCard = () => {
         />
       </div>
       <div className="">
-        <h5 className="font-normal text-[15px]">Jenny Kia</h5>
+        <h5 className="font-normal text-[15px]">Sk Sabbir Hossain</h5>
         <p className="text-xs text-gray-500">
-          Fashion designer, Blogger, activist
+          Web Developer, Blogger, activist
         </p>
       </div>
     </div>
