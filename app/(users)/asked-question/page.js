@@ -6,7 +6,7 @@ const Faq = () => {
     <section className="container mx-auto py-5 sm:py-10">
       <div className="w-full flex justify-center">
         <div className="w-full max-w-[700px] space-y-5 sm:space-y-10">
-          <div className="space-y-2 text-center">
+          <div className="space-y-2 text-center px2 sm:px-0">
             <h1 className="text-2xl font-semibold text-[#222] capitalize">
               <span className="text-[#00AAA1]">Frequently</span> asked question
             </h1>
@@ -16,11 +16,11 @@ const Faq = () => {
             </p>
           </div>
           {/* faqs */}
-          <div className="space-y-3">
+          <div className="space-y-3 px-2 sm:px-0">
             {/* 1 */}
             <div className="bg-[#F2F8F7] rounded-md">
               <div className="bg-[#DFF1F0] rounded-ss-md rounded-tr-md flex items-center justify-between px-2 py-2">
-                <h2 className="text-[#222] text-lg capitalize font-medium">
+                <h2 className="text-[#222] text-sm sm:text-lg capitalize font-bold sm:font-medium">
                   is there have any option for write blog?
                 </h2>
                 <span className="pe-3 font-bold text-[#00AAA1] cursor-pointer">
@@ -40,7 +40,7 @@ const Faq = () => {
                   </svg>
                 </span>
               </div>
-              <p className=" text-[#666] tex-xs font-normal py-2 px-2">
+              <p className=" text-[#666] text-[12px] sm:tex-xs font-normal py-2 px-2">
                 Did you come here for something in particular or just general
                 Riker-bashing? And blowing into maximum warp speed, you appeared
                 for an instant to be in two places at once. We have a saboteur
@@ -51,7 +51,7 @@ const Faq = () => {
             {/* 2 */}
             <div className="bg-[#F2F8F7] rounded-md">
               <div className="bg-[#DFF1F0] rounded-ss-md rounded-tr-md flex items-center justify-between px-2 py-2">
-                <h2 className="text-[#222] text-lg capitalize font-medium">
+                <h2 className="text-[#222] text-sm sm:text-lg capitalize font-bold sm:font-medium">
                   can i change my plan later?
                 </h2>
                 <span className="pe-3 font-bold text-[#00AAA1] cursor-pointer">
@@ -71,7 +71,7 @@ const Faq = () => {
                   </svg>
                 </span>
               </div>
-              <p className="hidden text-[#666] tex-xs font-normal py-2 px-2">
+              <p className="hidden text-[#666] text-[12px] sm:tex-xs font-normal py-2 px-2">
                 Did you come here for something in particular or just general
                 Riker-bashing? And blowing into maximum warp speed, you appeared
                 for an instant to be in two places at once. We have a saboteur
@@ -82,7 +82,7 @@ const Faq = () => {
             {/* 3 */}
             <div className="bg-[#F2F8F7] rounded-md">
               <div className="bg-[#DFF1F0] rounded-ss-md rounded-tr-md flex items-center justify-between px-2 py-2">
-                <h2 className="text-[#222] text-lg capitalize font-medium">
+                <h2 className="text-[#222] text-sm sm:text-lg capitalize font-bold sm:font-medium">
                   Did you come here for something in particular?
                 </h2>
                 <span className="pe-3 font-bold text-[#00AAA1] cursor-pointer">
@@ -102,7 +102,7 @@ const Faq = () => {
                   </svg>
                 </span>
               </div>
-              <p className="hidden text-[#666] tex-xs font-normal py-2 px-2">
+              <p className="hidden text-[#666] text-[12px] sm:tex-xs font-normal py-2 px-2">
                 Did you come here for something in particular or just general
                 Riker-bashing? And blowing into maximum warp speed, you appeared
                 for an instant to be in two places at once. We have a saboteur
@@ -113,7 +113,7 @@ const Faq = () => {
             {/* 4 */}
             <div className="bg-[#F2F8F7] rounded-md">
               <div className="bg-[#DFF1F0] rounded-ss-md rounded-tr-md flex items-center justify-between px-2 py-2">
-                <h2 className="text-[#222] text-lg capitalize font-medium">
+                <h2 className="text-[#222] text-sm sm:text-lg capitalize font-bold sm:font-medium">
                   is there have any option for write blog?
                 </h2>
                 <span className="pe-3 font-bold text-[#00AAA1] cursor-pointer">
@@ -133,7 +133,7 @@ const Faq = () => {
                   </svg>
                 </span>
               </div>
-              <p className="hidden text-[#666] tex-xs font-normal py-2 px-2">
+              <p className="hidden text-[#666] text-[12px] sm:tex-xs font-normal py-2 px-2">
                 Did you come here for something in particular or just general
                 Riker-bashing? And blowing into maximum warp speed, you appeared
                 for an instant to be in two places at once. We have a saboteur
@@ -144,7 +144,7 @@ const Faq = () => {
             {/* 5 */}
             <div className="bg-[#F2F8F7] rounded-md">
               <div className="bg-[#DFF1F0] rounded-ss-md rounded-tr-md flex items-center justify-between px-2 py-2">
-                <h2 className="text-[#222] text-lg capitalize font-medium">
+                <h2 className="text-[#222] text-sm sm:text-lg capitalize font-bold sm:font-medium">
                   something in particular or just general Riker-bashing?
                 </h2>
                 <span className="pe-3 font-bold text-[#00AAA1] cursor-pointer">
@@ -164,7 +164,7 @@ const Faq = () => {
                   </svg>
                 </span>
               </div>
-              <p className="hidden text-[#666] tex-xs font-normal py-2 px-2">
+              <p className="hidden text-[#666] text-[12px] sm:tex-xs font-normal py-2 px-2">
                 Did you come here for something in particular or just general
                 Riker-bashing? And blowing into maximum warp speed, you appeared
                 for an instant to be in two places at once. We have a saboteur
@@ -175,10 +175,10 @@ const Faq = () => {
           </div>
           {/* another question */}
           <div className="space-y-3 text-center">
-            <h2 className="text-[#222] font-medium text-xl">
+            <h2 className="text-[#222] font-medium text-lg sm:text-xl">
               Cant find an answer to your question?
             </h2>
-            <button className="border  border-[#00AAA1] text-sm hover:bg-[#00AAA1] hover:text-white duration-150 ease-linear text-[#222] rounded-md px-4 py-2">
+            <button className="border  border-[#00AAA1] text-sm hover:bg-[#00AAA1] hover:text-white duration-150 ease-linear text-[#222] rounded-md px-3 sm:px-4 py-1 sm:py-2">
               <Link
                 href={"/contact-us"}
                 className="flex items-center justify-center gap-2"
