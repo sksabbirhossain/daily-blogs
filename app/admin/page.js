@@ -2,7 +2,7 @@ import React from 'react'
 
 const AdminLogin = () => {
   return (
-    <div>page</div>
+    <div>admin login page</div>
   )
 }
 
