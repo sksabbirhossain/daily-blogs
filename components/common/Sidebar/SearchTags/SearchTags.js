@@ -1,40 +1,23 @@
-import React from "react";
+import { allCategory } from "@/actions/category/categoryActions";
+import Link from "next/link";
 
-const SearchTags = () => {
+const SearchTags = async () => {
+  //get all category
+  const categories = await allCategory();
   return (
     <div className="space-y-5">
       <h2 className="text-xl text-[#222] font-semibold">
         <span className="text-[#00AAA1] pr-2 uppercase">search</span>
-        With Tags
+        With Categories
       </h2>
       <div className="flex flex-wrap gap-3">
-        <button className="text-black px-3 py-1 rounded-md border hover:bg-[#00AAA1] hover:text-white text-xs">
-          Travel
-        </button>{" "}
-        <button className="text-black px-3 py-1 rounded-md border hover:bg-[#00AAA1] hover:text-white text-xs">
-          lifestyle
-        </button>{" "}
-        <button className="text-black px-3 py-1 rounded-md border hover:bg-[#00AAA1] hover:text-white text-xs">
-          fashion
-        </button>{" "}
-        <button className="text-black px-3 py-1 rounded-md border hover:bg-[#00AAA1] hover:text-white text-xs">
-          technology
-        </button>
-        <button className="text-black px-3 py-1 rounded-md border hover:bg-[#00AAA1] hover:text-white text-xs">
-          business
-        </button>
-        <button className="text-black px-3 py-1 rounded-md border hover:bg-[#00AAA1] hover:text-white text-xs">
-          design
-        </button>
-        <button className="text-black px-3 py-1 rounded-md border hover:bg-[#00AAA1] hover:text-white text-xs">
-          health
-        </button>
-        <button className="text-black px-3 py-1 rounded-md border hover:bg-[#00AAA1] hover:text-white text-xs">
-          Food
-        </button>
-        <button className="text-black px-3 py-1 rounded-md border hover:bg-[#00AAA1] hover:text-white text-xs">
-          Arts
-        </button>
+        {categories?.slice(0, 9).map((category) => (
+          <Link key={category._id} href={`/categories/${category.slug}`}>
+            <button className="text-black px-3 py-1 rounded-md border hover:bg-[#00AAA1] hover:text-white text-xs">
+              {category.name}
+            </button>
+          </Link>
+        ))}
       </div>
     </div>
   );
