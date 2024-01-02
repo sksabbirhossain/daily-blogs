@@ -1,18 +1,19 @@
+import moment from "moment";
 import Image from "next/image";
 import Link from "next/link";
 
-const Card = () => {
-  const slug = "this-is-a-blog-details-page";
+const Card = ({ blog }) => {
+  const { title, slug, category, description, picture, createdAt } = blog || {};
   return (
     <Link href={`/blogs/${slug}`}>
       <div className="space-y-1 py-5 md:py-0">
-        <p className="text-xs font-bold text-[#00AAA1]">Travel</p>
-        <h2 className="text-2xl pb-2 font-medium text-[#222]">
-          set video playback speed with javascript
-        </h2>
+        <p className="text-xs font-bold text-[#00AAA1]">{category?.name}</p>
+        <h1 className="text-xl pb-2 font-medium text-[#222]">
+          {title.substr(0, 35)}
+        </h1>
         <Image
-          src={"/blog.jpg"}
-          alt={"blog title"}
+          src={picture}
+          alt={title}
           width={1000}
           height={1000}
           className="rounded-md object-cover w-full h-full max-h-[250px]"
@@ -28,7 +29,7 @@ const Card = () => {
                 alt="user"
               />
             </span>
-            <span className="ml-1">Jenny Kiaa</span>
+            <span className="ml-1">Admin</span>
           </span>
           <span className="flex items-center">
             <span>
@@ -47,7 +48,7 @@ const Card = () => {
                 />
               </svg>
             </span>
-            02 december 2022
+            {moment(createdAt).format("DD MMMM YYYY")}
           </span>
           <span className="flex items-center">
             <span>
@@ -69,10 +70,7 @@ const Card = () => {
             3 min. to read
           </span>
         </p>
-        <p className="text-sm text-[#555]">
-          Did you come here for something in particular or just general
-          Riker-bashing? And blowing into
-        </p>
+        <p className="text-sm text-[#555]">{description.substr(0, 140)}...</p>
       </div>
     </Link>
   );

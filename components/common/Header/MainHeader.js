@@ -32,7 +32,7 @@ const MainHeader = () => {
             <ul className="flex items-center space-x-5 text-sm text-textBlack cursor-pointer">
               {navlink?.map((item, i) => (
                 <li
-                  className="text-[#222] hover:text-[#00AAA1] duration-150 ease-linear"
+                  className="text-[#222] text-sm font-semibold hover:text-[#00AAA1] duration-150 ease-linear"
                   key={i}
                 >
                   <Link href={item.link}>{item.name}</Link>

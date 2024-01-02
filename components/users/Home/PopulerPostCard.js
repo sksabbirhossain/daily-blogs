@@ -1,28 +1,29 @@
+import moment from "moment";
 import Image from "next/image";
 import Link from "next/link";
 
-const PopulerPostCard = () => {
-  const slug = "this-is-a-blog-details-page";
+const PopulerPostCard = ({ blog }) => {
+  const { title, slug, category, description, picture, createdAt } = blog || {};
   return (
     <div>
       <Link href={`/blogs/${slug}`}>
         <div className="space-y-2">
-          <p className="text-xs font-bold text-[#00AAA1]">Travel</p>
-          <h4 className="text-md text-[#222] font-medium">
-            Design is the Mix of emotions
-          </h4>
+          <p className="text-xs font-bold text-[#00AAA1]">{category?.name}</p>
+          <h1 className="text-md text-[#222] font-medium">
+            {title.substr(0, 35)}
+          </h1>
           <p className="flex flex-wrap gap-1 space-x-3 items-center text-xs text-[#777]">
             <span className="flex items-center">
               <span className="w-5 h-5">
                 <Image
-                  src="/blog.jpg"
+                  src={picture}
                   width={30}
                   height={30}
                   className="rounded-full w-full h-full"
                   alt="user"
                 />
               </span>
-              <span className="ml-1">Jenny Kiaa</span>
+              <span className="ml-1">Admin</span>
             </span>
             <span className="flex  items-center">
               <span>
@@ -41,7 +42,7 @@ const PopulerPostCard = () => {
                   />
                 </svg>
               </span>
-              02 december 2022
+              {moment(createdAt).format("DD MMMM YYYY")}
             </span>
             <span className="flex items-center">
               <span>
@@ -64,8 +65,7 @@ const PopulerPostCard = () => {
             </span>
           </p>
           <p className="text-sm text-[#555] font-normal">
-            Did you come here for something in particular or just general
-            Riker-bashing? And blowing into maximum warp
+            {description.substr(0, 140)}...
           </p>
         </div>
       </Link>

@@ -12,7 +12,7 @@ const MobileMenu = () => {
           <ul className="flex flex-col items-center space-y-3 text-base text-textBlack cursor-pointer">
             {navlink?.map((item, i) => (
               <li
-                className="hover:text-[#00AAA1] duration-150 ease-linear"
+                className="hover:text-[#00AAA1] text-sm font-semibold duration-150 ease-linear"
                 key={i}
                 onClick={() => mobileMenuHandler()}
               >

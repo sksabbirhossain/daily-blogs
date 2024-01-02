@@ -21,6 +21,16 @@ export const getBlog = async (slug) => {
   }
 };
 
+// get a blog
+export const getFeaturedBlogs = async (slug) => {
+  try {
+    const res = await fetch(`${process.env.BASE_URL}/blog/featured-blogs`);
+    return res.json();
+  } catch (err) {
+    console.log(err);
+  }
+};
+
 //add a blog
 export const addBlog = async (data) => {
   "use server";
