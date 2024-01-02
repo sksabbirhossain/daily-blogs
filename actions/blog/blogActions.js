@@ -11,6 +11,16 @@ export const allBlogs = async () => {
   }
 };
 
+// get a blog
+export const getBlog = async (slug) => {
+  try {
+    const res = await fetch(`${process.env.BASE_URL}/blogs/${slug}`);
+    return res.json();
+  } catch (err) {
+    console.log(err);
+  }
+};
+
 //add a blog
 export const addBlog = async (data) => {
   "use server";

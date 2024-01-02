@@ -1,20 +1,27 @@
+import { getBlog } from "@/actions/blog/blogActions";
 import BlogCard from "@/components/common/Blogs/BlogCard";
 import Sidebar from "@/components/common/Sidebar/Sidebar";
 import ShereIcons from "@/components/users/Blog/ShereIcons";
+import moment from "moment";
 import Image from "next/image";
-import React from "react";
 
-const Blog = ({ params: { slug } }) => {
+const Blog = async ({ params: { slug } }) => {
+  //get a blog
+  const blog = (await getBlog(slug)) || {};
+
+  const { title, category, description, picture, createdAt } = blog || {};
   return (
     <section className="container mx-auto py-10">
       <div className="grid gap-5 md:gap-7 grid-cols-1 md:gird-cols-2 lg:grid-cols-3 px-2 sm:px-0">
         <div className="md:col-span-2">
-          <div className="space-y-5 sm:space-y-10">
+          <div className="space-y-5 sm:space-y-8">
             {/* heading */}
             <div className="space-y-2">
-              <p className="text-xs text-[#00AAA1] font-semibold">Travel</p>
+              <p className="text-xs text-[#00AAA1] font-semibold">
+                {category?.name}
+              </p>
               <h1 className="text-[#222] font-semibold text-2xl capitalize">
-                I Created a Developer Rap Video - Heres What I Learned
+                {title}
               </h1>
               <p className="flex flex-wrap gap-1 space-x-3 items-center text-xs text-[#777]">
                 <span className="flex items-center">
@@ -27,7 +34,7 @@ const Blog = ({ params: { slug } }) => {
                       alt="user"
                     />
                   </span>
-                  <span className="ml-1">Jenny Kiaa</span>
+                  <span className="ml-1">Admin</span>
                 </span>
                 <span className="flex items-center">
                   <span>
@@ -46,14 +53,14 @@ const Blog = ({ params: { slug } }) => {
                       />
                     </svg>
                   </span>
-                  02 december 2022
+                  {moment(createdAt).format("DD MMMM YYYY")}
                 </span>
               </p>
             </div>
             {/* image */}
             <div>
               <Image
-                src="/blog.jpg"
+                src={picture}
                 width={1000}
                 height={1000}
                 alt="title"
@@ -62,15 +69,7 @@ const Blog = ({ params: { slug } }) => {
             </div>
             {/* descriptions */}
             <div className="">
-              <p className="text-[#666] text-sm font-normal">
-                Did you come here for something in particular or just general
-                Riker-bashing? And blowing into maximum warp speed, you appeared
-                for an instant to be in two places at once. We have a saboteur
-                aboard. We know you’re dealing in stolen ore. But I wanna talk
-                about the assassination attempt on Lieutenant Worf. Could
-                someone survive inside a transporter buffer for 75 years? Fate.
-                It protects fools, little children, and ships.
-              </p>
+              <p className="text-[#666] text-sm font-normal">{description}</p>
             </div>
             {/* shere icons */}
             <div className="w-full flex items-center justify-center">
@@ -81,7 +80,7 @@ const Blog = ({ params: { slug } }) => {
               </div>
             </div>
             {/* google adds */}
-            <div className="w-full h-44 bg-[#00AAA1] rounded-md">ADS</div>
+            <div className="w-full h-44 bg-[#00AAA1] rounded-md"></div>
             {/* related posts */}
             <div className="space-y-5">
               <h2 className="text-[#222] text-xl font-semibold">
@@ -97,7 +96,7 @@ const Blog = ({ params: { slug } }) => {
               </div>
             </div>
             {/* google adds */}
-            <div className="w-full h-44 bg-[#00AAA1] rounded-md">ADS</div>
+            <div className="w-full h-44 bg-[#00AAA1] rounded-md"></div>
           </div>
         </div>
         <div className="md:col-span-1 pt-5 sm:pt-0">
