@@ -1,5 +1,18 @@
 "use server";
 
+import { revalidatePath } from "next/cache";
+
+//get all category
+export const allCategory = async () => {
+  try {
+    const res = await fetch(`${process.env.BASE_URL}/categories`);
+    return res.json();
+  } catch (err) {
+    console.log(err);
+  }
+};
+
+// add a category
 export const addCategory = async (data) => {
   "use server";
   const formData = new FormData();
