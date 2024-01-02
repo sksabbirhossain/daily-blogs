@@ -1,6 +1,15 @@
 "use server";
-
 import { revalidatePath } from "next/cache";
+
+// get all blogs
+export const allBlogs = async () => {
+  try {
+    const res = await fetch(`${process.env.BASE_URL}/blogs`);
+    return res.json();
+  } catch (err) {
+    console.log(err);
+  }
+};
 
 //add a blog
 export const addBlog = async (data) => {

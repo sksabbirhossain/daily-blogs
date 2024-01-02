@@ -1,8 +1,11 @@
+import { allBlogs } from "@/actions/blog/blogActions";
 import Sidebar from "@/components/common/Sidebar/Sidebar";
 import React from "react";
 import RecentPostCard from "./RecentPostCard";
 
-const RecentlyPostedSection = () => {
+const RecentlyPostedSection = async () => {
+  //get all blogs
+  const blogs = await allBlogs();
   return (
     <section className="container mx-auto">
       <div className="grid md:gap-7 grid-cols-1 md:gird-cols-2 lg:grid-cols-3 py-7">
@@ -12,15 +15,9 @@ const RecentlyPostedSection = () => {
             Posted
           </h2>
           <div className="space-y-6">
-            <RecentPostCard />
-            <RecentPostCard />
-            <RecentPostCard />
-            <RecentPostCard />
-            <RecentPostCard />
-            <RecentPostCard />
-            <RecentPostCard />
-            <RecentPostCard />
-            <RecentPostCard />
+            {blogs?.map((blog) => (
+              <RecentPostCard key={blog._id} blog={blog} />
+            ))}
           </div>
         </div>
         <div className="md:col-span-1 pt-5 sm:pt-0">

@@ -1,25 +1,28 @@
+import moment from "moment";
 import Image from "next/image";
 import Link from "next/link";
 
-const RecentPostCard = () => {
-  const slug = "this-is-a-blog-details-page";
+const RecentPostCard = ({ blog }) => {
+  const { title, slug, picture, description, category, createdAt } = blog || {};
   return (
     <div>
       <Link href={`/blogs/${slug}`}>
         <div className="sm:flex gap-6">
           <div className="pb-3 sm:pb-0">
             <Image
-              src={"/blog.jpg"}
+              src={picture}
               alt="blog title"
-              width={250}
-              height={140}
-              className="rounded-md w-full h-full object-cover max-h-[240px]"
+              width={500}
+              height={100}
+              className="rounded-md sm:w-[250px] object-cover h-[200px] sm:h-[150px]"
             />
           </div>
           <div className="">
-            <p className="text-xs text-[#00AAA1] font-semibold">Travel</p>
+            <p className="text-xs text-[#00AAA1] font-semibold">
+              {category?.name}
+            </p>
             <h1 className="text-lg font-medium text-[#222]  w-full max-w-[450px]">
-              Design is the Mix of emotions
+              {title.substr(0, 35)}
             </h1>
             <p className="flex flex-wrap gap-1 space-x-3 items-center text-xs py-2 text-[#777]">
               <span className="flex items-center">
@@ -32,7 +35,7 @@ const RecentPostCard = () => {
                     alt="user"
                   />
                 </span>
-                <span className="ml-1">Jenny Kiaa</span>
+                <span className="ml-1">Admin</span>
               </span>
               <span className="flex items-center">
                 <span>
@@ -51,7 +54,7 @@ const RecentPostCard = () => {
                     />
                   </svg>
                 </span>
-                02 december 2022
+                {moment(createdAt).format("DD MMMM YYYY")}
               </span>
               <span className="flex items-center">
                 <span>
@@ -74,8 +77,7 @@ const RecentPostCard = () => {
               </span>
             </p>
             <p className="text-sm text-[#555] w-full max-w-[450px]">
-              Did you come here for something in particular or just general
-              Riker-bashing? And blowing into
+              {description.substr(0, 90)}...
             </p>
             <p className="text-xs pt-1 text-[#00AAA1]">Read More...</p>
           </div>
