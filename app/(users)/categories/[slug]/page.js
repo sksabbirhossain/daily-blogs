@@ -1,4 +1,5 @@
 import { getBlogsByCategory } from "@/actions/blog/blogActions";
+import { allCategory } from "@/actions/category/categoryActions";
 import Sidebar from "@/components/common/Sidebar/Sidebar";
 import RecentPostCard from "@/components/users/Home/RecentlyPosted/RecentPostCard";
 
@@ -42,5 +43,11 @@ const Category = async ({ params: { slug } }) => {
     </section>
   );
 };
+
+//generate all Categories
+export async function generateStaticParams() {
+  const categories = await allCategory();
+  return categories.map((category) => ({ slug: category.slug }));
+}
 
 export default Category;
