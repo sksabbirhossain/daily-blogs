@@ -1,15 +1,20 @@
-import { getBlog } from "@/actions/blog/blogActions";
-import BlogCard from "@/components/common/Blogs/BlogCard";
+import { getBlog, getRelatedBlogs } from "@/actions/blog/blogActions";
+import RelatedBlogs from "@/components/common/Blogs/RelatedBlogs";
 import Sidebar from "@/components/common/Sidebar/Sidebar";
 import ShereIcons from "@/components/users/Blog/ShereIcons";
 import moment from "moment";
 import Image from "next/image";
+import { Suspense } from "react";
 
 const Blog = async ({ params: { slug } }) => {
   //get a blog
-  const blog = (await getBlog(slug)) || {};
+  const blogPromise = getBlog(slug);
+  // get related blogs
+  const relatedBlogsPromise = getRelatedBlogs(slug);
 
-  const { title, category, description, picture, createdAt } = blog || {};
+  const blog = await blogPromise;
+
+  const { _id, title, category, description, picture, createdAt } = blog || {};
   return (
     <section className="container mx-auto py-10">
       <div className="grid gap-5 md:gap-7 grid-cols-1 md:gird-cols-2 lg:grid-cols-3 px-2 sm:px-0">
@@ -81,22 +86,15 @@ const Blog = async ({ params: { slug } }) => {
             </div>
             {/* google adds */}
             <div className="w-full h-44 bg-[#00AAA1] rounded-md"></div>
-            {/* related posts */}
-            <div className="space-y-5">
-              <h2 className="text-[#222] text-xl font-semibold">
-                <span className="bg-[#00AAA1] px-2 rounded-sm text-[#fff]">
-                  See related
-                </span>{" "}
-                Posts
-              </h2>
-              {/* related posts card */}
-              <div className="grid gap-5 grid-cols-1 sm:grid-cols-2">
-                <BlogCard />
-                <BlogCard />
-              </div>
-            </div>
+            {/* related Blogs */}
+            <Suspense fallback="<h1>Related Blogs is Loading...</h1>">
+              <RelatedBlogs
+                relatedBlogsPromise={relatedBlogsPromise}
+                blogId={_id}
+              />
+            </Suspense>
             {/* google adds */}
-            <div className="w-full h-44 bg-[#00AAA1] rounded-md"></div>
+            {/* <div className="w-full h-44 bg-[#00AAA1] rounded-md"></div> */}
           </div>
         </div>
         <div className="md:col-span-1 pt-5 sm:pt-0">

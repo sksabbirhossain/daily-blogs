@@ -21,7 +21,16 @@ export const getBlog = async (slug) => {
   }
 };
 
-// get a blog
+export const getRelatedBlogs = async (slug) => {
+  try {
+    const res = await fetch(`${process.env.BASE_URL}/blogs/related-blogs/${slug}`);
+    return res.json();
+  } catch (err) {
+    console.log(err);
+  }
+};
+
+// get featured blog
 export const getFeaturedBlogs = async (slug) => {
   try {
     const res = await fetch(`${process.env.BASE_URL}/blog/featured-blogs`);

@@ -1,24 +1,24 @@
+import moment from "moment";
 import Image from "next/image";
 import Link from "next/link";
 
-const BlogCard = () => {
-
-  const slug = "this-is-a-blog-details-page";
+const BlogCard = ({ blog }) => {
+  const { title, slug, picture, description, category, createdAt } = blog || {};
   return (
     <div className=" w-full max-w-[350px]">
       <Link href={`/blogs/${slug}`}>
         <div className="space-y-3 py-5 md:py-0">
           <Image
-            src={"/blog.jpg"}
-            alt={"blog title"}
+            src={picture}
+            alt={title}
             width={1000}
             height={1000}
             className="rounded-md w-full h-full max-h-[200px] object-cover"
           />
           <div className="space-y-1 pe-1">
-            <p className="text-xs font-bold text-[#00AAA1]">Travel</p>
+            <p className="text-xs font-bold text-[#00AAA1]">{category?.name}</p>
             <h2 className="text-xl font-semibold text-[#222]">
-              set video playback speed with javascript
+              {title.substr(0, 25)}
             </h2>
             <p className="flex flex-wrap gap-1 space-x-1 items-center text-[#777] font-normal text-xs">
               <span className="flex items-center">
@@ -31,7 +31,7 @@ const BlogCard = () => {
                     alt="user"
                   />
                 </span>
-                <span className="ml-1">Jenny Kiaa</span>
+                <span className="ml-1">Admin</span>
               </span>
               <span className="flex items-center">
                 <span>
@@ -50,7 +50,7 @@ const BlogCard = () => {
                     />
                   </svg>
                 </span>
-                02 december 2022
+                {moment(createdAt).format("DD MMMM YYYY")}
               </span>
               <span className="flex items-center">
                 <span>
@@ -73,8 +73,7 @@ const BlogCard = () => {
               </span>
             </p>
             <p className="text-sm font-normal text-[#555]">
-              Did you come here for something in particular or just general
-              Riker-bashing? And blowing into
+              {description.substr(0, 80)}...
             </p>
           </div>
         </div>
