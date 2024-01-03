@@ -1,5 +1,8 @@
 import Link from "next/link";
-import React from "react";
+
+export const metadata = {
+  title: "FAQ - Daily Blogs",
+};
 
 const Faq = () => {
   return (

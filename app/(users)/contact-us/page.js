@@ -1,5 +1,8 @@
 import SocialIcon from "@/components/common/SocialIcon/SocialIcon";
-import React from "react";
+
+export const metadata = {
+  title: "Contact Us - Daily Blogs",
+};
 
 const ContactUs = () => {
   return (
@@ -118,7 +121,7 @@ const ContactUs = () => {
               </div>
               <div className="space-y-3">
                 <h4 className="text-sm font-semibold ">Follow on:</h4>
-                <SocialIcon/>
+                <SocialIcon />
               </div>
             </div>
           </div>

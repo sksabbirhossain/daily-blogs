@@ -2,6 +2,14 @@ import { getBlogsByCategory } from "@/actions/blog/blogActions";
 import Sidebar from "@/components/common/Sidebar/Sidebar";
 import RecentPostCard from "@/components/users/Home/RecentlyPosted/RecentPostCard";
 
+//generate Meta data
+export async function generateMetadata({ params: { slug } }) {
+  const blogs = await getBlogsByCategory(slug);
+  return {
+    title: `${blogs[0].category?.name} - Daily Blogs`,
+  };
+}
+
 const Category = async ({ params: { slug } }) => {
   //get blogs by slug
   const blogs = await getBlogsByCategory(slug);

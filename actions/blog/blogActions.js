@@ -4,6 +4,17 @@ import { revalidatePath } from "next/cache";
 // get all blogs
 export const allBlogs = async () => {
   try {
+    const res = await fetch(
+      `${process.env.BASE_URL}/blogs?limit=${process.env.BLOG_PAR_PAGE}`
+    );
+    return res.json();
+  } catch (err) {
+    console.log(err);
+  }
+};
+// get all blogs without limit
+export const getAllBlogs = async () => {
+  try {
     const res = await fetch(`${process.env.BASE_URL}/blogs`);
     return res.json();
   } catch (err) {
@@ -24,7 +35,9 @@ export const getBlog = async (slug) => {
 // get related blogs
 export const getRelatedBlogs = async (slug) => {
   try {
-    const res = await fetch(`${process.env.BASE_URL}/blogs/related-blogs/${slug}`);
+    const res = await fetch(
+      `${process.env.BASE_URL}/blogs/related-blogs/${slug}`
+    );
     return res.json();
   } catch (err) {
     console.log(err);

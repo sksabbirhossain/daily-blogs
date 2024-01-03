@@ -1,4 +1,8 @@
-import { getBlog, getRelatedBlogs } from "@/actions/blog/blogActions";
+import {
+  getAllBlogs,
+  getBlog,
+  getRelatedBlogs,
+} from "@/actions/blog/blogActions";
 import Sidebar from "@/components/common/Sidebar/Sidebar";
 import RelatedBlogs from "@/components/users/Blog/RelatedBlogs";
 import ShereIcons from "@/components/users/Blog/ShereIcons";
@@ -7,6 +11,15 @@ import Image from "next/image";
 import { Suspense } from "react";
 
 import defaultPic from "@/public/default.jpg";
+
+//generate Meta data
+export async function generateMetadata({ params: { slug } }) {
+  const blog = await getBlog(slug);
+  return {
+    title: blog.title,
+    description: blog.description.substr(0, 1000),
+  };
+}
 
 const Blog = async ({ params: { slug } }) => {
   //get a blog
@@ -105,5 +118,11 @@ const Blog = async ({ params: { slug } }) => {
     </section>
   );
 };
+
+//generate all blogs
+export async function generateStaticParams() {
+  const blogs = await getAllBlogs();
+  return blogs.map((blog) => ({ slug: blog.slug }));
+}
 
 export default Blog;

@@ -1,6 +1,10 @@
 import { allCategory } from "@/actions/category/categoryActions";
 import Link from "next/link";
 
+export const metadata = {
+  title: "Categories - Daily Blogs",
+};
+
 const Categories = async () => {
   //get all categories
   const categories = await allCategory();

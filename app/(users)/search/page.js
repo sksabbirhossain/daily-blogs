@@ -1,5 +1,8 @@
 import Sidebar from "@/components/common/Sidebar/Sidebar";
-import RecentPostCard from "@/components/users/Home/RecentlyPosted/RecentPostCard";
+
+export const metadata = {
+  title: "Search - Daily Blogs",
+};
 
 const Search = () => {
   return (
