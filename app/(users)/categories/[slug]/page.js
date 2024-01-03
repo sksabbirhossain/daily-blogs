@@ -6,7 +6,7 @@ const Category = async ({ params: { slug } }) => {
   //get blogs by slug
   const blogs = await getBlogsByCategory(slug);
   return (
-    <section className="container mx-auto py-10">
+    <section className="container mx-auto py-5 sm:py-10">
       <div className="grid gap-5 md:gap-16 grid-cols-1 md:gird-cols-2 lg:grid-cols-3 px-2 sm:px-0">
         <div className="md:col-span-2">
           <div className="space-y-5 sm:space-y-10">

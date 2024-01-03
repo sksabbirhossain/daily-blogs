@@ -1,24 +1,33 @@
 "use client";
 import useMobileMenu from "@/contexts/mobileMenuContext";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import navlink from "./navLink";
 
 const MobileMenu = () => {
   const { menuOpen, mobileMenuHandler } = useMobileMenu();
+  const pathName = usePathname();
   return (
     <>
       {menuOpen && (
         <div className="block lg:hidden py-5">
-          <ul className="flex flex-col items-center space-y-3 text-base text-textBlack cursor-pointer">
-            {navlink?.map((item, i) => (
-              <li
-                className="hover:text-[#00AAA1] text-sm font-semibold duration-150 ease-linear"
-                key={i}
-                onClick={() => mobileMenuHandler()}
-              >
-                <Link href={item.link}>{item.name}</Link>
-              </li>
-            ))}
+          <ul className="flex flex-col items-center space-y-3 text-base cursor-pointer">
+            {navlink?.map((item, i) => {
+              const isActive = pathName.endsWith(item.link);
+              return (
+                <li
+                  className={
+                    isActive
+                      ? "text-[#00AAA1] text-sm font-semibold duration-150 ease-linear"
+                      : "hover:text-[#00AAA1] text-sm font-semibold duration-150 ease-linear"
+                  }
+                  key={i}
+                  onClick={() => mobileMenuHandler()}
+                >
+                  <Link href={item.link}>{item.name}</Link>
+                </li>
+              );
+            })}
             <li className="hover:text-[#00AAA1] duration-150 ease-linear flex items-center">
               <p>
                 <svg

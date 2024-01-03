@@ -11,13 +11,15 @@ const Card = ({ blog }) => {
         <h1 className="text-xl pb-2 font-medium text-[#222]">
           {title.substr(0, 35)}
         </h1>
-        <Image
-          src={picture}
-          alt={title}
-          width={1000}
-          height={1000}
-          className="rounded-md object-cover w-full h-full max-h-[250px]"
-        />
+        <div className="w-full h-[250px]">
+          <Image
+            src={picture}
+            alt={title}
+            width={1000}
+            height={1000}
+            className="rounded-md object-cover w-full h-full"
+          />
+        </div>
         <p className="flex flex-wrap gap-1 space-x-3 items-center text-[#777] text-xs py-2">
           <span className="flex items-center">
             <span className="w-5 h-5">

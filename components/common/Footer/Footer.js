@@ -1,9 +1,10 @@
+import { allCategory } from "@/actions/category/categoryActions";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
 import SocialIcon from "../SocialIcon/SocialIcon";
 
-const Footer = () => {
+const Footer = async () => {
+  const categories = await allCategory();
   return (
     <section>
       <footer className="bg-[#e9f8f5] py-5 md:py-16 px-2 sm:px-0">
@@ -15,8 +16,9 @@ const Footer = () => {
                   <Image src="/logo.png" width={200} height={50} alt="logo" />
                 </div>
                 <p className="text-sm text-[#555]">
-                  Did you come here for something in particular or just general
-                  Riker
+                  Explore a world of daily wonders with Daily Blogs. Immerse
+                  yourself in a diverse range of articles, from insightful
+                  reflections to practical tips.
                 </p>
               </div>
             </div>
@@ -24,27 +26,24 @@ const Footer = () => {
               <div className="space-y-3">
                 <h2 className="text-xl text-[#222] font-medium">Blogs</h2>
                 <div className="space-y-2 text-[#555] text-sm">
-                  <p className="hover:text-[#00AAA1] duration-150 ease-out">
-                    <Link href={"/"}>Travel</Link>
-                  </p>
-                  <p className="hover:text-[#00AAA1] duration-150 ease-out">
-                    <Link href={"/"}>Technology</Link>
-                  </p>
-                  <p className="hover:text-[#00AAA1] duration-150 ease-out">
-                    <Link href={"/"}>Lifestyle</Link>
-                  </p>
-                  <p className="hover:text-[#00AAA1] duration-150 ease-out">
-                    <Link href={"/"}>fashion</Link>
-                  </p>
-                  <p className="hover:text-[#00AAA1] duration-150 ease-out">
-                    <Link href={"/"}>Business</Link>
-                  </p>
+                  {categories?.slice(0, 4)?.map((category) => (
+                    <p
+                      className="hover:text-[#00AAA1] duration-150 ease-out"
+                      key={category._id}
+                    >
+                      <Link href={`/categories/${category.slug}`}>
+                        {category.name}
+                      </Link>
+                    </p>
+                  ))}
                 </div>
               </div>
             </div>
             <div>
               <div className="space-y-3">
-                <h2 className="text-xl text-[#222] font-medium">quick links</h2>
+                <h2 className="text-xl text-[#222] font-medium capitalize">
+                  quick links
+                </h2>
                 <div className="space-y-2 text-[#555] text-sm">
                   <p className="hover:text-[#00AAA1] duration-150 ease-out">
                     <Link href={"/asked-question"}>FAQ</Link>
@@ -63,7 +62,7 @@ const Footer = () => {
             </div>
             <div>
               <div className="space-y-3">
-                <h2 className="text-xl text-[#222] font-medium">
+                <h2 className="text-xl text-[#222] font-medium capitalize">
                   Subscribe for newsletter
                 </h2>
                 <div className="space-y-4">
