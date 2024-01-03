@@ -6,6 +6,8 @@ import moment from "moment";
 import Image from "next/image";
 import { Suspense } from "react";
 
+import defaultPic from "@/public/default.jpg";
+
 const Blog = async ({ params: { slug } }) => {
   //get a blog
   const blogPromise = getBlog(slug);
@@ -30,12 +32,12 @@ const Blog = async ({ params: { slug } }) => {
               </h1>
               <p className="flex flex-wrap gap-1 space-x-3 items-center text-xs text-[#777]">
                 <span className="flex items-center">
-                  <span className="w-5 h-5">
+                  <span className="w-5 h-5 rounded-full ring-1">
                     <Image
-                      src="/blog.jpg"
-                      width={30}
-                      height={30}
-                      className="rounded-full w-full h-full"
+                      src={defaultPic}
+                      width={40}
+                      height={40}
+                      className="rounded-full"
                       alt="user"
                     />
                   </span>
@@ -63,13 +65,12 @@ const Blog = async ({ params: { slug } }) => {
               </p>
             </div>
             {/* image */}
-            <div>
+            <div className="relative w-full h-[430px]">
               <Image
                 src={picture}
-                width={1000}
-                height={1000}
-                alt="title"
-                className="w-full h-full max-h-[430px] object-cover rounded-md"
+                fill
+                alt={title}
+                className=" object-cover rounded-md"
               />
             </div>
             {/* descriptions */}

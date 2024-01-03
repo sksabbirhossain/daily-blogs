@@ -2,19 +2,20 @@ import moment from "moment";
 import Image from "next/image";
 import Link from "next/link";
 
+import defaultPic from "@/public/default.jpg";
+
 const RecentPostCard = ({ blog }) => {
   const { title, slug, picture, description, category, createdAt } = blog || {};
   return (
     <div>
       <Link href={`/blogs/${slug}`}>
         <div className="sm:flex gap-6">
-          <div className="pb-3 sm:pb-0">
+          <div className="relative w-full sm:w-[250px] h-[200px] sm:h-[150px] pb-3 sm:pb-0">
             <Image
               src={picture}
-              alt="blog title"
-              width={500}
-              height={100}
-              className="rounded-md sm:w-[250px] object-cover h-[200px] sm:h-[150px]"
+              alt={title}
+              fill
+              className="rounded-md object-cover"
             />
           </div>
           <div className="">
@@ -26,12 +27,12 @@ const RecentPostCard = ({ blog }) => {
             </h1>
             <p className="flex flex-wrap gap-1 space-x-3 items-center text-xs py-2 text-[#777]">
               <span className="flex items-center">
-                <span className="w-5 h-5">
+                <span className="w-5 h-5 rounded-full ring-1">
                   <Image
-                    src="/blog.jpg"
-                    width={30}
-                    height={30}
-                    className="rounded-full w-full h-full"
+                    src={defaultPic}
+                    width={40}
+                    height={40}
+                    className="rounded-full"
                     alt="user"
                   />
                 </span>

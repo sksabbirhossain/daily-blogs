@@ -1,16 +1,17 @@
 import Image from "next/image";
-import React from "react";
+
+import defaultPic from "@/public/default.jpg";
 
 const AuthorCard = () => {
   return (
     <div className="flex gap-3 items-center">
-      <div className="w-[40px] h-[40px] flex items-center">
+      <div className="w-[40px] h-[40px] ring-2 rounded-full flex items-center">
         <Image
-          src="/blog.jpg"
+          src={defaultPic}
           width={40}
           height={40}
-          alt="author"
-          className="rounded-full w-full h-full object-cover"
+          className="rounded-full"
+          alt="user"
         />
       </div>
       <div className="">

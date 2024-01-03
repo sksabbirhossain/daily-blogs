@@ -2,6 +2,8 @@ import moment from "moment";
 import Image from "next/image";
 import Link from "next/link";
 
+import defaultPic from "@/public/default.jpg";
+
 const BlogCard = ({ blog }) => {
   const { title, slug, picture, description, category, createdAt } = blog || {};
   return (
@@ -22,12 +24,12 @@ const BlogCard = ({ blog }) => {
             </h2>
             <p className="flex flex-wrap gap-1 space-x-1 items-center text-[#777] font-normal text-xs">
               <span className="flex items-center">
-                <span className="w-5 h-5">
+                <span className="w-5 h-5 rounded-full ring-1">
                   <Image
-                    src="/blog.jpg"
-                    width={30}
-                    height={30}
-                    className="rounded-full w-full h-full"
+                    src={defaultPic}
+                    width={40}
+                    height={40}
+                    className="rounded-full"
                     alt="user"
                   />
                 </span>

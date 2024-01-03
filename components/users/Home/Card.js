@@ -2,6 +2,8 @@ import moment from "moment";
 import Image from "next/image";
 import Link from "next/link";
 
+import defaultPic from "@/public/default.jpg";
+
 const Card = ({ blog }) => {
   const { title, slug, category, description, picture, createdAt } = blog || {};
   return (
@@ -11,23 +13,22 @@ const Card = ({ blog }) => {
         <h1 className="text-xl pb-2 font-medium text-[#222]">
           {title.substr(0, 35)}
         </h1>
-        <div className="w-full h-[250px]">
+        <div className="relative w-full h-[250px]">
           <Image
             src={picture}
             alt={title}
-            width={1000}
-            height={1000}
-            className="rounded-md object-cover w-full h-full"
+            fill
+            className="rounded-md object-cover"
           />
         </div>
         <p className="flex flex-wrap gap-1 space-x-3 items-center text-[#777] text-xs py-2">
           <span className="flex items-center">
-            <span className="w-5 h-5">
+            <span className="w-5 h-5 rounded-full ring-1">
               <Image
-                src="/blog.jpg"
-                width={30}
-                height={30}
-                className="rounded-full w-full h-full"
+                src={defaultPic}
+                width={40}
+                height={40}
+                className="rounded-full"
                 alt="user"
               />
             </span>

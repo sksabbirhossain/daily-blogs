@@ -2,6 +2,8 @@ import moment from "moment";
 import Image from "next/image";
 import Link from "next/link";
 
+import defaultPic from "@/public/default.jpg";
+
 const PopulerPostCard = ({ blog }) => {
   const { title, slug, category, description, picture, createdAt } = blog || {};
   return (
@@ -14,18 +16,18 @@ const PopulerPostCard = ({ blog }) => {
           </h1>
           <p className="flex flex-wrap gap-1 space-x-3 items-center text-xs text-[#777]">
             <span className="flex items-center">
-              <span className="w-5 h-5">
+              <span className="w-5 h-5 rounded-full ring-1">
                 <Image
-                  src={picture}
-                  width={30}
-                  height={30}
-                  className="rounded-full w-full h-full"
+                  src={defaultPic}
+                  width={40}
+                  height={40}
+                  className="rounded-full"
                   alt="user"
                 />
               </span>
               <span className="ml-1">Admin</span>
             </span>
-            <span className="flex  items-center">
+            <span className="flex items-center">
               <span>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
