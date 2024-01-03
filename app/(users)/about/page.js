@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export const metadata = {
   title: "About Us - Daily Blogs",
 };
@@ -13,21 +15,25 @@ const About = () => {
 
           <div className="space-y-3 text-sm font-normal text-gray-800">
             <p>
-              Dynamically underwhelm integrated outsourcing via timely models.
-              Rapidiously reconceptualize visionary imperatives without 24/365
-              catalysts for change. Completely streamline functionalized models
-              and out-of-the-box functionalities. Authoritatively target
-              proactive vortals vis-a-vis exceptional results. Compellingly
-              brand emerging sources and compelling materials. Globally iterate
-              parallel content
+              Explore a world of daily wonders with{" "}
+              <span className="text-[#00AAA1] font-semibold">Daily Blogs</span>.
+              Immerse yourself in a diverse range of articles, from insightful
+              reflections to practical tips. Stay informed, inspired, and
+              engaged every day with our thoughtfully curated content. Join us
+              on a journey of continuous learning and discovery. Your daily dose
+              of knowledge and inspiration awaits. Start exploring now!
             </p>
             <h3 className="text-lg font-medium">
               The best ideas can change who we are.
             </h3>
             <p>
-              Dynamically underwhelm integrated outsourcing via timely models.
-              Rapidiously reconceptualize visionary imperatives without 24/365
-              catalysts for
+              In the ever-evolving tapestry of human existence, the power of
+              ideas stands as a transformative force, reshaping the very essence
+              of who we are. This profound statement encapsulates the profound
+              impact that innovative and groundbreaking ideas can have on
+              individuals and society at large. Ideas are the seeds of progress,
+              capable of sprouting into revolutions that redefine our
+              perspectives, beliefs, and aspirations.
             </p>
           </div>
         </div>
@@ -40,25 +46,28 @@ const About = () => {
           </h1>
           <p className="text-sm font-medium capitalize">
             there have some simple steps, by following these steps you can be a
-            regular author in notebook.
+            regular author in
+            <span className="text-[#00AAA1] font-semibold"> Daily Blogs</span>.
           </p>
-          <button className="text-[#00AAA1] border border-[#00AAA1] hover:bg-[#00AAA1] hover:text-white duration-150 ease-linear rounded py-2 px-4 text-sm flex items-center space-x-1">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth={1.5}
-              stroke="currentColor"
-              className="w-5 h-5"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6H10"
-              />
-            </svg>
-            <span>Write on notebook</span>
-          </button>
+          <Link href="/contact-us">
+            <button className="text-[#00AAA1] border border-[#00AAA1] hover:bg-[#00AAA1] hover:text-white duration-150 ease-linear rounded py-2 px-4 text-sm flex items-center space-x-1">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth={1.5}
+                stroke="currentColor"
+                className="w-5 h-5"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6H10"
+                />
+              </svg>
+              <span>Write on daily bolgs</span>
+            </button>
+          </Link>
         </div>
       </div>
     </>

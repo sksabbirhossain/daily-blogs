@@ -49,13 +49,13 @@ const Footer = async () => {
                     <Link href={"/asked-question"}>FAQ</Link>
                   </p>
                   <p className="hover:text-[#00AAA1] duration-150 ease-out">
-                    <Link href={"/"}>Terms & conditions</Link>
+                    <Link href={"/contact-us"}>Terms & conditions</Link>
                   </p>
                   <p className="hover:text-[#00AAA1] duration-150 ease-out">
-                    <Link href={"/"}>support</Link>
+                    <Link href={"/contact-us"}>support</Link>
                   </p>
                   <p className="hover:text-[#00AAA1] duration-150 ease-out">
-                    <Link href={"/"}>privacy policy</Link>
+                    <Link href={"/contact-us"}>privacy policy</Link>
                   </p>
                 </div>
               </div>

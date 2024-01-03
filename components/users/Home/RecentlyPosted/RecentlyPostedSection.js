@@ -1,6 +1,6 @@
 import { allBlogs } from "@/actions/blog/blogActions";
+import Pagination from "@/components/common/Pagination/Pagination";
 import Sidebar from "@/components/common/Sidebar/Sidebar";
-import React from "react";
 import RecentPostCard from "./RecentPostCard";
 
 const RecentlyPostedSection = async () => {
@@ -19,7 +19,12 @@ const RecentlyPostedSection = async () => {
               <RecentPostCard key={blog._id} blog={blog} />
             ))}
           </div>
+
+          {/* Pagination */}
+          <Pagination />
         </div>
+
+        {/* right sidebar */}
         <div className="md:col-span-1 pt-5 sm:pt-0">
           <div className="">
             <Sidebar />

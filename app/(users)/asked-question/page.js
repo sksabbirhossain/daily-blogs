@@ -15,7 +15,7 @@ const Faq = () => {
             </h1>
             <p className="text-[#555] text-sm font-normal">
               Did you come here for something in particular or just general
-              Riker-bashing? And blowing
+              Riker-bashing?
             </p>
           </div>
           {/* faqs */}
@@ -44,14 +44,13 @@ const Faq = () => {
                 </span>
               </div>
               <p className=" text-[#666] text-[12px] sm:tex-xs font-normal py-2 px-2">
-                Did you come here for something in particular or just general
-                Riker-bashing? And blowing into maximum warp speed, you appeared
-                for an instant to be in two places at once. We have a saboteur
-                aboard. We know youre dealing in stolen ore. But I wanna talk
-                about
+                Yes, You can write your own blogs in daily blogs. this Feature
+                is comming soon.
               </p>
             </div>
             {/* 2 */}
+            {/*
+          
             <div className="bg-[#F2F8F7] rounded-md">
               <div className="bg-[#DFF1F0] rounded-ss-md rounded-tr-md flex items-center justify-between px-2 py-2">
                 <h2 className="text-[#222] text-sm sm:text-lg capitalize font-bold sm:font-medium">
@@ -82,7 +81,7 @@ const Faq = () => {
                 about
               </p>
             </div>
-            {/* 3 */}
+          
             <div className="bg-[#F2F8F7] rounded-md">
               <div className="bg-[#DFF1F0] rounded-ss-md rounded-tr-md flex items-center justify-between px-2 py-2">
                 <h2 className="text-[#222] text-sm sm:text-lg capitalize font-bold sm:font-medium">
@@ -113,7 +112,7 @@ const Faq = () => {
                 about
               </p>
             </div>
-            {/* 4 */}
+            
             <div className="bg-[#F2F8F7] rounded-md">
               <div className="bg-[#DFF1F0] rounded-ss-md rounded-tr-md flex items-center justify-between px-2 py-2">
                 <h2 className="text-[#222] text-sm sm:text-lg capitalize font-bold sm:font-medium">
@@ -144,7 +143,7 @@ const Faq = () => {
                 about
               </p>
             </div>
-            {/* 5 */}
+           
             <div className="bg-[#F2F8F7] rounded-md">
               <div className="bg-[#DFF1F0] rounded-ss-md rounded-tr-md flex items-center justify-between px-2 py-2">
                 <h2 className="text-[#222] text-sm sm:text-lg capitalize font-bold sm:font-medium">
@@ -174,7 +173,8 @@ const Faq = () => {
                 aboard. We know you’re dealing in stolen ore. But I wanna talk
                 about
               </p>
-            </div>
+            </div> 
+         */}
           </div>
           {/* another question */}
           <div className="space-y-3 text-center">

@@ -109,15 +109,16 @@ const ContactUs = () => {
             <div className="space-y-5 text-[#555]">
               <div className="text-base capitalize">
                 <p>
-                  Dynamically underwhelm integrated outsourcing via timely
-                  models. Rapidiously reconceptualize visionary imperatives
-                  without.
+                  Feel free to reach out. Your thoughts, questions, and feedback
+                  are invaluable to us. Whether you are a reader, collaborator,
+                  or enthusiast, we welcome your messages. Contact us for
+                  inquiries, partnerships, or just to say hello. We look forward
+                  to connecting with you and fostering meaningful conversations.
                 </p>
               </div>
               <div className="text-sm space-y-1">
-                <p>blog.notebook@gmail.com</p>
-                <p>+886554 654654</p>
-                <p>9567 Turner Trace Apt. BC C3G8A4</p>
+                <p>notavailable@gmail.com</p>
+                <p>soon {"->"}</p>
               </div>
               <div className="space-y-3">
                 <h4 className="text-sm font-semibold ">Follow on:</h4>

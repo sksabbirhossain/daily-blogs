@@ -1,5 +1,6 @@
 import { getBlogsByCategory } from "@/actions/blog/blogActions";
 import { allCategory } from "@/actions/category/categoryActions";
+import Pagination from "@/components/common/Pagination/Pagination";
 import Sidebar from "@/components/common/Sidebar/Sidebar";
 import RecentPostCard from "@/components/users/Home/RecentlyPosted/RecentPostCard";
 
@@ -28,12 +29,15 @@ const Category = async ({ params: { slug } }) => {
                 </span>
               </h4>
             </div>
-            {/* post card */}
+            {/* blog card */}
             <div className="space-y-5">
               {blogs?.map((blog) => (
                 <RecentPostCard key={blog._id} blog={blog} />
               ))}
             </div>
+
+            {/* pagination */}
+            <Pagination />
           </div>
         </div>
         <div className="md:col-span-1 pt-5 sm:pt-0">
