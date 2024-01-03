@@ -16,8 +16,8 @@ import defaultPic from "@/public/default.jpg";
 export async function generateMetadata({ params: { slug } }) {
   const blog = await getBlog(slug);
   return {
-    title: blog.title,
-    description: blog.description.substr(0, 1000),
+    title: blog?.title,
+    description: blog?.description?.substr(0, 1000),
   };
 }
 

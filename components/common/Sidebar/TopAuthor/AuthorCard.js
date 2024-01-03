@@ -5,7 +5,7 @@ import defaultPic from "@/public/default.jpg";
 const AuthorCard = () => {
   return (
     <div className="flex gap-3 items-center">
-      <div className="w-[40px] h-[40px] ring-2 rounded-full flex items-center">
+      <div className="w-[40px] h-[40px] ring-2 ring-[#00AAA1] rounded-full flex items-center">
         <Image
           src={defaultPic}
           width={40}
