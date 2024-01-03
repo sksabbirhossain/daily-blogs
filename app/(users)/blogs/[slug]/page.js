@@ -1,6 +1,6 @@
 import { getBlog, getRelatedBlogs } from "@/actions/blog/blogActions";
-import RelatedBlogs from "@/components/common/Blogs/RelatedBlogs";
 import Sidebar from "@/components/common/Sidebar/Sidebar";
+import RelatedBlogs from "@/components/users/Blog/RelatedBlogs";
 import ShereIcons from "@/components/users/Blog/ShereIcons";
 import moment from "moment";
 import Image from "next/image";

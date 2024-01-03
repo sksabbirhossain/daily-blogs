@@ -1,9 +1,5 @@
-import BlogCard from "@/components/common/Blogs/BlogCard";
 import Sidebar from "@/components/common/Sidebar/Sidebar";
-import ShereIcons from "@/components/users/Blog/ShereIcons";
 import RecentPostCard from "@/components/users/Home/RecentlyPosted/RecentPostCard";
-import Image from "next/image";
-import React from "react";
 
 const Search = () => {
   return (
@@ -19,16 +15,7 @@ const Search = () => {
               </h4>
             </div>
             {/* post card */}
-            <div className="space-y-5">
-              <RecentPostCard />
-              <RecentPostCard />
-              <RecentPostCard />
-              <RecentPostCard />
-              <RecentPostCard />
-              <RecentPostCard />
-              <RecentPostCard />
-              <RecentPostCard />
-            </div>
+            <div className="space-y-5">{/* <RecentPostCard /> */}</div>
           </div>
         </div>
         <div className="md:col-span-1 pt-5 sm:pt-0">
