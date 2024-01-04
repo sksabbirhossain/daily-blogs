@@ -1,10 +1,10 @@
 import Link from "next/link";
 
-const Pagination = ({ totalPage, currentPage }) => {
+const SearchPagination = ({ totalPage, currentPage, searchQuery }) => {
   return (
     <div className="w-full flex justify-center py-7 sm:py-10">
       <div className="flex">
-        <Link href={`?page=${currentPage - 1}`}>
+        <Link href={`search?q=${searchQuery}&page=${currentPage - 1}`}>
           <button
             disabled={currentPage == 1}
             className="flex items-center justify-center px-3 h-8 me-3 text-sm font-medium text-gray-500 bg-white border border-gray-300 hover:bg-[#00AAA1] hover:text-white rounded-md disabled:bg-gray-100 disabled:text-gray-300"
@@ -30,7 +30,7 @@ const Pagination = ({ totalPage, currentPage }) => {
 
         {[...Array(totalPage)].map((_, i) => (
           <Link
-            href={`?page=${i + 1}`}
+            href={`search?q=${searchQuery}&page=${i + 1}`}
             className={`${
               currentPage == i + 1
                 ? "bg-[#00AAA1] text-white"
@@ -42,7 +42,7 @@ const Pagination = ({ totalPage, currentPage }) => {
           </Link>
         ))}
 
-        <Link href={`?page=${currentPage + 1}`}>
+        <Link href={`search?q=${searchQuery}&page=${currentPage + 1}`}>
           <button
             disabled={currentPage === totalPage}
             className="flex items-center justify-center px-3 h-8 text-sm font-medium text-gray-500 bg-white border border-gray-300 hover:bg-[#00AAA1] hover:text-white rounded-md disabled:bg-gray-100 disabled:text-gray-300"
@@ -70,4 +70,4 @@ const Pagination = ({ totalPage, currentPage }) => {
   );
 };
 
-export default Pagination;
+export default SearchPagination;

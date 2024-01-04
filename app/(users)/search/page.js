@@ -1,7 +1,7 @@
 import { searchBlogs } from "@/actions/blog/blogActions";
-import Pagination from "@/components/common/Pagination/Pagination";
 import Sidebar from "@/components/common/Sidebar/Sidebar";
 import RecentPostCard from "@/components/users/Home/RecentlyPosted/RecentPostCard";
+import SearchPagination from "@/components/users/search/SearchPagination";
 
 export async function generateMetadata({ searchParams }) {
   const { q } = searchParams;
@@ -48,7 +48,11 @@ const Search = async ({ searchParams }) => {
 
             {/* pagination */}
             <div>
-              <Pagination totalPage={totalPages} currentPage={currentPage} />
+              <SearchPagination
+                totalPage={totalPages}
+                currentPage={currentPage}
+                searchQuery={q}
+              />
             </div>
           </div>
         </div>

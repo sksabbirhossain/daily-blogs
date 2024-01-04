@@ -121,8 +121,8 @@ const Blog = async ({ params: { slug } }) => {
 
 //generate all blogs
 export async function generateStaticParams() {
-  const blogs = await getAllBlogs();
-  return blogs.map((blog) => ({ slug: blog.slug }));
+  const {blogs} = await getAllBlogs();
+  return blogs?.map((blog) => ({ slug: blog.slug }));
 }
 
 export default Blog;
