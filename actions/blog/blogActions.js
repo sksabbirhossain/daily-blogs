@@ -65,6 +65,18 @@ export const getFeaturedBlogs = async (slug) => {
   }
 };
 
+//search blogs
+export const searchBlogs = async (page, searchQuery) => {
+  try {
+    const res = await fetch(
+      `${process.env.BASE_URL}/blogs/search?q=${searchQuery}&page=${page}&limit=${process.env.BLOG_PAR_PAGE}`
+    );
+    return res.json();
+  } catch (err) {
+    console.log(err);
+  }
+};
+
 //add a blog
 export const addBlog = async (data) => {
   "use server";
