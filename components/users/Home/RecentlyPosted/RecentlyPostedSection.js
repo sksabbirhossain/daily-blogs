@@ -3,9 +3,10 @@ import Pagination from "@/components/common/Pagination/Pagination";
 import Sidebar from "@/components/common/Sidebar/Sidebar";
 import RecentPostCard from "./RecentPostCard";
 
-const RecentlyPostedSection = async () => {
+const RecentlyPostedSection = async ({ searchParams }) => {
+  const { page } = searchParams;
   //get all blogs
-  const blogs = await allBlogs();
+  const { blogs, totalPages, currentPage } = await allBlogs(parseInt(page));
   return (
     <section className="container mx-auto">
       <div className="grid md:gap-7 grid-cols-1 md:gird-cols-2 lg:grid-cols-3 py-7">
@@ -21,7 +22,7 @@ const RecentlyPostedSection = async () => {
           </div>
 
           {/* Pagination */}
-          <Pagination />
+          <Pagination totalPage={totalPages} currentPage={currentPage} />
         </div>
 
         {/* right sidebar */}

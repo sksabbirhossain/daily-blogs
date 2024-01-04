@@ -1,69 +1,70 @@
 import Link from "next/link";
 import React from "react";
 
-const Pagination = () => {
+const Pagination = ({ totalPage, currentPage }) => {
   return (
     <div className="w-full flex justify-center py-7 sm:py-10">
-      <div class="flex">
-        <Link
-          href="/"
-          class="flex items-center justify-center px-3 h-8 me-3 text-sm font-medium text-gray-500 bg-white border border-gray-300 hover:bg-[#00AAA1] hover:text-white rounded-md"
-        >
-          <svg
-            class="w-3.5 h-3.5 me-2 rtl:rotate-180"
-            aria-hidden="true"
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 14 10"
+      <div className="flex">
+        <Link href={`?page=${currentPage - 1}`}>
+          <button
+            disabled={currentPage == 1}
+            className="flex items-center justify-center px-3 h-8 me-3 text-sm font-medium text-gray-500 bg-white border border-gray-300 hover:bg-[#00AAA1] hover:text-white rounded-md disabled:bg-gray-100 disabled:text-gray-300"
           >
-            <path
-              stroke="currentColor"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M13 5H1m0 0 4 4M1 5l4-4"
-            />
-          </svg>
-          Prev
+            <svg
+              className="w-3.5 h-3.5 me-2 rtl:rotate-180"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 14 10"
+            >
+              <path
+                stroke="currentColor"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M13 5H1m0 0 4 4M1 5l4-4"
+              />
+            </svg>
+            Prev
+          </button>
         </Link>
-        <Link
-          href="/"
-          class="flex items-center justify-center px-3 h-8 me-3 text-sm font-medium text-gray-500 bg-white border border-gray-300 hover:bg-[#00AAA1] hover:text-white rounded-md"
-        >
-          1
-        </Link>
-        <Link
-          href="/"
-          class="flex items-center justify-center px-3 h-8 me-3 text-sm font-medium text-gray-500 bg-white border border-gray-300 hover:bg-[#00AAA1] hover:text-white rounded-md"
-        >
-          2
-        </Link>
-        <Link
-          href="/"
-          class="flex items-center justify-center px-3 h-8 me-3 text-sm font-medium text-gray-500 bg-white border border-gray-300 hover:bg-[#00AAA1] hover:text-white rounded-md"
-        >
-          3
-        </Link>
-        <Link
-          href="/"
-          class="flex items-center justify-center px-3 h-8 text-sm font-medium text-gray-500 bg-white border border-gray-300 hover:bg-[#00AAA1] hover:text-white rounded-md"
-        >
-          Next
-          <svg
-            class="w-3.5 h-3.5 ms-2 rtl:rotate-180"
-            aria-hidden="true"
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 14 10"
+
+        {[...Array(totalPage)].map((_, i) => (
+          <Link
+            href={`?page=${i + 1}`}
+            className={`${
+              currentPage == i + 1
+                ? "bg-[#00AAA1] text-white"
+                : " bg-white text-gray-500"
+            } flex items-center justify-center px-3 h-8 me-3 text-sm font-medium border border-gray-300 hover:bg-[#00AAA1] hover:text-white rounded-md`}
+            key={i}
           >
-            <path
-              stroke="currentColor"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M1 5h12m0 0L9 1m4 4L9 9"
-            />
-          </svg>
+            {i + 1}
+          </Link>
+        ))}
+
+        <Link href={`?page=${currentPage + 1}`}>
+          <button
+            disabled={currentPage === totalPage}
+            className="flex items-center justify-center px-3 h-8 text-sm font-medium text-gray-500 bg-white border border-gray-300 hover:bg-[#00AAA1] hover:text-white rounded-md disabled:bg-gray-100 disabled:text-gray-300"
+          >
+            Next
+            <svg
+              className="w-3.5 h-3.5 ms-2 rtl:rotate-180"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 14 10"
+            >
+              <path
+                stroke="currentColor"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M1 5h12m0 0L9 1m4 4L9 9"
+              />
+            </svg>
+          </button>
         </Link>
       </div>
     </div>

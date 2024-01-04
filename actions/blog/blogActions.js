@@ -2,10 +2,10 @@
 import { revalidatePath } from "next/cache";
 
 // get all blogs
-export const allBlogs = async () => {
+export const allBlogs = async (page) => {
   try {
     const res = await fetch(
-      `${process.env.BASE_URL}/blogs?limit=${process.env.BLOG_PAR_PAGE}`
+      `${process.env.BASE_URL}/blogs?page=${page}&limit=${process.env.BLOG_PAR_PAGE}`
     );
     return res.json();
   } catch (err) {
