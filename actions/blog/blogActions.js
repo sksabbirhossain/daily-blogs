@@ -44,9 +44,11 @@ export const getRelatedBlogs = async (slug) => {
   }
 };
 // get blogs by category slug
-export const getBlogsByCategory = async (slug) => {
+export const getBlogsByCategory = async (slug, page) => {
   try {
-    const res = await fetch(`${process.env.BASE_URL}/blogs/category/${slug}`);
+    const res = await fetch(
+      `${process.env.BASE_URL}/blogs/category/${slug}?page=${page}&limit=${process.env.BLOG_PAR_PAGE}`
+    );
     return res.json();
   } catch (err) {
     console.log(err);

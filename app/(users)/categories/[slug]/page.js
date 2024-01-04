@@ -12,9 +12,15 @@ export async function generateMetadata({ params: { slug } }) {
   };
 }
 
-const Category = async ({ params: { slug } }) => {
+const Category = async ({ params: { slug }, searchParams }) => {
+  const { page } = searchParams;
+
   //get blogs by slug
-  const blogs = await getBlogsByCategory(slug);
+  const { blogs, totalPages, currentPage } = await getBlogsByCategory(
+    slug,
+    parseInt(page)
+  );
+
   return (
     <section className="container mx-auto py-5 sm:py-10">
       <div className="grid gap-5 md:gap-16 grid-cols-1 md:gird-cols-2 lg:grid-cols-3 px-2 sm:px-0">
@@ -37,7 +43,7 @@ const Category = async ({ params: { slug } }) => {
             </div>
 
             {/* pagination */}
-            <Pagination />
+            <Pagination totalPage={totalPages} currentPage={currentPage} />
           </div>
         </div>
         <div className="md:col-span-1 pt-5 sm:pt-0">
