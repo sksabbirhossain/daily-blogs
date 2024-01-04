@@ -8,7 +8,7 @@ const AddCategory = () => {
       </div>
       <div className="w-full flex justify-center my-5">
         <div className="w-full max-w-[350px] bg-gray-100 rounded shadow-md p-2 py-5">
-          <form action={addCategory} enctype="multipart/form-data">
+          <form action={addCategory}>
             <div className="space-y-3">
               <div className="space-y-1">
                 <div>

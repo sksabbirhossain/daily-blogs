@@ -1,5 +1,7 @@
 import { addBlog } from "@/actions/blog/blogActions";
 import { allCategory } from "@/actions/category/categoryActions";
+import TextEditor from "@/components/admin/Blogs/TextEditor";
+import { Suspense } from "react";
 
 const AddBlog = async () => {
   //get all category
@@ -11,7 +13,7 @@ const AddBlog = async () => {
       </div>
       <div className="w-full flex justify-center my-5">
         <div className="w-full max-w-[650px] bg-gray-100 rounded shadow-md p-2 py-5">
-          <form action={addBlog} enctype="multipart/form-data">
+          <form action={addBlog} >
             <div className="space-y-3">
               <div className="space-y-1">
                 <div>
@@ -26,14 +28,23 @@ const AddBlog = async () => {
               </div>
               <div className="space-y-1">
                 <div>
-                  <label htmlFor="">Blog Description</label>
+                  <label htmlFor="">Short Description</label>
                 </div>
-                <input
+                <textarea
                   type="text"
                   name="description"
                   placeholder="Your Blog Description Here..."
                   className="w-full px-1 py-2 rounded border border-[#00AAA1] focus:outline-1 focus:outline-[#00AAA1]"
-                />
+                  rows={3}
+                ></textarea>
+              </div>
+              <div className="space-y-1">
+                <div>
+                  <label htmlFor="">Blog Details</label>
+                </div>
+                <Suspense fallback="Loading Editor...">
+                  <TextEditor />
+                </Suspense>
               </div>
               <div className="space-y-1">
                 <div>

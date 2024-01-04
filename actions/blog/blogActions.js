@@ -83,6 +83,7 @@ export const addBlog = async (data) => {
   const formData = new FormData();
   formData.append("title", data.get("title"));
   formData.append("description", data.get("description"));
+  formData.append("details", data.get("details"));
   formData.append("category", data.get("category"));
   formData.append("picture", data.get("picture"));
 
@@ -90,7 +91,6 @@ export const addBlog = async (data) => {
     await fetch(`${process.env.BASE_URL}/add-blog`, {
       method: "POST",
       body: formData,
-      cache: "no-cache",
     });
 
     revalidatePath("/admin/all-blogs");
