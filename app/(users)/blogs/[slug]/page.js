@@ -29,7 +29,8 @@ const Blog = async ({ params: { slug } }) => {
 
   const blog = await blogPromise;
 
-  const { _id, title, category, description, picture, createdAt } = blog || {};
+  const { _id, title, category, description, details, picture, createdAt } =
+    blog || {};
   return (
     <section className="container mx-auto py-10">
       <div className="grid gap-5 md:gap-7 grid-cols-1 md:gird-cols-2 lg:grid-cols-3 px-2 sm:px-0">
@@ -90,6 +91,8 @@ const Blog = async ({ params: { slug } }) => {
             <div className="">
               <p className="text-[#666] text-sm font-normal">{description}</p>
             </div>
+            {/* full details */}
+            <div className="" dangerouslySetInnerHTML={{ __html: details }} />
             {/* shere icons */}
             <div className="w-full flex items-center justify-center">
               <div className="flex items-center gap-3">
@@ -121,7 +124,7 @@ const Blog = async ({ params: { slug } }) => {
 
 //generate all blogs
 export async function generateStaticParams() {
-  const {blogs} = await getAllBlogs();
+  const { blogs } = await getAllBlogs();
   return blogs?.map((blog) => ({ slug: blog.slug }));
 }
 

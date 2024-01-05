@@ -5,7 +5,9 @@ import { revalidatePath } from "next/cache";
 //get all category
 export const allCategory = async () => {
   try {
-    const res = await fetch(`${process.env.BASE_URL}/categories`);
+    const res = await fetch(`${process.env.BASE_URL}/categories`, {
+      next: { revalidate: 3600 },
+    });
     return res.json();
   } catch (err) {
     console.log(err);
