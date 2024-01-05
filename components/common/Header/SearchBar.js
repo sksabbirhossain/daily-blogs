@@ -1,13 +1,15 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import { useState } from "react";
+import { useRef, useState } from "react";
 
 const SearchBar = () => {
   const [value, setValue] = useState("");
+  const input = useRef(null);
   const router = useRouter();
   const searchSubmit = (e) => {
     e.preventDefault();
+    input.current.blur();
     router.push(`/search?q=${value}`);
   };
 
@@ -19,12 +21,13 @@ const SearchBar = () => {
           placeholder="what are you looking for?"
           className="w-full lg:w-[450px] rounded-l-md p-1 focus:outline-none text-[#222] bg-transparent"
           required
+          ref={input}
           value={value}
           onChange={(e) => setValue(e.target.value)}
         />
         <button
           type="submit"
-          className="bg-primary rounded-r-md p-1 text-[#222]"
+          className="bg-primary rounded-r-md p-1 text-[#222] hover:text-[#00AAA1] duration-150 ease-in-out"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
