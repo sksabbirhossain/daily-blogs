@@ -18,7 +18,7 @@ const RecentPostCard = ({ blog }) => {
               className="rounded-md object-cover"
             />
           </div>
-          <div className="">
+          <div className="pt-2 sm:pt-0">
             <p className="text-xs text-[#00AAA1] font-semibold">
               {category?.name}
             </p>
