@@ -15,10 +15,6 @@ const navlink = [
     name: "contact Us",
     link: "/contact-us",
   },
-  {
-    name: "login",
-    link: "/login",
-  },
 ];
 
 export default navlink;

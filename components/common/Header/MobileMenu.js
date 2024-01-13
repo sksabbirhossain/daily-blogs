@@ -1,14 +1,23 @@
 "use client";
 import useMobileMenu from "@/contexts/mobileMenuContext";
-import { useSession } from "next-auth/react";
+import { signOut, useSession } from "next-auth/react";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import navlink from "./navLink";
 
 const MobileMenu = () => {
   const { menuOpen, mobileMenuHandler } = useMobileMenu();
   const pathName = usePathname();
-  const { data } = useSession();
+  const loginActive = pathName.endsWith("/login");
+  const { data: session } = useSession();
+  const router = useRouter();
+
+  //user signout handler
+  const signOutHandler = () => {
+    signOut();
+    router.push("/");
+    toast.success("User Signout SuccessFull");
+  };
   return (
     <>
       {menuOpen && (
@@ -30,6 +39,27 @@ const MobileMenu = () => {
                 </li>
               );
             })}
+
+            {session?.user?.accessToken ? (
+              <li
+                className="text-[#222] text-sm font-semibold  hover:text-[#00AAA1] duration-150 ease-linear"
+                onClick={() => signOutHandler()}
+              >
+                <button onClick={() => mobileMenuHandler()}>LogOut</button>
+              </li>
+            ) : (
+              <li
+                className={
+                  loginActive
+                    ? "text-[#00AAA1] text-sm font-semibold  duration-150 ease-linear"
+                    : "text-[#222] text-sm font-semibold hover:text-[#00AAA1] duration-150 ease-linear"
+                }
+                onClick={() => mobileMenuHandler()}
+              >
+                <Link href="/login">Login</Link>
+              </li>
+            )}
+
             <li className="hover:text-[#00AAA1] duration-150 ease-linear flex items-center">
               <p>
                 <svg

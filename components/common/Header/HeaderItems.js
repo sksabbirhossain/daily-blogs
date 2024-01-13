@@ -1,11 +1,24 @@
 "use client";
 
+import { signOut, useSession } from "next-auth/react";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
+import toast from "react-hot-toast";
 import navlink from "./navLink";
 
 const HeaderItems = () => {
   const pathName = usePathname();
+  const loginActive = pathName.endsWith("/login");
+  const { data: session } = useSession();
+  const router = useRouter();
+
+  //user signout handler
+  const signOutHandler = () => {
+    signOut();
+    router.push("/");
+    toast.success("User Signout SuccessFull");
+  };
+
   return (
     <ul className="flex items-center space-x-5 text-sm text-textBlack cursor-pointer">
       {navlink?.map((item, i) => {
@@ -23,6 +36,24 @@ const HeaderItems = () => {
           </li>
         );
       })}
+      {session?.user?.accessToken ? (
+        <li
+          className="text-[#222] text-sm font-semibold  hover:text-[#00AAA1] duration-150 ease-linear"
+          onClick={() => signOutHandler()}
+        >
+          <button>LogOut</button>
+        </li>
+      ) : (
+        <li
+          className={
+            loginActive
+              ? "text-[#00AAA1] text-sm font-semibold  duration-150 ease-linear"
+              : "text-[#222] text-sm font-semibold hover:text-[#00AAA1] duration-150 ease-linear"
+          }
+        >
+          <Link href="/login">Login</Link>
+        </li>
+      )}
       <li className="text-[#222] hover:text-[#00AAA1] duration-150 ease-linear flex items-center">
         <p>
           <svg
