@@ -1,5 +1,6 @@
 "use client";
 import useMobileMenu from "@/contexts/mobileMenuContext";
+import { useSession } from "next-auth/react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import navlink from "./navLink";
@@ -7,6 +8,7 @@ import navlink from "./navLink";
 const MobileMenu = () => {
   const { menuOpen, mobileMenuHandler } = useMobileMenu();
   const pathName = usePathname();
+  const { data } = useSession();
   return (
     <>
       {menuOpen && (

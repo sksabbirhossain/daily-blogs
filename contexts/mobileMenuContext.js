@@ -1,5 +1,6 @@
 "use client";
-import { createContext, useContext, useState } from "react";
+// import { cookies } from "next/headers";
+import { createContext, useContext, useEffect, useState } from "react";
 
 export const MobileMenuContext = createContext();
 

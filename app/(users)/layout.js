@@ -1,7 +1,9 @@
 import Footer from "@/components/common/Footer/Footer";
 import MainHeader from "@/components/common/Header/MainHeader";
+import Providers from "@/utils/Providers";
 import MobileMenu from "@/utils/mobileMenuContext";
 import { Poppins } from "next/font/google";
+import { Toaster } from "react-hot-toast";
 import "../globals.css";
 
 const poppins = Poppins({
@@ -19,11 +21,14 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={poppins.className}>
-        <MobileMenu>
-          <MainHeader />
-          {children}
-          <Footer />
-        </MobileMenu>
+        <Providers>
+          <Toaster position="top-right" />
+          <MobileMenu>
+            <MainHeader />
+            {children}
+            <Footer />
+          </MobileMenu>
+        </Providers>
       </body>
     </html>
   );
