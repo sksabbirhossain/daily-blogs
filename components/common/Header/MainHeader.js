@@ -7,9 +7,9 @@ import SearchBar from "./SearchBar";
 
 const MainHeader = () => {
   return (
-    <header className="bg-[#cbf1f1]/80 shadow-lg shadow-[#00AAA1]/20 backdrop-blur transition-colors w-full h-auto py-[8px] lg:py-0 lg:h-[50px] z-50 sticky top-0">
-      <div className="w-full h-full container mx-auto px-2 sm:px-0">
-        <div className="w-full h-full flex items-center justify-between">
+    <header className="sticky top-0 z-50 h-auto w-full bg-[#cbf1f1]/80 py-[8px] shadow-lg shadow-[#00AAA1]/20 backdrop-blur transition-colors lg:h-[50px] lg:py-0">
+      <div className="container mx-auto h-full w-full px-2 sm:px-0">
+        <div className="flex h-full w-full items-center justify-between">
           {/* logo */}
           <div className="hidden sm:flex">
             <Link href="/">
@@ -17,7 +17,7 @@ const MainHeader = () => {
             </Link>
           </div>
           {/* mobile logo */}
-          <div className="sm:hidden flex pr-2 sm:pr-0">
+          <div className="flex pr-2 sm:hidden sm:pr-0">
             <Link href="/">
               <Image src="/mobile-logo.png" width={50} height={50} alt="logo" />
             </Link>

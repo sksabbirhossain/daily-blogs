@@ -4,8 +4,8 @@ import defaultPic from "@/public/default.jpg";
 
 const AuthorCard = () => {
   return (
-    <div className="flex gap-3 items-center">
-      <div className="w-[40px] h-[40px] ring-2 ring-[#00AAA1] rounded-full flex items-center">
+    <div className="flex items-center gap-3">
+      <div className="flex h-[40px] w-[40px] items-center rounded-full ring-2 ring-[#00AAA1]">
         <Image
           src={defaultPic}
           width={40}
@@ -15,7 +15,7 @@ const AuthorCard = () => {
         />
       </div>
       <div className="">
-        <h5 className="font-normal text-[15px]">Sk Sabbir Hossain</h5>
+        <h5 className="text-[15px] font-normal">Sk Sabbir Hossain</h5>
         <p className="text-xs text-gray-500">
           Web Developer, Blogger, activist
         </p>

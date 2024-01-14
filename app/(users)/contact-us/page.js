@@ -6,19 +6,19 @@ export const metadata = {
 
 const ContactUs = () => {
   return (
-    <div className="py-10 container mx-auto px-2 sm:px-0">
-      <h1 className="text-3xl font-bold text-center pb-10">Contact Us</h1>
+    <div className="container mx-auto px-2 py-10 sm:px-0">
+      <h1 className="pb-10 text-center text-3xl font-bold">Contact Us</h1>
 
-      <div className="w-full flex flex-col justify-center items-center">
+      <div className="flex w-full flex-col items-center justify-center">
         <div className="w-full max-w-[1000px]">
-          <div className="grid gap-5 sm:gap-10 grid-cols-1 sm:grid-cols-2">
+          <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 sm:gap-10">
             <div className="w-full">
               <form action="">
-                <div className="block sm:flex gap-5">
+                <div className="block gap-5 sm:flex">
                   <div className="space-y-1 pb-3">
                     <label
                       htmlFor=""
-                      className="text-[#555] text-base font-medium"
+                      className="text-base font-medium text-[#555]"
                     >
                       Name
                     </label>
@@ -27,7 +27,7 @@ const ContactUs = () => {
                         type="text"
                         name="name"
                         placeholder="Your Name Here..."
-                        className="border border-[#00AAA1] rounded py-2 px-1 w-full  focus:outline-1 focus:outline-[#00AAA1]"
+                        className="w-full rounded border border-[#00AAA1] px-1 py-2  focus:outline-1 focus:outline-[#00AAA1]"
                         required
                       />
                     </div>
@@ -35,7 +35,7 @@ const ContactUs = () => {
                   <div className="space-y-1 pb-3">
                     <label
                       htmlFor=""
-                      className="text-[#555] text-base font-medium"
+                      className="text-base font-medium text-[#555]"
                     >
                       Email
                     </label>
@@ -44,7 +44,7 @@ const ContactUs = () => {
                         type="email"
                         name="email"
                         placeholder="Your Email Here..."
-                        className="border border-[#00AAA1] rounded py-2 px-1 w-full focus:outline-1 focus:outline-[#00AAA1]"
+                        className="w-full rounded border border-[#00AAA1] px-1 py-2 focus:outline-1 focus:outline-[#00AAA1]"
                         required
                       />
                     </div>
@@ -53,7 +53,7 @@ const ContactUs = () => {
                 <div className="space-y-1 pb-3">
                   <label
                     htmlFor=""
-                    className="text-[#555] text-base font-medium"
+                    className="text-base font-medium text-[#555]"
                   >
                     Subject
                   </label>
@@ -62,14 +62,14 @@ const ContactUs = () => {
                       type="text"
                       name="subject"
                       placeholder="Your Subject Here..."
-                      className="border border-[#00AAA1] rounded py-2 px-1 w-full  focus:outline-1 focus:outline-[#00AAA1]"
+                      className="w-full rounded border border-[#00AAA1] px-1 py-2  focus:outline-1 focus:outline-[#00AAA1]"
                     />
                   </div>
                 </div>
                 <div className="space-y-1 pb-3">
                   <label
                     htmlFor=""
-                    className="text-[#555] text-base font-medium"
+                    className="text-base font-medium text-[#555]"
                   >
                     Message
                   </label>
@@ -77,13 +77,13 @@ const ContactUs = () => {
                     <textarea
                       name="message"
                       placeholder="Your Message Here..."
-                      className="border border-[#00AAA1] rounded py-2 px-1 w-full  focus:outline-1 focus:outline-[#00AAA1]"
+                      className="w-full rounded border border-[#00AAA1] px-1 py-2  focus:outline-1 focus:outline-[#00AAA1]"
                       rows="4"
                     ></textarea>
                   </div>
                 </div>
                 <div className="space-y-1 pb-3">
-                  <button className="flex items-center text-sm text-[#00AAA1] hover:text-white hover:bg-[#00AAA1] border-[#00AAA1] border duration-150 ease-linear rounded py-2 px-3">
+                  <button className="flex items-center rounded border border-[#00AAA1] px-3 py-2 text-sm text-[#00AAA1] duration-150 ease-linear hover:bg-[#00AAA1] hover:text-white">
                     Send Message
                     <span className="ps-1">
                       <svg
@@ -92,7 +92,7 @@ const ContactUs = () => {
                         viewBox="0 0 24 24"
                         strokeWidth={1.5}
                         stroke="currentColor"
-                        className="w-3 h-3"
+                        className="h-3 w-3"
                       >
                         <path
                           strokeLinecap="round"
@@ -116,7 +116,7 @@ const ContactUs = () => {
                   to connecting with you and fostering meaningful conversations.
                 </p>
               </div>
-              <div className="text-sm space-y-1">
+              <div className="space-y-1 text-sm">
                 <p>notavailable@gmail.com</p>
                 <p>soon {"->"}</p>
               </div>

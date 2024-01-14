@@ -6,14 +6,14 @@ const SearchTags = async () => {
   const categories = await allCategory();
   return (
     <div className="space-y-5">
-      <h2 className="text-xl text-[#222] font-semibold">
-        <span className="text-[#00AAA1] pr-2 uppercase">search</span>
+      <h2 className="text-xl font-semibold text-[#222]">
+        <span className="pr-2 uppercase text-[#00AAA1]">search</span>
         With Categories
       </h2>
       <div className="flex flex-wrap gap-3">
         {categories?.slice(0, 9).map((category) => (
           <Link key={category._id} href={`/categories/${category.slug}`}>
-            <button className="text-black px-3 py-1 rounded-md border hover:bg-[#00AAA1] hover:text-white text-xs">
+            <button className="rounded-md border px-3 py-1 text-xs text-black hover:bg-[#00AAA1] hover:text-white">
               {category.name}
             </button>
           </Link>

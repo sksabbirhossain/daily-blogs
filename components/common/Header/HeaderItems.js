@@ -20,15 +20,15 @@ const HeaderItems = () => {
   };
 
   return (
-    <ul className="flex items-center space-x-5 text-sm text-textBlack cursor-pointer">
+    <ul className="text-textBlack flex cursor-pointer items-center space-x-5 text-sm">
       {navlink?.map((item, i) => {
         const isActive = pathName.endsWith(item.link);
         return (
           <li
             className={
               isActive
-                ? "text-[#00AAA1] text-sm font-semibold  duration-150 ease-linear"
-                : "text-[#222] text-sm font-semibold hover:text-[#00AAA1] duration-150 ease-linear"
+                ? "text-sm font-semibold text-[#00AAA1]  duration-150 ease-linear"
+                : "text-sm font-semibold text-[#222] duration-150 ease-linear hover:text-[#00AAA1]"
             }
             key={i}
           >
@@ -38,7 +38,7 @@ const HeaderItems = () => {
       })}
       {session?.user?.accessToken ? (
         <li
-          className="text-[#222] text-sm font-semibold  hover:text-[#00AAA1] duration-150 ease-linear"
+          className="text-sm font-semibold text-[#222]  duration-150 ease-linear hover:text-[#00AAA1]"
           onClick={() => signOutHandler()}
         >
           <button>LogOut</button>
@@ -47,14 +47,14 @@ const HeaderItems = () => {
         <li
           className={
             loginActive
-              ? "text-[#00AAA1] text-sm font-semibold  duration-150 ease-linear"
-              : "text-[#222] text-sm font-semibold hover:text-[#00AAA1] duration-150 ease-linear"
+              ? "text-sm font-semibold text-[#00AAA1]  duration-150 ease-linear"
+              : "text-sm font-semibold text-[#222] duration-150 ease-linear hover:text-[#00AAA1]"
           }
         >
           <Link href="/login">Login</Link>
         </li>
       )}
-      <li className="text-[#222] hover:text-[#00AAA1] duration-150 ease-linear flex items-center">
+      <li className="flex items-center text-[#222] duration-150 ease-linear hover:text-[#00AAA1]">
         <p>
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -62,7 +62,7 @@ const HeaderItems = () => {
             viewBox="0 0 24 24"
             strokeWidth="1.5"
             stroke="currentColor"
-            className="w-6 h-6"
+            className="h-6 w-6"
           >
             <path
               strokeLinecap="round"

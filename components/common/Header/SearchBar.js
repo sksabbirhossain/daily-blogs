@@ -15,11 +15,11 @@ const SearchBar = () => {
 
   return (
     <form onSubmit={searchSubmit}>
-      <div className="flex items-center border rounded-md border-[#00AAA1]">
+      <div className="flex items-center rounded-md border border-[#00AAA1]">
         <input
           type="text"
           placeholder="what are you looking for?"
-          className="w-full lg:w-[450px] rounded-l-md p-1 focus:outline-none text-[#222] bg-transparent"
+          className="w-full rounded-l-md bg-transparent p-1 text-[#222] focus:outline-none lg:w-[450px]"
           required
           ref={input}
           value={value}
@@ -27,7 +27,7 @@ const SearchBar = () => {
         />
         <button
           type="submit"
-          className="bg-primary rounded-r-md p-1 text-[#222] hover:text-[#00AAA1] duration-150 ease-in-out"
+          className="bg-primary rounded-r-md p-1 text-[#222] duration-150 ease-in-out hover:text-[#00AAA1]"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -35,7 +35,7 @@ const SearchBar = () => {
             viewBox="0 0 24 24"
             strokeWidth={1.5}
             stroke="currentColor"
-            className="w-6 h-6"
+            className="h-6 w-6"
           >
             <path
               strokeLinecap="round"

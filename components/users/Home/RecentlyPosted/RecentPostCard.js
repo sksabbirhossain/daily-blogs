@@ -9,8 +9,8 @@ const RecentPostCard = ({ blog }) => {
   return (
     <div>
       <Link href={`/blogs/${slug}`}>
-        <div className="sm:flex gap-6">
-          <div className="relative w-full sm:w-[250px] h-[200px] sm:h-[150px] pb-3 sm:pb-0">
+        <div className="gap-6 sm:flex">
+          <div className="relative h-[200px] w-full pb-3 sm:h-[150px] sm:w-[250px] sm:pb-0">
             <Image
               src={picture}
               alt={title}
@@ -19,15 +19,15 @@ const RecentPostCard = ({ blog }) => {
             />
           </div>
           <div className="pt-2 sm:pt-0">
-            <p className="text-xs text-[#00AAA1] font-semibold">
+            <p className="text-xs font-semibold text-[#00AAA1]">
               {category?.name}
             </p>
-            <h1 className="text-lg font-medium text-[#222]  w-full max-w-[450px]">
+            <h1 className="w-full max-w-[450px] text-lg  font-medium text-[#222]">
               {title.substr(0, 35)}
             </h1>
-            <p className="flex flex-wrap gap-1 space-x-3 items-center text-xs py-2 text-[#777]">
+            <p className="flex flex-wrap items-center gap-1 space-x-3 py-2 text-xs text-[#777]">
               <span className="flex items-center">
-                <span className="w-5 h-5 rounded-full ring-1">
+                <span className="h-5 w-5 rounded-full ring-1">
                   <Image
                     src={defaultPic}
                     width={40}
@@ -46,7 +46,7 @@ const RecentPostCard = ({ blog }) => {
                     viewBox="0 0 24 24"
                     strokeWidth={1.5}
                     stroke="currentColor"
-                    className="w-4 h-4"
+                    className="h-4 w-4"
                   >
                     <path
                       strokeLinecap="round"
@@ -65,7 +65,7 @@ const RecentPostCard = ({ blog }) => {
                     viewBox="0 0 24 24"
                     strokeWidth={1.5}
                     stroke="currentColor"
-                    className="w-4 h-4"
+                    className="h-4 w-4"
                   >
                     <path
                       strokeLinecap="round"
@@ -77,10 +77,10 @@ const RecentPostCard = ({ blog }) => {
                 3 min. to read
               </span>
             </p>
-            <p className="text-sm text-[#555] w-full max-w-[450px]">
+            <p className="w-full max-w-[450px] text-sm text-[#555]">
               {description.substr(0, 90)}...
             </p>
-            <p className="text-xs pt-1 text-[#00AAA1]">Read More...</p>
+            <p className="pt-1 text-xs text-[#00AAA1]">Read More...</p>
           </div>
         </div>
       </Link>

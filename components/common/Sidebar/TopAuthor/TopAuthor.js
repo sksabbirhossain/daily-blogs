@@ -4,8 +4,8 @@ import AuthorCard from "./AuthorCard";
 const TopAuthor = () => {
   return (
     <div className="space-y-5">
-      <h2 className="text-xl text-[#222] font-semibold">
-        <span className="text-[#00AAA1] pr-2 uppercase">top</span>
+      <h2 className="text-xl font-semibold text-[#222]">
+        <span className="pr-2 uppercase text-[#00AAA1]">top</span>
         Authors
       </h2>
       <div className="space-y-5">

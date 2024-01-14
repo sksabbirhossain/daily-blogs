@@ -4,16 +4,16 @@ import React from "react";
 
 const Header = () => {
   return (
-    <div className="flex justify-between items-center bg-[#00AAA1]/80 text-white shadow-sm shadow-[#00AAA1] backdrop-blur transition-colors w-full h-[50px] z-50 fixed top-0 px-2 sm:px-0">
-      <div className="sm:ps-4 sm:pe-2 w-full flex justify-between items-center">
+    <div className="fixed top-0 z-50 flex h-[50px] w-full items-center justify-between bg-[#00AAA1]/80 px-2 text-white shadow-sm shadow-[#00AAA1] backdrop-blur transition-colors sm:px-0">
+      <div className="flex w-full items-center justify-between sm:pe-2 sm:ps-4">
         <div className="flex items-center space-x-3">
           <button
             type="button"
-            className="inline-flex items-center text-sm  rounded-lg sm:hidden focus:outline-none focus:ring-black p-1 ring-2 fill-green-800"
+            className="inline-flex items-center rounded-lg  fill-green-800 p-1 text-sm ring-2 focus:outline-none focus:ring-black sm:hidden"
           >
             <span className="sr-only">Open sidebar</span>
             <svg
-              className="w-6 h-6"
+              className="h-6 w-6"
               aria-hidden="true"
               fill="currentColor"
               viewBox="0 0 20 20"

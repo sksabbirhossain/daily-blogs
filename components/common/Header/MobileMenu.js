@@ -21,16 +21,16 @@ const MobileMenu = () => {
   return (
     <>
       {menuOpen && (
-        <div className="block lg:hidden py-5">
-          <ul className="flex flex-col items-center space-y-3 text-base cursor-pointer">
+        <div className="block py-5 lg:hidden">
+          <ul className="flex cursor-pointer flex-col items-center space-y-3 text-base">
             {navlink?.map((item, i) => {
               const isActive = pathName.endsWith(item.link);
               return (
                 <li
                   className={
                     isActive
-                      ? "text-[#00AAA1] text-sm font-semibold duration-150 ease-linear"
-                      : "hover:text-[#00AAA1] text-sm font-semibold duration-150 ease-linear"
+                      ? "text-sm font-semibold text-[#00AAA1] duration-150 ease-linear"
+                      : "text-sm font-semibold duration-150 ease-linear hover:text-[#00AAA1]"
                   }
                   key={i}
                   onClick={() => mobileMenuHandler()}
@@ -42,7 +42,7 @@ const MobileMenu = () => {
 
             {session?.user?.accessToken ? (
               <li
-                className="text-[#222] text-sm font-semibold  hover:text-[#00AAA1] duration-150 ease-linear"
+                className="text-sm font-semibold text-[#222]  duration-150 ease-linear hover:text-[#00AAA1]"
                 onClick={() => signOutHandler()}
               >
                 <button onClick={() => mobileMenuHandler()}>LogOut</button>
@@ -51,8 +51,8 @@ const MobileMenu = () => {
               <li
                 className={
                   loginActive
-                    ? "text-[#00AAA1] text-sm font-semibold  duration-150 ease-linear"
-                    : "text-[#222] text-sm font-semibold hover:text-[#00AAA1] duration-150 ease-linear"
+                    ? "text-sm font-semibold text-[#00AAA1]  duration-150 ease-linear"
+                    : "text-sm font-semibold text-[#222] duration-150 ease-linear hover:text-[#00AAA1]"
                 }
                 onClick={() => mobileMenuHandler()}
               >
@@ -60,7 +60,7 @@ const MobileMenu = () => {
               </li>
             )}
 
-            <li className="hover:text-[#00AAA1] duration-150 ease-linear flex items-center">
+            <li className="flex items-center duration-150 ease-linear hover:text-[#00AAA1]">
               <p>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -68,7 +68,7 @@ const MobileMenu = () => {
                   viewBox="0 0 24 24"
                   strokeWidth="1.5"
                   stroke="currentColor"
-                  className="w-6 h-6"
+                  className="h-6 w-6"
                 >
                   <path
                     strokeLinecap="round"

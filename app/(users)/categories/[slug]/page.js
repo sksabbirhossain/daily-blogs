@@ -18,19 +18,19 @@ const Category = async ({ params: { slug }, searchParams }) => {
   //get blogs by slug
   const { blogs, totalPages, currentPage } = await getBlogsByCategory(
     slug,
-    parseInt(page)
+    parseInt(page),
   );
 
   return (
     <section className="container mx-auto py-5 sm:py-10">
-      <div className="grid gap-5 md:gap-16 grid-cols-1 md:gird-cols-2 lg:grid-cols-3 px-2 sm:px-0">
+      <div className="md:gird-cols-2 grid grid-cols-1 gap-5 px-2 sm:px-0 md:gap-16 lg:grid-cols-3">
         <div className="md:col-span-2">
           <div className="space-y-5 sm:space-y-10">
             {/* heading */}
             <div className="border-b border-[#00AAA1] pb-1">
-              <h4 className="text-[#555] text-base capitalize">
+              <h4 className="text-base capitalize text-[#555]">
                 search result for{" "}
-                <span className="text-[#00AAA1] font-semibold">
+                <span className="font-semibold text-[#00AAA1]">
                   {blogs[0]?.category?.name}
                 </span>
               </h4>
@@ -46,7 +46,7 @@ const Category = async ({ params: { slug }, searchParams }) => {
             <Pagination totalPage={totalPages} currentPage={currentPage} />
           </div>
         </div>
-        <div className="md:col-span-1 pt-5 sm:pt-0">
+        <div className="pt-5 sm:pt-0 md:col-span-1">
           <Sidebar />
         </div>
       </div>

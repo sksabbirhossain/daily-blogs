@@ -5,7 +5,7 @@ import useMobileMenu from "@/contexts/mobileMenuContext";
 const MenuIcon = () => {
   const { mobileMenuHandler } = useMobileMenu();
   return (
-    <div className="lg:hidden flex items-center ps-3 lg:ps-0">
+    <div className="flex items-center ps-3 lg:hidden lg:ps-0">
       <button onClick={() => mobileMenuHandler()}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -13,7 +13,7 @@ const MenuIcon = () => {
           viewBox="0 0 24 24"
           strokeWidth={1.5}
           stroke="currentColor"
-          className="w-7 h-7 ring-2 rounded ring-[#00AAA1]"
+          className="h-7 w-7 rounded ring-2 ring-[#00AAA1]"
         >
           <path
             strokeLinecap="round"

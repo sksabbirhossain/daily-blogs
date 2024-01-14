@@ -15,16 +15,16 @@ const BlogCard = ({ blog }) => {
             alt={title}
             width={1000}
             height={1000}
-            className="rounded-md w-full h-full max-h-[200px] object-cover"
+            className="h-full max-h-[200px] w-full rounded-md object-cover"
           />
           <div className="space-y-1 pe-1">
             <p className="text-xs font-bold text-[#00AAA1]">{category?.name}</p>
             <h2 className="text-xl font-semibold text-[#222]">
               {title.substr(0, 25)}
             </h2>
-            <p className="flex flex-wrap gap-1 space-x-1 items-center text-[#777] font-normal text-xs">
+            <p className="flex flex-wrap items-center gap-1 space-x-1 text-xs font-normal text-[#777]">
               <span className="flex items-center">
-                <span className="w-5 h-5 rounded-full ring-1">
+                <span className="h-5 w-5 rounded-full ring-1">
                   <Image
                     src={defaultPic}
                     width={40}
@@ -43,7 +43,7 @@ const BlogCard = ({ blog }) => {
                     viewBox="0 0 24 24"
                     strokeWidth={1.5}
                     stroke="currentColor"
-                    className="w-4 h-4"
+                    className="h-4 w-4"
                   >
                     <path
                       strokeLinecap="round"
@@ -62,7 +62,7 @@ const BlogCard = ({ blog }) => {
                     viewBox="0 0 24 24"
                     strokeWidth={1.5}
                     stroke="currentColor"
-                    className="w-4 h-4"
+                    className="h-4 w-4"
                   >
                     <path
                       strokeLinecap="round"

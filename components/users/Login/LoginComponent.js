@@ -37,8 +37,8 @@ const LoginComponent = () => {
   };
 
   return (
-    <div className="flex w-full h-screen justify-center items-center">
-      <div className="max-w-[350px] -mt-[50px] bg-gray-100 p-3 rounded py-10 shadow-sm shadow-[#00AAA1]/50">
+    <div className="flex h-screen w-full items-center justify-center">
+      <div className="-mt-[50px] max-w-[350px] rounded bg-gray-100 p-3 py-10 shadow-sm shadow-[#00AAA1]/50">
         <form onSubmit={loginHandler}>
           <div className="space-y-3">
             <div className="space-y-2">
@@ -48,7 +48,7 @@ const LoginComponent = () => {
                 </label>
               </div>
               <input
-                className="w-full border border-[#00AAA1] focus:outline-[#00AAA1] rounded px-1 py-2"
+                className="w-full rounded border border-[#00AAA1] px-1 py-2 focus:outline-[#00AAA1]"
                 type="email"
                 name="email"
                 placeholder="your email here..."
@@ -63,7 +63,7 @@ const LoginComponent = () => {
                 </label>
               </div>
               <input
-                className="w-full border border-[#00AAA1] focus:outline-[#00AAA1] rounded px-1 py-2"
+                className="w-full rounded border border-[#00AAA1] px-1 py-2 focus:outline-[#00AAA1]"
                 type="password"
                 name="password"
                 placeholder="your password here..."
@@ -74,7 +74,7 @@ const LoginComponent = () => {
             <div className="pt-2">
               <button
                 type="submit"
-                className="hover:bg-[#00AAA1] border border-[#00AAA1] rounded py-2 w-full font-medium hover:text-white bg-white duration-150 ease-in"
+                className="w-full rounded border border-[#00AAA1] bg-white py-2 font-medium duration-150 ease-in hover:bg-[#00AAA1] hover:text-white"
               >
                 Login
               </button>
@@ -86,19 +86,19 @@ const LoginComponent = () => {
               <GithubLogin />
             </div>
             <div className="pt-2">
-              <p className="text-center text-xs font-medium text-[#00AAA1] capitalize">
+              <p className="text-center text-xs font-medium capitalize text-[#00AAA1]">
                 <Link href="/register">Create your account</Link>
               </p>
             </div>
           </div>
         </form>
         {error?.common && (
-          <p className="text-center py-2 bg-red-400 text-white rounded mt-2">
+          <p className="mt-2 rounded bg-red-400 py-2 text-center text-white">
             {error?.common?.msg}
           </p>
         )}
         {commonError !== "" && (
-          <p className="text-center py-2 bg-red-400 text-white rounded mt-2">
+          <p className="mt-2 rounded bg-red-400 py-2 text-center text-white">
             {commonError}
           </p>
         )}

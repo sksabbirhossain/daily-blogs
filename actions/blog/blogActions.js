@@ -6,7 +6,7 @@ export const allBlogs = async (page) => {
   try {
     const res = await fetch(
       `${process.env.BASE_URL}/blogs?page=${page}&limit=${process.env.BLOG_PAR_PAGE}`,
-      { next: { revalidate: 3600 } }
+      { next: { revalidate: 3600 } },
     );
     return res.json();
   } catch (err) {
@@ -42,7 +42,7 @@ export const getRelatedBlogs = async (slug) => {
   try {
     const res = await fetch(
       `${process.env.BASE_URL}/blogs/related-blogs/${slug}`,
-      { next: { revalidate: 3600 } }
+      { next: { revalidate: 3600 } },
     );
     return res.json();
   } catch (err) {
@@ -54,7 +54,7 @@ export const getBlogsByCategory = async (slug, page) => {
   try {
     const res = await fetch(
       `${process.env.BASE_URL}/blogs/category/${slug}?page=${page}&limit=${process.env.BLOG_PAR_PAGE}`,
-      { next: { revalidate: 3600 } }
+      { next: { revalidate: 3600 } },
     );
     return res.json();
   } catch (err) {
@@ -79,7 +79,7 @@ export const searchBlogs = async (page, searchQuery) => {
   try {
     const res = await fetch(
       `${process.env.BASE_URL}/blogs/search?q=${searchQuery}&page=${page}&limit=${process.env.BLOG_PAR_PAGE}`,
-      { next: { revalidate: 3600 } }
+      { next: { revalidate: 3600 } },
     );
     return res.json();
   } catch (err) {

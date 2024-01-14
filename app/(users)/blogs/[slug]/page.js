@@ -33,20 +33,20 @@ const Blog = async ({ params: { slug } }) => {
     blog || {};
   return (
     <section className="container mx-auto py-10">
-      <div className="grid gap-5 md:gap-7 grid-cols-1 md:gird-cols-2 lg:grid-cols-3 px-2 sm:px-0">
+      <div className="md:gird-cols-2 grid grid-cols-1 gap-5 px-2 sm:px-0 md:gap-7 lg:grid-cols-3">
         <div className="md:col-span-2">
           <div className="space-y-5 sm:space-y-8">
             {/* heading */}
             <div className="space-y-2">
-              <p className="text-xs text-[#00AAA1] font-semibold">
+              <p className="text-xs font-semibold text-[#00AAA1]">
                 {category?.name}
               </p>
-              <h1 className="text-[#222] font-semibold text-2xl capitalize">
+              <h1 className="text-2xl font-semibold capitalize text-[#222]">
                 {title}
               </h1>
-              <p className="flex flex-wrap gap-1 space-x-3 items-center text-xs text-[#777]">
+              <p className="flex flex-wrap items-center gap-1 space-x-3 text-xs text-[#777]">
                 <span className="flex items-center">
-                  <span className="w-5 h-5 rounded-full ring-1">
+                  <span className="h-5 w-5 rounded-full ring-1">
                     <Image
                       src={defaultPic}
                       width={40}
@@ -65,7 +65,7 @@ const Blog = async ({ params: { slug } }) => {
                       viewBox="0 0 24 24"
                       strokeWidth={1.5}
                       stroke="currentColor"
-                      className="w-4 h-4"
+                      className="h-4 w-4"
                     >
                       <path
                         strokeLinecap="round"
@@ -79,30 +79,30 @@ const Blog = async ({ params: { slug } }) => {
               </p>
             </div>
             {/* image */}
-            <div className="relative w-full h-[430px]">
+            <div className="relative h-[430px] w-full">
               <Image
                 src={picture}
                 fill
                 alt={title}
-                className=" object-cover rounded-md"
+                className=" rounded-md object-cover"
               />
             </div>
             {/* descriptions */}
             <div className="">
-              <p className="text-[#666] text-sm font-normal">{description}</p>
+              <p className="text-sm font-normal text-[#666]">{description}</p>
             </div>
             {/* full details */}
             <div className="" dangerouslySetInnerHTML={{ __html: details }} />
             {/* shere icons */}
-            <div className="w-full flex items-center justify-center">
+            <div className="flex w-full items-center justify-center">
               <div className="flex items-center gap-3">
-                <div className="h-[1px] bg-[#D1E7E5] w-[60px] sm:w-[100px] lg:w-[200px]" />
+                <div className="h-[1px] w-[60px] bg-[#D1E7E5] sm:w-[100px] lg:w-[200px]" />
                 <ShereIcons />
-                <div className="h-[1px] bg-[#D1E7E5] w-[60px] sm:w-[100px] lg:w-[200px]" />
+                <div className="h-[1px] w-[60px] bg-[#D1E7E5] sm:w-[100px] lg:w-[200px]" />
               </div>
             </div>
             {/* google adds */}
-            <div className="w-full h-44 bg-[#00AAA1] rounded-md"></div>
+            <div className="h-44 w-full rounded-md bg-[#00AAA1]"></div>
             {/* related Blogs */}
             <Suspense fallback="<h1>Related Blogs is Loading...</h1>">
               <RelatedBlogs
@@ -114,7 +114,7 @@ const Blog = async ({ params: { slug } }) => {
             {/* <div className="w-full h-44 bg-[#00AAA1] rounded-md"></div> */}
           </div>
         </div>
-        <div className="md:col-span-1 pt-5 sm:pt-0">
+        <div className="pt-5 sm:pt-0 md:col-span-1">
           <Sidebar />
         </div>
       </div>

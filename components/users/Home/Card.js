@@ -10,10 +10,10 @@ const Card = ({ blog }) => {
     <Link href={`/blogs/${slug}`}>
       <div className="space-y-1 py-5 md:py-0">
         <p className="text-xs font-bold text-[#00AAA1]">{category?.name}</p>
-        <h1 className="text-xl pb-2 font-medium text-[#222]">
+        <h1 className="pb-2 text-xl font-medium text-[#222]">
           {title.substr(0, 35)}
         </h1>
-        <div className="relative w-full h-[250px]">
+        <div className="relative h-[250px] w-full">
           <Image
             src={picture}
             alt={title}
@@ -21,9 +21,9 @@ const Card = ({ blog }) => {
             className="rounded-md object-cover"
           />
         </div>
-        <p className="flex flex-wrap gap-1 space-x-3 items-center text-[#777] text-xs py-2">
+        <p className="flex flex-wrap items-center gap-1 space-x-3 py-2 text-xs text-[#777]">
           <span className="flex items-center">
-            <span className="w-5 h-5 rounded-full ring-1">
+            <span className="h-5 w-5 rounded-full ring-1">
               <Image
                 src={defaultPic}
                 width={40}
@@ -42,7 +42,7 @@ const Card = ({ blog }) => {
                 viewBox="0 0 24 24"
                 strokeWidth={1.5}
                 stroke="currentColor"
-                className="w-4 h-4"
+                className="h-4 w-4"
               >
                 <path
                   strokeLinecap="round"
@@ -61,7 +61,7 @@ const Card = ({ blog }) => {
                 viewBox="0 0 24 24"
                 strokeWidth={1.5}
                 stroke="currentColor"
-                className="w-4 h-4"
+                className="h-4 w-4"
               >
                 <path
                   strokeLinecap="round"

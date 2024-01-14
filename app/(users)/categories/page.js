@@ -9,16 +9,16 @@ const Categories = async () => {
   //get all categories
   const categories = await allCategory();
   return (
-    <section className="bg-[#F2F8F7] mb-10">
+    <section className="mb-10 bg-[#F2F8F7]">
       <div className="container mx-auto py-5 sm:py-14">
-        <h1 className="text-2xl text-center capitalize sm:pb-4 ">categories</h1>
-        <div className="w-full flex justify-center items-center py-5">
+        <h1 className="text-center text-2xl capitalize sm:pb-4 ">categories</h1>
+        <div className="flex w-full items-center justify-center py-5">
           <div className="w-full max-w-[900px]">
-            <div className="w-full flex gap-4 flex-wrap justify-center">
+            <div className="flex w-full flex-wrap justify-center gap-4">
               {/* 1 */}
               {categories?.map((category) => (
                 <Link href={`/categories/${category.slug}`} key={category._id}>
-                  <div className="flex flex-col items-center justify-center bg-[#E8F3F3] hover:bg-[#00AAA1] hover:text-white rounded-md w-52 h-28 space-y-2 group duration-150 ease-linear cursor-pointer">
+                  <div className="group flex h-28 w-52 cursor-pointer flex-col items-center justify-center space-y-2 rounded-md bg-[#E8F3F3] duration-150 ease-linear hover:bg-[#00AAA1] hover:text-white">
                     <span>
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -26,7 +26,7 @@ const Categories = async () => {
                         viewBox="0 0 24 24"
                         strokeWidth={1.5}
                         stroke="currentColor"
-                        className="w-8 h-8 text-[#00AAA1] group-hover:text-white"
+                        className="h-8 w-8 text-[#00AAA1] group-hover:text-white"
                       >
                         <path
                           strokeLinecap="round"
@@ -35,7 +35,7 @@ const Categories = async () => {
                         />
                       </svg>
                     </span>
-                    <h1 className="text-[#222] text-sm font-medium capitalize group-hover:text-white">
+                    <h1 className="text-sm font-medium capitalize text-[#222] group-hover:text-white">
                       {category.name}
                     </h1>
                   </div>
