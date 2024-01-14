@@ -5,7 +5,9 @@ const GithubLogin = () => {
   return (
     <button
       className="flex items-center justify-center gap-1 hover:bg-[#f0fffe] border border-[#00AAA1] rounded py-2 w-full font-medium bg-white duration-150 ease-in uppercase"
-      onClick={() => signIn("github", { callbackUrl: "http://localhost:3000/" })}
+      onClick={() =>
+        signIn("github", { callbackUrl: "http://localhost:3000/" })
+      }
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
