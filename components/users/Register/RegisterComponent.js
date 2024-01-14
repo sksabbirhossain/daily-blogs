@@ -13,9 +13,6 @@ const RegisterComponent = () => {
 
   const router = useRouter();
 
-  // console.log("commonError")
-  // console.log(commonError)
-
   //submit form
   const handleSubmit = async (e) => {
     e.preventDefault();

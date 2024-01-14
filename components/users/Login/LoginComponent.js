@@ -9,24 +9,36 @@ import toast from "react-hot-toast";
 const LoginComponent = () => {
   const [email, setEmail] = useState("");
   const [password, setpassword] = useState("");
+  const [error, setError] = useState(null);
+  const [commonError, setCommonError] = useState("");
+
   const router = useRouter();
 
   const loginHandler = async (e) => {
     e.preventDefault();
-    const user = await signIn("credentials", {
-      email,
-      password,
-      redirect: false,
-    });
-    if (user.ok && user.status === 200) {
-      toast.success("User Login Successfully");
-      router.push("/");
+
+    try {
+      setCommonError("");
+      setError("");
+      const user = await signIn("credentials", {
+        email,
+        password,
+        redirect: false,
+      });
+      if (user.ok && user.status === 200) {
+        toast.success("User Login Successfully");
+        router.push("/");
+      } else {
+        setCommonError("Invalid credentials!");
+      }
+    } catch (err) {
+      setCommonError(err.message);
     }
   };
 
   return (
-    <div className="flex w-full h-screen -mt-[50px] justify-center items-center">
-      <div className="bg-gray-100 p-3 rounded py-10 shadow-sm shadow-[#00AAA1]/50">
+    <div className="flex w-full h-screen justify-center items-center">
+      <div className="max-w-[350px] -mt-[50px] bg-gray-100 p-3 rounded py-10 shadow-sm shadow-[#00AAA1]/50">
         <form onSubmit={loginHandler}>
           <div className="space-y-3">
             <div className="space-y-2">
@@ -80,6 +92,16 @@ const LoginComponent = () => {
             </div>
           </div>
         </form>
+        {error?.common && (
+          <p className="text-center py-2 bg-red-400 text-white rounded mt-2">
+            {error?.common?.msg}
+          </p>
+        )}
+        {commonError !== "" && (
+          <p className="text-center py-2 bg-red-400 text-white rounded mt-2">
+            {commonError}
+          </p>
+        )}
       </div>
     </div>
   );
