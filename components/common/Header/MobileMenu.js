@@ -32,8 +32,8 @@ const MobileMenu = () => {
                 <li
                   className={
                     isActive
-                      ? "text-sm font-semibold text-[#00AAA1] duration-150 ease-linear"
-                      : "text-sm font-semibold duration-150 ease-linear hover:text-[#00AAA1]"
+                      ? "text-sm font-bold text-[#00AAA1] duration-150 ease-linear"
+                      : "text-sm font-semibold text-[#222] duration-150 ease-linear hover:text-[#00AAA1] dark:text-gray-100"
                   }
                   key={i}
                   onClick={() => mobileMenuHandler()}
@@ -45,7 +45,7 @@ const MobileMenu = () => {
 
             {session?.user?.accessToken ? (
               <li
-                className="text-sm font-semibold text-[#222]  duration-150 ease-linear hover:text-[#00AAA1]"
+                className="text-sm font-semibold text-[#222] duration-150 ease-linear hover:text-[#00AAA1] dark:text-gray-100"
                 onClick={() => signOutHandler()}
               >
                 <button onClick={() => mobileMenuHandler()}>LogOut</button>
@@ -54,8 +54,8 @@ const MobileMenu = () => {
               <li
                 className={
                   loginActive
-                    ? "text-sm font-semibold text-[#00AAA1]  duration-150 ease-linear"
-                    : "text-sm font-semibold text-[#222] duration-150 ease-linear hover:text-[#00AAA1]"
+                    ? "text-sm font-semibold text-[#00AAA1] duration-150 ease-linear"
+                    : "text-sm font-semibold text-[#222] duration-150 ease-linear hover:text-[#00AAA1] dark:text-gray-100"
                 }
                 onClick={() => mobileMenuHandler()}
               >
@@ -64,7 +64,7 @@ const MobileMenu = () => {
             )}
 
             <li
-              className="flex items-center duration-150 ease-linear hover:text-[#00AAA1]"
+              className="flex items-center text-[#00AAA1] duration-150 ease-linear"
               onClick={handleThemeToggle}
             >
               {isDarkMode ? (

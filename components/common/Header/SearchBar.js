@@ -19,7 +19,7 @@ const SearchBar = () => {
         <input
           type="text"
           placeholder="what are you looking for?"
-          className="w-full rounded-l-md bg-transparent p-1 text-[#222] focus:outline-none lg:w-[450px]"
+          className="w-full rounded-l-md bg-transparent p-1 text-[#222] focus:outline-none lg:w-[450px] dark:text-gray-100"
           required
           ref={input}
           value={value}
@@ -27,7 +27,7 @@ const SearchBar = () => {
         />
         <button
           type="submit"
-          className="bg-primary rounded-r-md p-1 text-[#222] duration-150 ease-in-out hover:text-[#00AAA1]"
+          className="bg-primary rounded-r-md p-1 text-[#222] duration-150 ease-in-out hover:text-[#00AAA1] dark:text-gray-100"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"

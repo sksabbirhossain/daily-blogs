@@ -4,7 +4,7 @@ import { signIn } from "next-auth/react";
 const GithubLogin = () => {
   return (
     <button
-      className="flex w-full items-center justify-center gap-1 rounded border border-[#00AAA1] bg-white py-2 font-medium uppercase duration-150 ease-in hover:bg-[#f0fffe]"
+      className="flex w-full items-center justify-center gap-1 rounded border border-[#00AAA1] bg-white py-2 font-medium uppercase duration-150 ease-in hover:bg-[#f0fffe] dark:bg-gray-300"
       onClick={() =>
         signIn("github", { callbackUrl: "http://localhost:3000/" })
       }

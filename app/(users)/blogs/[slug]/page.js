@@ -41,10 +41,10 @@ const Blog = async ({ params: { slug } }) => {
               <p className="text-xs font-semibold text-[#00AAA1]">
                 {category?.name}
               </p>
-              <h1 className="text-2xl font-semibold capitalize text-[#222]">
+              <h1 className="text-2xl font-semibold capitalize text-[#222] dark:text-gray-200">
                 {title}
               </h1>
-              <p className="flex flex-wrap items-center gap-1 space-x-3 text-xs text-[#777]">
+              <p className="flex flex-wrap items-center gap-1 space-x-3 text-xs text-[#777] dark:text-gray-300">
                 <span className="flex items-center">
                   <span className="h-5 w-5 rounded-full ring-1">
                     <Image
@@ -89,16 +89,21 @@ const Blog = async ({ params: { slug } }) => {
             </div>
             {/* descriptions */}
             <div className="">
-              <p className="text-sm font-normal text-[#666]">{description}</p>
+              <p className="text-sm font-normal text-[#666] dark:text-gray-200">
+                {description}
+              </p>
             </div>
             {/* full details */}
-            <div className="" dangerouslySetInnerHTML={{ __html: details }} />
+            <div
+              className="text-[#666] dark:text-gray-200"
+              dangerouslySetInnerHTML={{ __html: details }}
+            />
             {/* shere icons */}
             <div className="flex w-full items-center justify-center">
               <div className="flex items-center gap-3">
-                <div className="h-[1px] w-[60px] bg-[#D1E7E5] sm:w-[100px] lg:w-[200px]" />
+                <div className="h-[1px] w-[60px] bg-[#D1E7E5] sm:w-[100px] lg:w-[200px] dark:bg-slate-500" />
                 <ShereIcons />
-                <div className="h-[1px] w-[60px] bg-[#D1E7E5] sm:w-[100px] lg:w-[200px]" />
+                <div className="h-[1px] w-[60px] bg-[#D1E7E5] sm:w-[100px] lg:w-[200px] dark:bg-slate-500" />
               </div>
             </div>
             {/* google adds */}

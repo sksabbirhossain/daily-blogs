@@ -2,11 +2,10 @@
 
 import useMobileMenu from "@/contexts/mobileMenuContext";
 
-
 const MenuIcon = () => {
   const { mobileMenuHandler } = useMobileMenu();
   return (
-    <div className="flex items-center ps-3 lg:hidden lg:ps-0">
+    <div className="flex items-center ps-3 text-[#222] lg:hidden lg:ps-0 dark:text-gray-100">
       <button onClick={() => mobileMenuHandler()}>
         <svg
           xmlns="http://www.w3.org/2000/svg"

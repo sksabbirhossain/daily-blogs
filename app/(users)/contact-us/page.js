@@ -7,7 +7,9 @@ export const metadata = {
 const ContactUs = () => {
   return (
     <div className="container mx-auto px-2 py-10 sm:px-0">
-      <h1 className="pb-10 text-center text-3xl font-bold">Contact Us</h1>
+      <h1 className="pb-10 text-center text-3xl font-bold text-[#222] dark:text-gray-200">
+        Contact Us
+      </h1>
 
       <div className="flex w-full flex-col items-center justify-center">
         <div className="w-full max-w-[1000px]">
@@ -18,7 +20,7 @@ const ContactUs = () => {
                   <div className="space-y-1 pb-3">
                     <label
                       htmlFor=""
-                      className="text-base font-medium text-[#555]"
+                      className="text-base font-medium text-[#555] dark:text-gray-300"
                     >
                       Name
                     </label>
@@ -27,7 +29,7 @@ const ContactUs = () => {
                         type="text"
                         name="name"
                         placeholder="Your Name Here..."
-                        className="w-full rounded border border-[#00AAA1] px-1 py-2  focus:outline-1 focus:outline-[#00AAA1]"
+                        className="w-full rounded border border-[#00AAA1] px-1 py-2 focus:outline-1 focus:outline-[#00AAA1] dark:bg-slate-800 dark:text-gray-100"
                         required
                       />
                     </div>
@@ -35,7 +37,7 @@ const ContactUs = () => {
                   <div className="space-y-1 pb-3">
                     <label
                       htmlFor=""
-                      className="text-base font-medium text-[#555]"
+                      className="text-base font-medium text-[#555] dark:text-gray-300"
                     >
                       Email
                     </label>
@@ -44,7 +46,7 @@ const ContactUs = () => {
                         type="email"
                         name="email"
                         placeholder="Your Email Here..."
-                        className="w-full rounded border border-[#00AAA1] px-1 py-2 focus:outline-1 focus:outline-[#00AAA1]"
+                        className="w-full rounded border border-[#00AAA1] px-1 py-2 focus:outline-1 focus:outline-[#00AAA1] dark:bg-slate-800 dark:text-gray-100"
                         required
                       />
                     </div>
@@ -53,7 +55,7 @@ const ContactUs = () => {
                 <div className="space-y-1 pb-3">
                   <label
                     htmlFor=""
-                    className="text-base font-medium text-[#555]"
+                    className="text-base font-medium text-[#555] dark:text-gray-300"
                   >
                     Subject
                   </label>
@@ -62,14 +64,14 @@ const ContactUs = () => {
                       type="text"
                       name="subject"
                       placeholder="Your Subject Here..."
-                      className="w-full rounded border border-[#00AAA1] px-1 py-2  focus:outline-1 focus:outline-[#00AAA1]"
+                      className="w-full rounded border border-[#00AAA1] px-1 py-2  focus:outline-1 focus:outline-[#00AAA1] dark:bg-slate-800 dark:text-gray-100"
                     />
                   </div>
                 </div>
                 <div className="space-y-1 pb-3">
                   <label
                     htmlFor=""
-                    className="text-base font-medium text-[#555]"
+                    className="text-base font-medium text-[#555] dark:text-gray-300"
                   >
                     Message
                   </label>
@@ -77,7 +79,7 @@ const ContactUs = () => {
                     <textarea
                       name="message"
                       placeholder="Your Message Here..."
-                      className="w-full rounded border border-[#00AAA1] px-1 py-2  focus:outline-1 focus:outline-[#00AAA1]"
+                      className="dark: w-full rounded border border-[#00AAA1] px-1  py-2 focus:outline-1 focus:outline-[#00AAA1] dark:bg-slate-800 dark:text-gray-100"
                       rows="4"
                     ></textarea>
                   </div>
@@ -106,7 +108,7 @@ const ContactUs = () => {
               </form>
             </div>
 
-            <div className="space-y-5 text-[#555]">
+            <div className="space-y-5 text-[#555] dark:text-gray-400">
               <div className="text-base capitalize">
                 <p>
                   Feel free to reach out. Your thoughts, questions, and feedback
@@ -121,7 +123,7 @@ const ContactUs = () => {
                 <p>soon {"->"}</p>
               </div>
               <div className="space-y-3">
-                <h4 className="text-sm font-semibold ">Follow on:</h4>
+                <h4 className="text-sm font-semibold text-[#222] dark:text-gray-300">Follow on:</h4>
                 <SocialIcon />
               </div>
             </div>

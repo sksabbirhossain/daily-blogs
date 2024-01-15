@@ -7,7 +7,7 @@ const Pagination = ({ totalPage, currentPage }) => {
         <Link href={`?page=${currentPage - 1}`}>
           <button
             disabled={currentPage == 1}
-            className="me-3 flex h-8 items-center justify-center rounded-md border border-gray-300 bg-white px-3 text-sm font-medium text-gray-500 hover:bg-[#00AAA1] hover:text-white disabled:bg-gray-100 disabled:text-gray-300"
+            className="me-3 flex h-8 items-center justify-center rounded-md border border-gray-300 bg-white px-3 text-sm font-medium text-gray-500 hover:bg-[#00AAA1] hover:text-white disabled:bg-gray-100 disabled:text-gray-300 dark:border-gray-700 dark:bg-slate-800 dark:text-gray-200 dark:disabled:bg-gray-500"
           >
             <span className="hidden sm:flex">
               <svg
@@ -36,8 +36,8 @@ const Pagination = ({ totalPage, currentPage }) => {
             className={`${
               currentPage == i + 1
                 ? "bg-[#00AAA1] text-white"
-                : " bg-white text-gray-500"
-            } me-3 flex h-8 items-center justify-center rounded-md border border-gray-300 px-3 text-sm font-medium hover:bg-[#00AAA1] hover:text-white`}
+                : " bg-white text-gray-500 dark:bg-slate-800 dark:text-gray-200"
+            } me-3 flex h-8 items-center justify-center rounded-md border border-gray-300 px-3 text-sm font-medium hover:bg-[#00AAA1] hover:text-white dark:border-gray-700`}
             key={i}
           >
             {i + 1}
@@ -47,7 +47,7 @@ const Pagination = ({ totalPage, currentPage }) => {
         <Link href={`?page=${currentPage + 1}`}>
           <button
             disabled={currentPage === totalPage}
-            className="flex h-8 items-center justify-center rounded-md border border-gray-300 bg-white px-3 text-sm font-medium text-gray-500 hover:bg-[#00AAA1] hover:text-white disabled:bg-gray-100 disabled:text-gray-300"
+            className="me-3 flex h-8 items-center justify-center rounded-md border border-gray-300 bg-white px-3 text-sm font-medium text-gray-500 hover:bg-[#00AAA1] hover:text-white disabled:bg-gray-100 disabled:text-gray-300 dark:border-gray-700 dark:bg-slate-800 dark:text-gray-200 dark:disabled:bg-gray-500"
           >
             Next
             <span className="hidden sm:flex">

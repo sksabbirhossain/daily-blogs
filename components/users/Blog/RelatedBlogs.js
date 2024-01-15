@@ -4,7 +4,7 @@ const RelatedBlogs = async ({ relatedBlogsPromise, blogId }) => {
   const relatedBlogs = await relatedBlogsPromise;
   return (
     <div className="space-y-5">
-      <h2 className="text-xl font-semibold text-[#222]">
+      <h2 className="text-xl font-semibold text-[#222] dark:text-gray-200">
         <span className="me-2 rounded-sm bg-[#00AAA1] px-2 text-[#fff]">
           See related
         </span>

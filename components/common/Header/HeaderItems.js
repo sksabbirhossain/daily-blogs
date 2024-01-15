@@ -8,11 +8,11 @@ import toast from "react-hot-toast";
 import navlink from "./navLink";
 
 const HeaderItems = () => {
+  const { isDarkMode, handleThemeToggle } = useTheme();
   const pathName = usePathname();
   const loginActive = pathName.endsWith("/login");
   const { data: session } = useSession();
   const router = useRouter();
-  const { isDarkMode, handleThemeToggle } = useTheme();
 
   //user signout handler
   const signOutHandler = async () => {
@@ -29,8 +29,8 @@ const HeaderItems = () => {
           <li
             className={
               isActive
-                ? "text-sm font-semibold text-[#00AAA1]  duration-150 ease-linear"
-                : "text-sm font-semibold text-[#222] duration-150 ease-linear hover:text-[#00AAA1]"
+                ? "text-sm font-semibold text-[#00AAA1] duration-150 ease-linear"
+                : "text-sm font-semibold text-[#222] duration-150 ease-linear hover:text-[#00AAA1] dark:text-gray-100"
             }
             key={i}
           >
@@ -40,7 +40,7 @@ const HeaderItems = () => {
       })}
       {session?.user?.accessToken ? (
         <li
-          className="text-sm font-semibold text-[#222]  duration-150 ease-linear hover:text-[#00AAA1]"
+          className="text-sm font-semibold text-[#222] duration-150 ease-linear hover:text-[#00AAA1] dark:text-gray-100"
           onClick={() => signOutHandler()}
         >
           <button>LogOut</button>
@@ -49,8 +49,8 @@ const HeaderItems = () => {
         <li
           className={
             loginActive
-              ? "text-sm font-semibold text-[#00AAA1]  duration-150 ease-linear"
-              : "text-sm font-semibold text-[#222] duration-150 ease-linear hover:text-[#00AAA1]"
+              ? "text-sm font-semibold text-[#00AAA1] duration-150  ease-linear dark:text-gray-100"
+              : "text-sm font-semibold text-[#222] duration-150 ease-linear hover:text-[#00AAA1] dark:text-gray-100"
           }
         >
           <Link href="/login">Login</Link>
@@ -58,7 +58,7 @@ const HeaderItems = () => {
       )}
 
       <li
-        className="flex items-center text-[#222] duration-150 ease-linear hover:text-[#00AAA1]"
+        className="flex items-center font-bold text-[#00AAA1]"
         onClick={handleThemeToggle}
       >
         {isDarkMode ? (
@@ -67,7 +67,7 @@ const HeaderItems = () => {
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 24 24"
-              strokeWidth="1.5"
+              strokeWidth={1.5}
               stroke="currentColor"
               className="h-6 w-6"
             >
@@ -84,9 +84,9 @@ const HeaderItems = () => {
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 24 24"
-              strokeWidth={1.5}
+              strokeWidth="1.5"
               stroke="currentColor"
-              className="h-6 w-6"
+              className="h-5 w-5"
             >
               <path
                 strokeLinecap="round"

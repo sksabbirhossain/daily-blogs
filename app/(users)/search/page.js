@@ -32,7 +32,7 @@ const Search = async ({ searchParams }) => {
           <div className="space-y-5 sm:space-y-10">
             {/* heading */}
             <div className="border-b border-[#00AAA1] pb-1">
-              <h4 className="text-base capitalize text-[#555]">
+              <h4 className="text-base capitalize text-[#555] dark:text-gray-300">
                 search result for{" "}
                 <span className="font-semibold text-[#00AAA1]">
                   {searchQuery}

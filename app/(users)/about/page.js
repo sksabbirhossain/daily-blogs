@@ -7,13 +7,13 @@ export const metadata = {
 const About = () => {
   return (
     <>
-      <div className="mb-10 flex w-full flex-col items-center justify-center bg-[#F2F8F7] px-2  py-10 md:px-0">
+      <div className="mb-10 flex w-full flex-col items-center justify-center bg-[#F2F8F7] px-2 py-10 md:px-0 dark:bg-slate-800">
         <div className="w-full max-w-[665px] space-y-5 text-center">
-          <h1 className="text-3xl font-semibold">
+          <h1 className="text-3xl font-semibold text-[#222] dark:text-gray-200">
             Daily Blogs is a place where you can find your perfect blogs.
           </h1>
 
-          <div className="space-y-3 text-sm font-normal text-gray-800">
+          <div className="space-y-3 text-sm font-normal text-gray-800 dark:text-gray-300">
             <p>
               Explore a world of daily wonders with{" "}
               <span className="font-semibold text-[#00AAA1]">Daily Blogs</span>.
@@ -40,11 +40,11 @@ const About = () => {
       </div>
 
       <div className="flex items-center justify-center">
-        <div className="mb-10 flex w-full max-w-[1076px] flex-col items-center justify-center space-y-3 rounded-md bg-[#F2F8F7] py-10">
-          <h1 className="text-3xl font-semibold capitalize">
+        <div className="mb-10 flex w-full max-w-[1076px] flex-col items-center justify-center space-y-3 rounded-md bg-[#F2F8F7] py-10 dark:bg-slate-800">
+          <h1 className="text-3xl font-semibold capitalize text-[#222] dark:text-gray-200">
             want to write on Daily blogs?
           </h1>
-          <p className="text-sm font-medium capitalize">
+          <p className="text-sm font-medium capitalize text-[#555] dark:text-gray-400">
             there have some simple steps, by following these steps you can be a
             regular author in
             <span className="font-semibold text-[#00AAA1]"> Daily Blogs</span>.

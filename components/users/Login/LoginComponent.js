@@ -42,17 +42,23 @@ const LoginComponent = () => {
 
   return (
     <div className="flex h-screen w-full items-center justify-center">
-      <div className="-mt-[50px] max-w-[350px] rounded bg-gray-100 p-3 py-10 shadow-sm shadow-[#00AAA1]/50">
+      <div className="-mt-[50px] max-w-[350px] rounded bg-gray-100 p-3 pb-10 shadow-sm shadow-[#00AAA1]/50 dark:bg-slate-800">
+        <h1 className="py-5 text-center text-xl text-[#222] dark:text-gray-200">
+          Login Your Account.
+        </h1>
         <form onSubmit={loginHandler}>
           <div className="space-y-3">
             <div className="space-y-2">
               <div>
-                <label htmlFor="" className="text-sm font-medium">
+                <label
+                  htmlFor=""
+                  className="text-sm font-medium text-[#222] dark:text-gray-200"
+                >
                   Email
                 </label>
               </div>
               <input
-                className="w-full rounded border border-[#00AAA1] px-1 py-2 focus:outline-[#00AAA1]"
+                className="w-full rounded border border-[#00AAA1] px-1 py-2 focus:outline-[#00AAA1] dark:bg-slate-700 dark:text-gray-200"
                 type="email"
                 name="email"
                 placeholder="Your email here..."
@@ -62,12 +68,15 @@ const LoginComponent = () => {
             </div>
             <div className="space-y-2">
               <div>
-                <label htmlFor="" className="text-sm font-medium">
+                <label
+                  htmlFor=""
+                  className="text-sm font-medium text-[#222] dark:text-gray-200"
+                >
                   Password
                 </label>
               </div>
               <input
-                className="w-full rounded border border-[#00AAA1] px-1 py-2 focus:outline-[#00AAA1]"
+                className="w-full rounded border border-[#00AAA1] px-1 py-2 focus:outline-[#00AAA1] dark:bg-slate-700 dark:text-gray-200"
                 type="password"
                 name="password"
                 placeholder="Your password here..."
@@ -79,7 +88,7 @@ const LoginComponent = () => {
               <button
                 type="submit"
                 disabled={loading}
-                className="w-full rounded border border-[#00AAA1] bg-white py-2 font-medium duration-150 ease-in hover:bg-[#00AAA1] hover:text-white disabled:cursor-not-allowed disabled:border-gray-500/65 disabled:bg-gray-500/65 disabled:text-gray-200"
+                className="w-full rounded border border-[#00AAA1] bg-white py-2 font-medium duration-150 ease-in hover:bg-[#00AAA1] hover:text-white disabled:cursor-not-allowed disabled:border-gray-500/65 disabled:bg-gray-500/65 disabled:text-gray-200 dark:bg-[#00AAA1] dark:text-gray-100 dark:hover:bg-[#329792]"
               >
                 {loading ? (
                   <p className="flex items-center justify-center">
@@ -103,7 +112,7 @@ const LoginComponent = () => {
                 )}
               </button>
             </div>
-            <div className="pt-2 text-center font-bold">
+            <div className="pt-2 text-center font-bold text-[#222] dark:text-gray-200">
               <span> - </span>OR<span> - </span>
             </div>
             <div className="pt-2">

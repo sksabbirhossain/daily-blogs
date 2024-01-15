@@ -11,10 +11,10 @@ const PopulerPostCard = ({ blog }) => {
       <Link href={`/blogs/${slug}`}>
         <div className="space-y-2">
           <p className="text-xs font-bold text-[#00AAA1]">{category?.name}</p>
-          <h1 className="text-md font-medium text-[#222]">
+          <h1 className="text-md font-medium text-[#222] dark:text-gray-50">
             {title.substr(0, 35)}
           </h1>
-          <p className="flex flex-wrap items-center gap-1 space-x-3 text-xs text-[#777]">
+          <p className="flex flex-wrap items-center gap-1 space-x-3 text-xs text-[#777] dark:text-gray-300">
             <span className="flex items-center">
               <span className="h-5 w-5 rounded-full ring-1">
                 <Image
@@ -66,7 +66,7 @@ const PopulerPostCard = ({ blog }) => {
               3 min. to read
             </span>
           </p>
-          <p className="text-sm font-normal text-[#555]">
+          <p className="text-sm font-normal text-[#555] dark:text-gray-300">
             {description.substr(0, 140)}...
           </p>
         </div>

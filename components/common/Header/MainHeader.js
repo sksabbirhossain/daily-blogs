@@ -7,7 +7,7 @@ import SearchBar from "./SearchBar";
 
 const MainHeader = () => {
   return (
-    <header className="sticky top-0 z-50 h-auto w-full bg-[#cbf1f1]/80 py-[8px] shadow-lg shadow-[#00AAA1]/20 backdrop-blur transition-colors lg:h-[50px] lg:py-0">
+    <header className="sticky top-0 z-50 h-auto w-full bg-[#cbf1f1]/80 py-[8px] shadow-lg shadow-[#00AAA1]/20 backdrop-blur transition-colors lg:h-[50px] lg:py-0 dark:bg-slate-950/80 dark:shadow-sm dark:shadow-gray-700">
       <div className="container mx-auto h-full w-full px-2 sm:px-0">
         <div className="flex h-full w-full items-center justify-between">
           {/* logo */}

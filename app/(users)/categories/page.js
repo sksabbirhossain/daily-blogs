@@ -9,16 +9,16 @@ const Categories = async () => {
   //get all categories
   const categories = await allCategory();
   return (
-    <section className="mb-10 bg-[#F2F8F7]">
+    <section className="mb-10 bg-[#F2F8F7] dark:bg-slate-800">
       <div className="container mx-auto py-5 sm:py-14">
-        <h1 className="text-center text-2xl capitalize sm:pb-4 ">categories</h1>
+        <h1 className="text-center text-2xl capitalize sm:pb-4 dark:text-gray-100">categories</h1>
         <div className="flex w-full items-center justify-center py-5">
           <div className="w-full max-w-[900px]">
             <div className="flex w-full flex-wrap justify-center gap-4">
               {/* 1 */}
               {categories?.map((category) => (
                 <Link href={`/categories/${category.slug}`} key={category._id}>
-                  <div className="group flex h-28 w-52 cursor-pointer flex-col items-center justify-center space-y-2 rounded-md bg-[#E8F3F3] duration-150 ease-linear hover:bg-[#00AAA1] hover:text-white">
+                  <div className="group flex h-28 w-52 cursor-pointer flex-col items-center justify-center space-y-2 rounded-md bg-[#E8F3F3] duration-150 ease-linear hover:bg-[#00AAA1] hover:text-white dark:bg-slate-900">
                     <span>
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -35,7 +35,7 @@ const Categories = async () => {
                         />
                       </svg>
                     </span>
-                    <h1 className="text-sm font-medium capitalize text-[#222] group-hover:text-white">
+                    <h1 className="text-sm font-medium capitalize text-[#222] dark:text-gray-100 group-hover:text-white">
                       {category.name}
                     </h1>
                   </div>

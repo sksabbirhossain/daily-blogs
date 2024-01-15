@@ -22,10 +22,10 @@ const RecentPostCard = ({ blog }) => {
             <p className="text-xs font-semibold text-[#00AAA1]">
               {category?.name}
             </p>
-            <h1 className="w-full max-w-[450px] text-lg  font-medium text-[#222]">
+            <h1 className="w-full max-w-[450px] text-lg  font-medium text-[#222] dark:text-gray-100">
               {title.substr(0, 35)}
             </h1>
-            <p className="flex flex-wrap items-center gap-1 space-x-3 py-2 text-xs text-[#777]">
+            <p className="flex flex-wrap items-center gap-1 space-x-3 py-2 text-xs text-[#777] dark:text-gray-400">
               <span className="flex items-center">
                 <span className="h-5 w-5 rounded-full ring-1">
                   <Image
@@ -77,7 +77,7 @@ const RecentPostCard = ({ blog }) => {
                 3 min. to read
               </span>
             </p>
-            <p className="w-full max-w-[450px] text-sm text-[#555]">
+            <p className="w-full max-w-[450px] text-sm text-[#555] dark:text-gray-400">
               {description.substr(0, 90)}...
             </p>
             <p className="pt-1 text-xs text-[#00AAA1]">Read More...</p>

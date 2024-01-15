@@ -8,15 +8,13 @@ export default function useTheme() {
 }
 
 export function ThemeProvider({ children }) {
-  // check localstorage is available or not
-  const isLocalStorageAvailable =
-    typeof window !== "undefined" && typeof window.localStorage !== "undefined";
-
+  const store = typeof localStorage !== "undefined" ? localStorage : [];
   const [isDarkMode, setIsDarkMode] = useState(
-    isLocalStorageAvailable &&
-      (localStorage.getItem("color-theme") === "dark" ||
-        (!("color-theme" in localStorage) &&
-          window.matchMedia("(prefers-color-scheme: dark)").matches)),
+    (typeof localStorage !== "undefined" &&
+      localStorage.getItem("color-theme") === "dark") ||
+      (!("color-theme" in store) &&
+        typeof window !== "undefined" &&
+        window.matchMedia("(prefers-color-scheme: dark)").matches),
   );
 
   useEffect(() => {
@@ -31,10 +29,10 @@ export function ThemeProvider({ children }) {
 
   //toggle theme handler
   const handleThemeToggle = () => {
-    if (!isDarkMode) {
-      setIsDarkMode(true);
-    } else {
+    if (isDarkMode) {
       setIsDarkMode(false);
+    } else {
+      setIsDarkMode(true);
     }
   };
 
