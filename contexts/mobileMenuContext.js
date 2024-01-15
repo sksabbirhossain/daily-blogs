@@ -1,6 +1,5 @@
 "use client";
-// import { cookies } from "next/headers";
-import { createContext, useContext, useEffect, useState } from "react";
+import { createContext, useContext, useState } from "react";
 
 export const MobileMenuContext = createContext();
 
@@ -11,6 +10,7 @@ export default function useMobileMenu() {
 export function MobileMenuProvider({ children }) {
   const [menuOpen, setMenuOpen] = useState(false);
 
+  //toggle mobile menu handler
   const mobileMenuHandler = () => {
     return setMenuOpen(!menuOpen);
   };

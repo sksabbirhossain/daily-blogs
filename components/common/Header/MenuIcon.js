@@ -2,6 +2,7 @@
 
 import useMobileMenu from "@/contexts/mobileMenuContext";
 
+
 const MenuIcon = () => {
   const { mobileMenuHandler } = useMobileMenu();
   return (

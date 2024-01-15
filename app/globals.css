@@ -6,10 +6,6 @@
   @apply transition-colors duration-300;
 }
 
-body {
-  background-color: #fff;
-}
-
 /* custom scroll bar */
 /* width */
 ::-webkit-scrollbar {
