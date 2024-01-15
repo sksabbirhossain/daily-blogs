@@ -1,4 +1,5 @@
 import { allCategory } from "@/actions/category/categoryActions";
+import logo from "@/public/logo.png";
 import Image from "next/image";
 import Link from "next/link";
 import SocialIcon from "../SocialIcon/SocialIcon";
@@ -7,15 +8,15 @@ const Footer = async () => {
   const categories = await allCategory();
   return (
     <section>
-      <footer className="bg-[#e9f8f5] py-5 md:py-16 px-2 sm:px-0">
+      <footer className="bg-[#e9f8f5] px-2 py-5 sm:px-0 md:py-16 dark:bg-slate-800">
         <div className="container mx-auto">
-          <div className="grid gap-5 grid-cols-1 sm:grid-cols-3 md:grid-cols-4">
+          <div className="grid grid-cols-1 gap-5 sm:grid-cols-3 md:grid-cols-4">
             <div>
               <div className="space-y-3">
                 <div>
-                  <Image src="/logo.png" width={200} height={50} alt="logo" />
+                  <Image src={logo} width={200} height={50} alt="logo" />
                 </div>
-                <p className="text-sm text-[#555]">
+                <p className="text-sm text-[#555] dark:text-gray-300">
                   Explore a world of daily wonders with Daily Blogs. Immerse
                   yourself in a diverse range of articles, from insightful
                   reflections to practical tips.
@@ -24,11 +25,13 @@ const Footer = async () => {
             </div>
             <div>
               <div className="space-y-3">
-                <h2 className="text-xl text-[#222] font-medium">Blogs</h2>
-                <div className="space-y-2 text-[#555] text-sm">
+                <h2 className="text-xl font-medium text-[#222] dark:text-[#00AAA1]">
+                  Blogs
+                </h2>
+                <div className="space-y-2 text-sm text-[#555]">
                   {categories?.slice(0, 4)?.map((category) => (
                     <p
-                      className="hover:text-[#00AAA1] duration-150 ease-out"
+                      className="text-[#444] duration-150 ease-out hover:text-[#00AAA1] dark:text-gray-300"
                       key={category._id}
                     >
                       <Link href={`/categories/${category.slug}`}>
@@ -41,20 +44,20 @@ const Footer = async () => {
             </div>
             <div>
               <div className="space-y-3">
-                <h2 className="text-xl text-[#222] font-medium capitalize">
+                <h2 className="text-xl font-medium capitalize text-[#222] dark:text-[#00AAA1]">
                   quick links
                 </h2>
-                <div className="space-y-2 text-[#555] text-sm">
-                  <p className="hover:text-[#00AAA1] duration-150 ease-out">
+                <div className="space-y-2 text-sm text-[#555] dark:text-gray-300">
+                  <p className="duration-150 ease-out hover:text-[#00AAA1]">
                     <Link href={"/asked-question"}>FAQ</Link>
                   </p>
-                  <p className="hover:text-[#00AAA1] duration-150 ease-out">
+                  <p className="duration-150 ease-out hover:text-[#00AAA1]">
                     <Link href={"/contact-us"}>Terms & conditions</Link>
                   </p>
-                  <p className="hover:text-[#00AAA1] duration-150 ease-out">
+                  <p className="duration-150 ease-out hover:text-[#00AAA1]">
                     <Link href={"/contact-us"}>support</Link>
                   </p>
-                  <p className="hover:text-[#00AAA1] duration-150 ease-out">
+                  <p className="duration-150 ease-out hover:text-[#00AAA1]">
                     <Link href={"/contact-us"}>privacy policy</Link>
                   </p>
                 </div>
@@ -62,27 +65,27 @@ const Footer = async () => {
             </div>
             <div>
               <div className="space-y-3">
-                <h2 className="text-xl text-[#222] font-medium capitalize">
+                <h2 className="text-xl font-medium capitalize text-[#222] dark:text-[#00AAA1]">
                   Subscribe for newsletter
                 </h2>
                 <div className="space-y-4">
                   <form>
-                    <div className="flex items-center border border-[#00AAA1]  rounded-md border-primary">
+                    <div className="border-primary flex items-center rounded-md  border border-[#00AAA1]">
                       <input
                         type="text"
                         placeholder="Email"
-                        className="w-full rounded-l-md p-1 focus:outline-none bg-transparent"
+                        className="w-full rounded-l-md bg-transparent p-1 focus:outline-none dark:text-gray-200"
                       />
                       <button
                         type="submit"
-                        className="bg-[#00AAA1] border border-[#00AAA1] rounded-r-md py-1 px-3 text-white"
+                        className="rounded-r-md border border-[#00AAA1] bg-[#00AAA1] px-3 py-1 text-white"
                       >
                         Subcribe
                       </button>
                     </div>
                   </form>
                   <div className="space-y-2">
-                    <h2 className="text-base text-[#222] font-semibold">
+                    <h2 className="text-base font-semibold text-[#222] dark:text-gray-100">
                       follow on:
                     </h2>
                     <SocialIcon />
@@ -93,7 +96,7 @@ const Footer = async () => {
           </div>
         </div>
       </footer>
-      <div className="flex w-full h-[50px] items-center justify-center bg-[#cbf1f1] text-[#222] border-t border-gray-300 text-sm">
+      <div className="flex h-[50px] w-full items-center justify-center border-t border-gray-300 bg-[#cbf1f1] text-sm text-[#222] dark:border-gray-700 dark:bg-slate-900 dark:text-gray-100">
         <p>Copyright © 2023 . All rights reserved.</p>
       </div>
     </section>

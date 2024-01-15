@@ -7,16 +7,16 @@ export const metadata = {
 const About = () => {
   return (
     <>
-      <div className="bg-[#F2F8F7] py-10 mb-10 w-full flex flex-col justify-center items-center  px-2 md:px-0">
-        <div className="space-y-5 text-center w-full max-w-[665px]">
-          <h1 className="text-3xl font-semibold">
+      <div className="mb-10 flex w-full flex-col items-center justify-center bg-[#F2F8F7] px-2 py-10 md:px-0 dark:bg-slate-800">
+        <div className="w-full max-w-[665px] space-y-5 text-center">
+          <h1 className="text-3xl font-semibold text-[#222] dark:text-gray-200">
             Daily Blogs is a place where you can find your perfect blogs.
           </h1>
 
-          <div className="space-y-3 text-sm font-normal text-gray-800">
+          <div className="space-y-3 text-sm font-normal text-gray-800 dark:text-gray-300">
             <p>
               Explore a world of daily wonders with{" "}
-              <span className="text-[#00AAA1] font-semibold">Daily Blogs</span>.
+              <span className="font-semibold text-[#00AAA1]">Daily Blogs</span>.
               Immerse yourself in a diverse range of articles, from insightful
               reflections to practical tips. Stay informed, inspired, and
               engaged every day with our thoughtfully curated content. Join us
@@ -39,25 +39,25 @@ const About = () => {
         </div>
       </div>
 
-      <div className="flex justify-center items-center">
-        <div className="w-full max-w-[1076px] bg-[#F2F8F7] rounded-md py-10 mb-10 flex flex-col justify-center items-center space-y-3">
-          <h1 className="text-3xl font-semibold capitalize">
+      <div className="flex items-center justify-center">
+        <div className="mb-10 flex w-full max-w-[1076px] flex-col items-center justify-center space-y-3 rounded-md bg-[#F2F8F7] py-10 dark:bg-slate-800">
+          <h1 className="text-3xl font-semibold capitalize text-[#222] dark:text-gray-200">
             want to write on Daily blogs?
           </h1>
-          <p className="text-sm font-medium capitalize">
+          <p className="text-sm font-medium capitalize text-[#555] dark:text-gray-400">
             there have some simple steps, by following these steps you can be a
             regular author in
-            <span className="text-[#00AAA1] font-semibold"> Daily Blogs</span>.
+            <span className="font-semibold text-[#00AAA1]"> Daily Blogs</span>.
           </p>
           <Link href="/contact-us">
-            <button className="text-[#00AAA1] border border-[#00AAA1] hover:bg-[#00AAA1] hover:text-white duration-150 ease-linear rounded py-2 px-4 text-sm flex items-center space-x-1">
+            <button className="flex items-center space-x-1 rounded border border-[#00AAA1] px-4 py-2 text-sm text-[#00AAA1] duration-150 ease-linear hover:bg-[#00AAA1] hover:text-white">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
                 strokeWidth={1.5}
                 stroke="currentColor"
-                className="w-5 h-5"
+                className="h-5 w-5"
               >
                 <path
                   strokeLinecap="round"

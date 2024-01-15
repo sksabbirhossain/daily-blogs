@@ -2,6 +2,29 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  background-color: #fff;
+* {
+  @apply transition-colors duration-300;
 }
+
+/* custom scroll bar */
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background-color: #cbf1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #00aaa1;
+  border-radius: 2px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #018d86;
+}
+/* custom scroll bar */

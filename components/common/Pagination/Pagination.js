@@ -2,16 +2,16 @@ import Link from "next/link";
 
 const Pagination = ({ totalPage, currentPage }) => {
   return (
-    <div className="w-full flex justify-center py-7 sm:py-10">
+    <div className="flex w-full justify-center py-7 sm:py-10">
       <div className="flex">
         <Link href={`?page=${currentPage - 1}`}>
           <button
             disabled={currentPage == 1}
-            className="flex items-center justify-center px-3 h-8 me-3 text-sm font-medium text-gray-500 bg-white border border-gray-300 hover:bg-[#00AAA1] hover:text-white rounded-md disabled:bg-gray-100 disabled:text-gray-300"
+            className="me-3 flex h-8 items-center justify-center rounded-md border border-gray-300 bg-white px-3 text-sm font-medium text-gray-500 hover:bg-[#00AAA1] hover:text-white disabled:bg-gray-100 disabled:text-gray-300 dark:border-gray-700 dark:bg-slate-800 dark:text-gray-200 dark:disabled:bg-gray-500"
           >
             <span className="hidden sm:flex">
               <svg
-                className="w-3.5 h-3.5 me-2 rtl:rotate-180"
+                className="me-2 h-3.5 w-3.5 rtl:rotate-180"
                 aria-hidden="true"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -36,8 +36,8 @@ const Pagination = ({ totalPage, currentPage }) => {
             className={`${
               currentPage == i + 1
                 ? "bg-[#00AAA1] text-white"
-                : " bg-white text-gray-500"
-            } flex items-center justify-center px-3 h-8 me-3 text-sm font-medium border border-gray-300 hover:bg-[#00AAA1] hover:text-white rounded-md`}
+                : " bg-white text-gray-500 dark:bg-slate-800 dark:text-gray-200"
+            } me-3 flex h-8 items-center justify-center rounded-md border border-gray-300 px-3 text-sm font-medium hover:bg-[#00AAA1] hover:text-white dark:border-gray-700`}
             key={i}
           >
             {i + 1}
@@ -47,12 +47,12 @@ const Pagination = ({ totalPage, currentPage }) => {
         <Link href={`?page=${currentPage + 1}`}>
           <button
             disabled={currentPage === totalPage}
-            className="flex items-center justify-center px-3 h-8 text-sm font-medium text-gray-500 bg-white border border-gray-300 hover:bg-[#00AAA1] hover:text-white rounded-md disabled:bg-gray-100 disabled:text-gray-300"
+            className="me-3 flex h-8 items-center justify-center rounded-md border border-gray-300 bg-white px-3 text-sm font-medium text-gray-500 hover:bg-[#00AAA1] hover:text-white disabled:bg-gray-100 disabled:text-gray-300 dark:border-gray-700 dark:bg-slate-800 dark:text-gray-200 dark:disabled:bg-gray-500"
           >
             Next
             <span className="hidden sm:flex">
               <svg
-                className="w-3.5 h-3.5 ms-2 rtl:rotate-180"
+                className="ms-2 h-3.5 w-3.5 rtl:rotate-180"
                 aria-hidden="true"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
