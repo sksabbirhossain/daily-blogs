@@ -1,7 +1,6 @@
 import Footer from "@/components/common/Footer/Footer";
 import MainHeader from "@/components/common/Header/MainHeader";
-import SessionProviders from "@/utils/SessionProviders";
-import MobileMenu from "@/utils/mobileMenuContext";
+import Providers from "@/utils/Providers";
 import ThemeProviderContext from "@/utils/themeProvider";
 import { Poppins } from "next/font/google";
 import { Toaster } from "react-hot-toast";
@@ -22,16 +21,12 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`${poppins.className} bg-[#fff] dark:bg-slate-900`}>
-        <ThemeProviderContext>
-          <MobileMenu>
-            <SessionProviders>
-              <Toaster position="top-right" />
-              <MainHeader />
-              {children}
-              <Footer />
-            </SessionProviders>
-          </MobileMenu>
-        </ThemeProviderContext>
+        <Providers>
+          <Toaster position="top-right" />
+          <MainHeader />
+          {children}
+          <Footer />
+        </Providers>
       </body>
     </html>
   );
