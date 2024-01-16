@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 * {
-  @apply transition-colors duration-300;
+  @apply transition-colors duration-200;
 }
 
 /* custom scroll bar */
