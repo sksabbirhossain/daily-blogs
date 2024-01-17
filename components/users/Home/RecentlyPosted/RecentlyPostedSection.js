@@ -8,8 +8,8 @@ const RecentlyPostedSection = async ({ searchParams }) => {
   //get all blogs
   const { blogs, totalPages, currentPage } = await allBlogs(parseInt(page));
   return (
-    <section className="container mx-auto">
-      <div className="md:gird-cols-2     grid grid-cols-1 py-7 md:gap-7 lg:grid-cols-3">
+    <section className="container mx-auto px-2 sm:px-0">
+      <div className="md:gird-cols-2 grid grid-cols-1 py-7 md:gap-7 lg:grid-cols-3">
         <div className="md:col-span-2">
           <h2 className="pb-6 text-xl font-semibold capitalize text-[#222] dark:text-gray-100">
             <span className="pr-2 uppercase text-[#00AAA1]">Recently</span>
