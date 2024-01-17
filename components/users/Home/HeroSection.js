@@ -6,12 +6,16 @@ const HeroSection = async () => {
   //get featured blogs
   const featuredBlogs = await getFeaturedBlogs();
   return (
-    <section className="w-full bg-[#e9f8f5] dark:bg-slate-800">
-      <div className="container mx-auto">
+    <section className="relative w-full bg-[#e9f8f5] px-2 sm:px-0 dark:bg-slate-800">
+      <div className="absolute right-40 top-0 h-[450px] w-20 -rotate-45 bg-[#00AAA1] blur-[100px] filter"></div>
+      <div className="absolute right-2/4 top-0 h-[450px] w-20 rotate-45 bg-purple-400 mix-blend-multiply blur-3xl filter"></div>
+      <div className="absolute right-3/4 top-16 h-[400px] w-20 -rotate-45 bg-pink-500 mix-blend-multiply blur-[100px] filter"></div>
+
+      <div className="container relative mx-auto">
         <div className="md:gird-cols-2 grid grid-cols-1 gap-5 py-10 sm:gap-10 lg:grid-cols-3">
           {/* left side */}
           <div className="md:col-span-2">
-            <div className="pb-5">
+            <div className="pb-2 sm:pb-5">
               <h2 className="text-xl font-medium text-[#222] dark:text-white">
                 <span className="rounded bg-[#00AAA1] px-2 text-white">
                   Featured

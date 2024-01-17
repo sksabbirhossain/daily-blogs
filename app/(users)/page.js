@@ -3,7 +3,7 @@ import RecentlyPostedSection from "@/components/users/Home/RecentlyPosted/Recent
 
 export default function Home({ searchParams }) {
   return (
-    <div className="space-y-10  px-2 sm:px-0">
+    <div className="space-y-10">
       <HeroSection />
       <RecentlyPostedSection searchParams={searchParams} />
     </div>
