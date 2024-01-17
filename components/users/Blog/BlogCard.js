@@ -5,7 +5,7 @@ import Link from "next/link";
 import defaultPic from "@/public/default.jpg";
 
 const BlogCard = ({ blog }) => {
-  const { title, slug, picture, description, category, createdAt } = blog || {};
+  const { title, slug, picture, description, category, updatedAt } = blog || {};
   return (
     <div className=" w-full max-w-[350px]">
       <Link href={`/blogs/${slug}`}>
@@ -36,7 +36,7 @@ const BlogCard = ({ blog }) => {
                 <span className="ml-1">Admin</span>
               </span>
               <span className="flex items-center">
-                <span>
+                <span className="pr-1">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
@@ -52,10 +52,10 @@ const BlogCard = ({ blog }) => {
                     />
                   </svg>
                 </span>
-                {moment(createdAt).format("DD MMMM YYYY")}
+                {moment(updatedAt).format("DD MMMM YYYY")}
               </span>
               <span className="flex items-center">
-                <span>
+                <span className="pr-1">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
@@ -76,6 +76,9 @@ const BlogCard = ({ blog }) => {
             </p>
             <p className="text-sm font-normal text-[#555] dark:text-gray-300">
               {description.substr(0, 80)}...
+            </p>
+            <p className="pt-0.5 text-xs font-semibold text-[#00AAA1]">
+              Read More..
             </p>
           </div>
         </div>

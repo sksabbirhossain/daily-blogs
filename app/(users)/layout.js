@@ -1,7 +1,6 @@
 import Footer from "@/components/common/Footer/Footer";
 import MainHeader from "@/components/common/Header/MainHeader";
 import Providers from "@/utils/Providers";
-import ThemeProviderContext from "@/utils/themeProvider";
 import { Poppins } from "next/font/google";
 import { Toaster } from "react-hot-toast";
 import "../globals.css";

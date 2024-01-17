@@ -5,12 +5,12 @@ import Link from "next/link";
 import defaultPic from "@/public/default.jpg";
 
 const Card = ({ blog }) => {
-  const { title, slug, category, description, picture, createdAt } = blog || {};
+  const { title, slug, category, description, picture, updatedAt } = blog || {};
   return (
     <Link href={`/blogs/${slug}`}>
       <div className="space-y-1 py-5 md:py-0">
         <p className="text-xs font-bold text-[#00AAA1]">{category?.name}</p>
-        <h1 className="pb-2 text-xl font-medium text-[#222] dark:text-gray-100">
+        <h1 className="pb-0.5 text-xl font-medium text-[#222] dark:text-gray-100">
           {title.substr(0, 35)}
         </h1>
         <div className="relative h-[250px] w-full">
@@ -21,7 +21,7 @@ const Card = ({ blog }) => {
             className="rounded-md object-cover"
           />
         </div>
-        <p className="flex flex-wrap items-center gap-1 space-x-3 py-2 text-xs text-[#777] dark:text-gray-200">
+        <p className="flex flex-wrap items-center gap-1 space-x-3 py-1 text-xs text-[#777] dark:text-gray-200">
           <span className="flex items-center">
             <span className="h-5 w-5 rounded-full ring-1">
               <Image
@@ -35,7 +35,7 @@ const Card = ({ blog }) => {
             <span className="ml-1">Admin</span>
           </span>
           <span className="flex items-center">
-            <span>
+            <span className="pr-1">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -51,10 +51,10 @@ const Card = ({ blog }) => {
                 />
               </svg>
             </span>
-            {moment(createdAt).format("DD MMMM YYYY")}
+            {moment(updatedAt).format("DD MMMM YYYY")}
           </span>
           <span className="flex items-center">
-            <span>
+            <span className="pr-1">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -76,6 +76,7 @@ const Card = ({ blog }) => {
         <p className="text-sm text-[#555] dark:text-gray-100">
           {description.substr(0, 140)}...
         </p>
+        <p className="text-xs font-semibold text-[#00AAA1]">Read More...</p>
       </div>
     </Link>
   );
