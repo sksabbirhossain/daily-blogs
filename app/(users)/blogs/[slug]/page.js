@@ -29,7 +29,7 @@ const Blog = async ({ params: { slug } }) => {
 
   const blog = await blogPromise;
 
-  const { _id, title, category, description, details, picture, createdAt } =
+  const { _id, title, category, description, details, picture, updatedAt } =
     blog || {};
   return (
     <section className="container mx-auto py-10">
@@ -58,7 +58,7 @@ const Blog = async ({ params: { slug } }) => {
                   <span className="ml-1">Admin</span>
                 </span>
                 <span className="flex items-center">
-                  <span>
+                  <span className="pr-1">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
@@ -74,7 +74,7 @@ const Blog = async ({ params: { slug } }) => {
                       />
                     </svg>
                   </span>
-                  {moment(createdAt).format("DD MMMM YYYY")}
+                  {moment(updatedAt).format("DD MMMM YYYY")}
                 </span>
               </p>
             </div>

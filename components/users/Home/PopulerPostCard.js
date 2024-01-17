@@ -5,13 +5,13 @@ import Link from "next/link";
 import defaultPic from "@/public/default.jpg";
 
 const PopulerPostCard = ({ blog }) => {
-  const { title, slug, category, description, picture, createdAt } = blog || {};
+  const { title, slug, category, description, picture, updatedAt } = blog || {};
   return (
     <div>
       <Link href={`/blogs/${slug}`}>
-        <div className="space-y-2">
+        <div className="space-y-1">
           <p className="text-xs font-bold text-[#00AAA1]">{category?.name}</p>
-          <h1 className="text-md font-medium text-[#222] dark:text-gray-50">
+          <h1 className="text-xl font-medium text-[#222] dark:text-gray-50">
             {title.substr(0, 35)}
           </h1>
           <p className="flex flex-wrap items-center gap-1 space-x-3 text-xs text-[#333] dark:text-gray-300">
@@ -28,7 +28,7 @@ const PopulerPostCard = ({ blog }) => {
               <span className="ml-1">Admin</span>
             </span>
             <span className="flex items-center">
-              <span>
+              <span className="pr-1">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -44,10 +44,10 @@ const PopulerPostCard = ({ blog }) => {
                   />
                 </svg>
               </span>
-              {moment(createdAt).format("DD MMMM YYYY")}
+              {moment(updatedAt).format("DD MMMM YYYY")}
             </span>
             <span className="flex items-center">
-              <span>
+              <span className="pr-1">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -68,6 +68,9 @@ const PopulerPostCard = ({ blog }) => {
           </p>
           <p className="text-sm font-normal text-[#333] dark:text-gray-300">
             {description.substr(0, 140)}...
+          </p>
+          <p className="pt-0.5 text-xs font-semibold text-[#00AAA1]">
+            Read More..
           </p>
         </div>
       </Link>

@@ -5,7 +5,7 @@ import Link from "next/link";
 import defaultPic from "@/public/default.jpg";
 
 const RecentPostCard = ({ blog }) => {
-  const { title, slug, picture, description, category, createdAt } = blog || {};
+  const { title, slug, picture, description, category, updatedAt } = blog || {};
   return (
     <div>
       <Link href={`/blogs/${slug}`}>
@@ -39,7 +39,7 @@ const RecentPostCard = ({ blog }) => {
                 <span className="ml-1">Admin</span>
               </span>
               <span className="flex items-center">
-                <span>
+                <span className="pr-1">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
@@ -55,10 +55,10 @@ const RecentPostCard = ({ blog }) => {
                     />
                   </svg>
                 </span>
-                {moment(createdAt).format("DD MMMM YYYY")}
+                {moment(updatedAt).format("DD MMMM YYYY")}
               </span>
               <span className="flex items-center">
-                <span>
+                <span className="pr-1">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
@@ -80,7 +80,9 @@ const RecentPostCard = ({ blog }) => {
             <p className="w-full max-w-[450px] text-sm text-[#555] dark:text-gray-400">
               {description.substr(0, 90)}...
             </p>
-            <p className="pt-1 text-xs text-[#00AAA1]">Read More...</p>
+            <p className="pt-0.5 text-xs font-semibold text-[#00AAA1]">
+              Read More..
+            </p>
           </div>
         </div>
       </Link>
