@@ -16,8 +16,8 @@ import defaultPic from "@/public/default.jpg";
 export async function generateMetadata({ params: { slug } }) {
   const blog = await getBlog(slug);
   return {
-    title: blog?.title,
-    description: blog?.description?.substr(0, 1000),
+    title: blog?.metaTitle,
+    description: blog?.description,
   };
 }
 
@@ -29,8 +29,8 @@ const Blog = async ({ params: { slug } }) => {
 
   const blog = await blogPromise;
 
-  const { _id, title, category, description, details, picture, updatedAt } =
-    blog || {};
+  const { _id, title, category, details, picture, updatedAt } = blog || {};
+
   return (
     <section className="container mx-auto py-10">
       <div className="md:gird-cols-2 grid grid-cols-1 gap-5 px-2 sm:px-0 md:gap-7 lg:grid-cols-3">
@@ -86,12 +86,6 @@ const Blog = async ({ params: { slug } }) => {
                 alt={title}
                 className=" rounded-md object-cover"
               />
-            </div>
-            {/* descriptions */}
-            <div className="">
-              <p className="text-sm font-normal text-[#666] dark:text-gray-200">
-                {description}
-              </p>
             </div>
             {/* full details */}
             <div
