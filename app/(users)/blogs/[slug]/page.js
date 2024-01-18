@@ -89,11 +89,11 @@ const Blog = async ({ params: { slug } }) => {
             </div>
             {/* full details */}
             <div
-              className="text-[#666] dark:text-gray-200"
+              className="blogDetails text-[#222] dark:text-gray-200"
               dangerouslySetInnerHTML={{ __html: details }}
             />
             {/* shere icons */}
-            <div className="flex w-full items-center justify-center">
+            <div className="flex w-full items-center justify-center pb-5 sm:pb-0">
               <div className="flex items-center gap-3">
                 <div className="h-[1px] w-[60px] bg-[#D1E7E5] sm:w-[100px] lg:w-[200px] dark:bg-slate-500" />
                 <ShereIcons />
@@ -101,7 +101,7 @@ const Blog = async ({ params: { slug } }) => {
               </div>
             </div>
             {/* google adds */}
-            <div className="h-44 w-full rounded-md bg-[#00AAA1]"></div>
+            {/* <div className="h-44 w-full rounded-md bg-[#00AAA1]"></div> */}
             {/* related Blogs */}
             <Suspense fallback="<h1>Related Blogs is Loading...</h1>">
               <RelatedBlogs
