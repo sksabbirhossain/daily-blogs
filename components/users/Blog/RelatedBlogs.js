@@ -3,7 +3,7 @@ import BlogCard from "./BlogCard";
 const RelatedBlogs = async ({ relatedBlogsPromise, blogId }) => {
   const relatedBlogs = await relatedBlogsPromise;
   return (
-    <div className="space-y-5">
+    <div className="space-y-2 sm:space-y-5">
       <h2 className="text-xl font-semibold text-[#222] dark:text-gray-200">
         <span className="me-2 rounded-sm bg-[#00AAA1] px-2 text-[#fff]">
           See related
@@ -11,7 +11,7 @@ const RelatedBlogs = async ({ relatedBlogsPromise, blogId }) => {
         Blogs
       </h2>
       {/* related Blogs card */}
-      <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
+      <div className="grid grid-cols-1 gap-2 sm:grid-cols-2">
         {relatedBlogs
           ?.filter((blog) => blog._id !== blogId)
           ?.map((blog) => (
