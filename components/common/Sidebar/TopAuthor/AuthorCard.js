@@ -14,10 +14,10 @@ const AuthorCard = () => {
           alt="user"
         />
       </div>
-      <div className="">
-        <h5 className="text-[15px] font-normal text-[#222] dark:text-gray-200">
+      <div>
+        <h1 className="text-[15px] font-normal text-[#222] dark:text-gray-200">
           Sk Sabbir Hossain
-        </h5>
+        </h1>
         <p className="text-xs text-[#555] dark:text-gray-400">
           Web Developer, Blogger, activist
         </p>

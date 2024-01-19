@@ -33,7 +33,7 @@ const HeroSection = async () => {
             {/* right side */}
             <div className="">
               <div className="pb-5">
-                <h2 className="text-xl font-medium text-[#222] dark:text-gray-100">
+                <h2 className="text-xl font-medium text-[#222] dark:text-white">
                   <span className="rounded bg-[#00AAA1] px-2 text-white">
                     populer
                   </span>{" "}

@@ -6,7 +6,7 @@ const MenuIcon = () => {
   const { mobileMenuHandler, menuOpen } = useMobileMenu();
   return (
     <div className="flex items-center ps-3 text-[#222] lg:hidden lg:ps-0 dark:text-gray-100">
-      <button onClick={() => mobileMenuHandler()}>
+      <button aria-label="mobile menu icon" onClick={() => mobileMenuHandler()}>
         {menuOpen ? (
           <svg
             xmlns="http://www.w3.org/2000/svg"
