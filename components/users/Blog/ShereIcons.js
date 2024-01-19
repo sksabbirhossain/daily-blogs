@@ -11,7 +11,7 @@ import {
 const ShereIcons = () => {
   const [copyMessage, setCopyMessage] = useState(false);
   const pathName = usePathname();
-  const fullUrl = `${"http://localhost:3000"}${pathName}`;
+  const fullUrl = `${"https://dailyblogs.vercel.app"}${pathName}`;
 
   //copy clipboard
   const copyClipBoard = (link) => {
