@@ -36,40 +36,37 @@
 
 .blogDetails ul {
   display: block;
-  margin-top: 1em;
-  margin-bottom: 1em;
+  margin-bottom: 0.2em;
+  margin-top: 5px;
   margin-left: 0;
   margin-right: 0;
   list-style: inside;
-  padding-left: 10px;
+  padding-left: 5px;
 }
 
 .blogDetails ol {
   display: block;
   list-style-type: disc;
-  margin-top: 1em;
-  margin-bottom: 1em;
+  margin-bottom: 0.2em;
+  margin-top: 5px;
   margin-left: 0;
   margin-right: 0;
   list-style-position: inside;
-  padding-left: 10px;
+  padding-left: 5px;
 }
 
 .blogDetails h1 {
-  font-size: 27px;
-  font-weight: 500;
+  @apply text-2xl font-semibold capitalize;
 }
 
 .blogDetails h2 {
-  font-size: 21px;
-  font-weight: 500;
+  @apply text-lg font-semibold capitalize;
 }
 
 .blogDetails h3 {
-  font-size: 19px;
-  font-weight: 400;
+  @apply text-base font-medium capitalize;
 }
 
 .blogDetails p {
-  font-size: 15px;
+  @apply text-[15px] font-normal;
 }

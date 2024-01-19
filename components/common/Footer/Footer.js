@@ -70,22 +70,22 @@ const Footer = async () => {
                 </h2>
                 <div className="space-y-4">
                   <form>
-                    <div className="border-primary flex items-center rounded-md  border border-[#00AAA1]">
+                    <div className="border-primary flex items-center rounded-md  border border-[#1d9690]">
                       <input
                         type="text"
                         placeholder="Email"
-                        className="w-full rounded-l-md bg-transparent p-1 focus:outline-none dark:text-gray-200"
+                        className="w-full rounded-l-md bg-transparent p-1 focus:outline-none dark:text-gray-100"
                       />
                       <button
                         type="submit"
-                        className="rounded-r-md border border-[#00AAA1] bg-[#00AAA1] px-3 py-1 text-white"
+                        className="rounded-r-md border border-[#1d9690] bg-[#1d9690] px-3 py-1 text-white"
                       >
                         Subcribe
                       </button>
                     </div>
                   </form>
                   <div className="space-y-2">
-                    <h2 className="text-base font-semibold text-[#222] dark:text-gray-100">
+                    <h2 className="text-base font-semibold text-[#222] dark:text-white">
                       follow on:
                     </h2>
                     <SocialIcon />

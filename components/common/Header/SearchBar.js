@@ -26,6 +26,7 @@ const SearchBar = () => {
           onChange={(e) => setValue(e.target.value)}
         />
         <button
+          aria-label="search button"
           type="submit"
           className="bg-primary rounded-r-md p-1 text-[#222] duration-150 ease-in-out hover:text-[#00AAA1] dark:text-gray-100"
         >
