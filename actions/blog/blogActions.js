@@ -108,3 +108,47 @@ export const addBlog = async (data) => {
     console.log(err);
   }
 };
+
+
+//update a blog
+export const updateBlog = async (slug, data) => {
+  "use server";
+  const formData = new FormData();
+  formData.append("title", data.get("title"));
+  formData.append("metaTitle", data.get("metaTitle"));
+  formData.append("description", data.get("description"));
+  formData.append("details", data.get("details"));
+  formData.append("category", data.get("category"));
+  if (data.get("picture").name !== "undefined") {
+    formData.append("picture", data.get("picture"));
+  }
+
+  try {
+    await fetch(`${process.env.BASE_URL}/blog/update-blog/${slug}`, {
+      method: "PATCH",
+      body: formData,
+      cache: "no-cache",
+    });
+
+    revalidatePath("/admin/all-blogs");
+  } catch (err) {
+    console.log(err);
+  }
+};
+
+//delete a blog
+export const deleteBlog = async (formData) => {
+  "use server";
+  const blogId = formData.get("blogId");
+
+  try {
+    await fetch(`${process.env.BASE_URL}/blog/delete-blog/${blogId}`, {
+      method: "DELETE",
+      cache: "no-cache",
+    });
+
+    revalidatePath("/admin/all-blogs");
+  } catch (err) {
+    console.log(err);
+  }
+};
