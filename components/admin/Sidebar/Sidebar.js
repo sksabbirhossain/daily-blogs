@@ -1,9 +1,13 @@
+"use client";
+import useMobileMenu from "@/contexts/mobileMenuContext";
 import Link from "next/link";
-import React from "react";
 
 const Sidebar = () => {
+  const { menuOpen } = useMobileMenu();
   return (
-    <aside className="fixed left-0 top-[50px] z-40 h-screen w-64 -translate-x-full transition-transform sm:translate-x-0">
+    <aside
+      className={`fixed left-0 top-[50px] z-40 h-screen w-64 -translate-x-full transition-transform sm:translate-x-0 ${menuOpen && "translate-x-0"}`}
+    >
       <div className="h-full overflow-y-auto bg-blue-900 px-3 py-4">
         <ul className="space-y-2 font-medium">
           <li>
@@ -41,6 +45,23 @@ const Sidebar = () => {
               <span className="ms-3 flex-1 whitespace-nowrap">
                 Add Category
               </span>
+            </Link>
+          </li>
+          <li>
+            <Link
+              href="/admin/all-blogs"
+              className="group flex items-center rounded-lg p-2 text-white hover:bg-[#00aa4d]"
+            >
+              <svg
+                className="h-5 w-5 flex-shrink-0 text-white transition duration-75  group-hover:text-gray-900 dark:group-hover:text-white"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor"
+                viewBox="0 0 18 20"
+              >
+                <path d="M17 5.923A1 1 0 0 0 16 5h-3V4a4 4 0 1 0-8 0v1H2a1 1 0 0 0-1 .923L.086 17.846A2 2 0 0 0 2.08 20h13.84a2 2 0 0 0 1.994-2.153L17 5.923ZM7 9a1 1 0 0 1-2 0V7h2v2Zm0-5a2 2 0 1 1 4 0v1H7V4Zm6 5a1 1 0 1 1-2 0V7h2v2Z" />
+              </svg>
+              <span className="ms-3 flex-1 whitespace-nowrap">All Blogs</span>
             </Link>
           </li>
           <li>
