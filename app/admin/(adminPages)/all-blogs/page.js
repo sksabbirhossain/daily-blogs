@@ -6,7 +6,7 @@ const AllBlogs = async () => {
   const { blogs } = await getAllBlogs();
   return (
     <div className="space-y-6">
-      <h1 className="text-xl font-bold shadow px-1 py-2">AllBlogs</h1>
+      <h1 className="text-xl font-bold shadow rounded px-1 py-2">AllBlogs</h1>
       <div className="">
         <div className="relative overflow-x-auto shadow-md sm:rounded-lg">
           <table className="w-full text-sm text-left rtl:text-right text-gray-500">
