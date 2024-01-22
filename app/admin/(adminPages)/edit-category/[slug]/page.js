@@ -1,11 +1,16 @@
-import { addCategory } from "@/actions/category/categoryActions";
+import {
+  getCategory,
+  updateCategory,
+} from "@/actions/category/categoryActions";
 import { redirect } from "next/navigation";
 
-const AddCategory = () => {
-  //handle add category
-  const handleSubmit = async (formdata) => {
+const EditCategory = async ({ params: { slug } }) => {
+  const category = await getCategory(slug);
+
+  //handle update category form
+  const handleSubmit = async (formData) => {
     "use server";
-    await addCategory(formdata);
+    await updateCategory(slug, formData);
     redirect("/admin/categories");
   };
 
@@ -26,7 +31,8 @@ const AddCategory = () => {
                   type="text"
                   name="name"
                   placeholder="Your Category Name Here..."
-                  className="w-full rounded border border-[#00AAA1] px-1 py-2 focus:outline-1 focus:outline-[#00AAA1]"
+                  className="w-full rounded border border-[#00AAA1] bg-gray-50 px-1 py-2 focus:outline-1 focus:outline-[#00AAA1]"
+                  defaultValue={category[0]?.name}
                 />
               </div>
               <div className="space-y-1">
@@ -37,7 +43,7 @@ const AddCategory = () => {
                   type="file"
                   name="picture"
                   placeholder="Your Category Picture Here..."
-                  className="w-full rounded border border-[#00AAA1] px-1 py-2 focus:outline-1 focus:outline-[#00AAA1]"
+                  className="w-full rounded border border-[#00AAA1] bg-gray-50 px-1 py-2 focus:outline-1 focus:outline-[#00AAA1]"
                 />
               </div>
               <div>
@@ -45,7 +51,7 @@ const AddCategory = () => {
                   type="submit"
                   className="w-full rounded border border-[#00AAA1] bg-[#00AAA1] px-5 py-2 text-gray-200 duration-150 ease-linear hover:bg-sky-500 hover:text-white "
                 >
-                  Add
+                  Update
                 </button>
               </div>
             </div>
@@ -56,4 +62,4 @@ const AddCategory = () => {
   );
 };
 
-export default AddCategory;
+export default EditCategory;

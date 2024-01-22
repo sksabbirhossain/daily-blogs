@@ -1,5 +1,8 @@
 import { deleteBlog, getAllBlogs } from "@/actions/blog/blogActions";
-import { allCategory } from "@/actions/category/categoryActions";
+import {
+  allCategory,
+  deleteCategory,
+} from "@/actions/category/categoryActions";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -41,7 +44,7 @@ const Categories = async () => {
                   </th>
                   <td className="px-6 py-4">{category?.name}</td>
                   <td className="px-6 py-4">
-                    <p className="flex gap-3">
+                    <span className="flex gap-3">
                       <Link
                         href={`/admin/edit-category/${category?.slug}`}
                         className="font-medium text-green-700  hover:underline"
@@ -56,7 +59,7 @@ const Categories = async () => {
                           <path d="M5.25 5.25a3 3 0 0 0-3 3v10.5a3 3 0 0 0 3 3h10.5a3 3 0 0 0 3-3V13.5a.75.75 0 0 0-1.5 0v5.25a1.5 1.5 0 0 1-1.5 1.5H5.25a1.5 1.5 0 0 1-1.5-1.5V8.25a1.5 1.5 0 0 1 1.5-1.5h5.25a.75.75 0 0 0 0-1.5H5.25Z" />
                         </svg>
                       </Link>
-                      <form action={deleteBlog}>
+                      <form action={deleteCategory}>
                         <input
                           type="hidden"
                           name="categoryId"
@@ -80,7 +83,7 @@ const Categories = async () => {
                           </svg>
                         </button>
                       </form>
-                    </p>
+                    </span>
                   </td>
                 </tr>
               ))}
