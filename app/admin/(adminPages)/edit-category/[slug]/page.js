@@ -1,4 +1,5 @@
 import {
+  allCategory,
   getCategory,
   updateCategory,
 } from "@/actions/category/categoryActions";
@@ -61,5 +62,11 @@ const EditCategory = async ({ params: { slug } }) => {
     </div>
   );
 };
+
+//generate all category
+export async function generateStaticParams() {
+  const categories = await allCategory();
+  return categories?.map((category) => ({ slug: category.slug }));
+}
 
 export default EditCategory;
