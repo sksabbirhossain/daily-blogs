@@ -1,4 +1,4 @@
-import { getBlog, updateBlog } from "@/actions/blog/blogActions";
+import { getAllBlogs, getBlog, updateBlog } from "@/actions/blog/blogActions";
 import { allCategory } from "@/actions/category/categoryActions";
 import TextEditor from "@/components/admin/Blogs/TextEditor";
 import { redirect } from "next/navigation";
@@ -19,12 +19,12 @@ const EditBlog = async ({ params: { slug } }) => {
 
   return (
     <div className="space-y-6 pb-10">
-      <h1 className="text-xl font-bold px-1 py-2 rounded-md shadow-md">
+      <h1 className="rounded-md px-1 py-2 text-xl font-bold shadow-md">
         Edit Blog
       </h1>
       {/* edit blog form */}
-      <div className="w-full flex justify-center my-5">
-        <div className="w-full max-w-[650px] bg-gray-100 rounded shadow-md p-2 py-5">
+      <div className="my-5 flex w-full justify-center">
+        <div className="w-full max-w-[650px] rounded bg-gray-100 p-2 py-5 shadow-md">
           <form action={handleSubmit}>
             <div className="space-y-3">
               <div className="space-y-1">
@@ -35,7 +35,7 @@ const EditBlog = async ({ params: { slug } }) => {
                   type="text"
                   name="title"
                   placeholder="Your Blog Title Here..."
-                  className="w-full px-1 py-2 rounded border border-[#00AAA1] focus:outline-1 focus:outline-[#00AAA1]"
+                  className="w-full rounded border border-[#00AAA1] px-1 py-2 focus:outline-1 focus:outline-[#00AAA1]"
                   defaultValue={blog?.title}
                   required
                 />
@@ -48,7 +48,7 @@ const EditBlog = async ({ params: { slug } }) => {
                   type="text"
                   name="metaTitle"
                   placeholder="Your Blog Meta Title Here..."
-                  className="w-full px-1 py-2 rounded border border-[#00AAA1] focus:outline-1 focus:outline-[#00AAA1]"
+                  className="w-full rounded border border-[#00AAA1] px-1 py-2 focus:outline-1 focus:outline-[#00AAA1]"
                   defaultValue={blog?.metaTitle}
                   required
                 />
@@ -61,7 +61,7 @@ const EditBlog = async ({ params: { slug } }) => {
                   type="text"
                   name="description"
                   placeholder="Your Blog Meta Description Here..."
-                  className="w-full px-1 py-2 rounded border border-[#00AAA1] focus:outline-1 focus:outline-[#00AAA1]"
+                  className="w-full rounded border border-[#00AAA1] px-1 py-2 focus:outline-1 focus:outline-[#00AAA1]"
                   rows={3}
                   defaultValue={blog?.description}
                   required
@@ -81,7 +81,7 @@ const EditBlog = async ({ params: { slug } }) => {
                 </div>
                 <select
                   name="category"
-                  className="w-full px-1 py-2 rounded border border-[#00AAA1] focus:outline-1 focus:outline-[#00AAA1]"
+                  className="w-full rounded border border-[#00AAA1] px-1 py-2 focus:outline-1 focus:outline-[#00AAA1]"
                   required
                 >
                   <option value={blog?.category?._id}>
@@ -102,13 +102,13 @@ const EditBlog = async ({ params: { slug } }) => {
                   type="file"
                   name="picture"
                   placeholder="Your Category Picture Here..."
-                  className="w-full px-1 py-2 rounded border border-[#00AAA1] focus:outline-1 focus:outline-[#00AAA1]"
+                  className="w-full rounded border border-[#00AAA1] px-1 py-2 focus:outline-1 focus:outline-[#00AAA1]"
                 />
               </div>
               <div>
                 <button
                   type="submit"
-                  className="border border-[#00AAA1] bg-[#00AAA1] hover:text-white hover:bg-sky-500 duration-150 ease-linear text-gray-50 py-2 px-5 w-full rounded "
+                  className="w-full rounded border border-[#00AAA1] bg-[#00AAA1] px-5 py-2 text-gray-50 duration-150 ease-linear hover:bg-sky-500 hover:text-white "
                 >
                   Update
                 </button>
@@ -120,5 +120,11 @@ const EditBlog = async ({ params: { slug } }) => {
     </div>
   );
 };
+
+//generate all blogs
+export async function generateStaticParams() {
+  const { blogs } = await getAllBlogs();
+  return blogs?.map((blog) => ({ slug: blog.slug }));
+}
 
 export default EditBlog;
