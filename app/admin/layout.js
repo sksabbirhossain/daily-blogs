@@ -1,7 +1,5 @@
 import "@/app/globals.css";
-import Providers from "@/utils/Providers";
 import { Poppins } from "next/font/google";
-import { Toaster } from "react-hot-toast";
 
 export const metadata = {
   title: "Daily blogs - admin Login page",
@@ -17,9 +15,7 @@ export default function AdminMainLayout({ children }) {
   return (
     <html lang="en">
       <body className={`${poppins.className} dark:bg-gray-200 dark:text-black`}>
-        <Providers>
-        <Toaster position="top-right" />
-          {children}</Providers>
+        {children}
       </body>
     </html>
   );

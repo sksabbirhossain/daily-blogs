@@ -1,5 +1,7 @@
 import Header from "@/components/admin/Header/Header";
 import Sidebar from "@/components/admin/Sidebar/Sidebar";
+import Providers from "@/utils/Providers";
+import { Toaster } from "react-hot-toast";
 
 export const metadata = {
   title: "Admin | Daily blogs",
@@ -9,11 +11,14 @@ export const metadata = {
 export default function AdminLayout({ children }) {
   return (
     <div>
-      <Header />
-      <Sidebar />
-      <div className="px-2 sm:ml-64 mt-[50px]">
-        <div className="container mx-auto pt-5">{children}</div>
-      </div>
+      <Providers>
+        <Toaster position="top-right" />
+        <Header />
+        <Sidebar />
+        <div className="mt-[50px] px-2 sm:ml-64">
+          <div className="container mx-auto pt-5">{children}</div>
+        </div>
+      </Providers>
     </div>
   );
 }
