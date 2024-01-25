@@ -13,6 +13,7 @@ export const allBlogs = async (page) => {
     console.log(err);
   }
 };
+
 // get all blogs without limit
 export const getAllBlogs = async () => {
   try {
@@ -109,7 +110,6 @@ export const addBlog = async (data) => {
   }
 };
 
-
 //update a blog
 export const updateBlog = async (slug, data) => {
   "use server";
@@ -128,6 +128,32 @@ export const updateBlog = async (slug, data) => {
       method: "PATCH",
       body: formData,
       cache: "no-cache",
+    });
+
+    revalidatePath("/admin/all-blogs");
+  } catch (err) {
+    console.log(err);
+  }
+};
+
+//featured a blog
+export const featuredBlog = async (formData) => {
+  "use server";
+  const blogId = formData.get("blogId");
+  const featuredData = formData.get("featured");
+
+  const data = {
+    featured: !(featuredData === "true"),
+  };
+
+  try {
+    await fetch(`${process.env.BASE_URL}/blog/featured-blog/${blogId}`, {
+      method: "PATCH",
+      body: JSON.stringify(data),
+      cache: "no-cache",
+      headers: {
+        "Content-Type": "application/json",
+      },
     });
 
     revalidatePath("/admin/all-blogs");
