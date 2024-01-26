@@ -11,8 +11,15 @@ const AllBlogs = async () => {
 
   return (
     <div className="space-y-6">
-      <h1 className="rounded px-1 py-2 text-xl font-bold shadow">AllBlogs</h1>
-      <div className="">
+      <div className="flex items-center justify-between rounded bg-gray-100 px-2 py-3 shadow">
+        <h1 className="text-xl font-bold uppercase">All Blogs</h1>
+        <Link href="/admin/add-blog">
+          <button className="rounded bg-green-600 px-2 py-1 text-white">
+            Add Blog
+          </button>
+        </Link>
+      </div>
+      <div>
         <div className="relative overflow-x-auto shadow-md sm:rounded-lg">
           <table className="w-full text-left text-sm text-gray-500 rtl:text-right">
             <thead className="bg-gray-200 text-xs uppercase text-gray-700">
