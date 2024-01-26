@@ -1,5 +1,5 @@
 import { allCategory } from "@/actions/category/categoryActions";
-import logo from "@/public/logo.png";
+import logo from "@/public/darkLogo.png";
 import Image from "next/image";
 import Link from "next/link";
 import SocialIcon from "../SocialIcon/SocialIcon";
