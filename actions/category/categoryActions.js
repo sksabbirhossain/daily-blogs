@@ -1,5 +1,7 @@
 "use server";
 
+import { authOptions } from "@/utils/authOptions";
+import { getServerSession } from "next-auth";
 import { revalidatePath } from "next/cache";
 
 //get all category
@@ -29,6 +31,7 @@ export const getCategory = async (slug) => {
 // add a category
 export const addCategory = async (data) => {
   "use server";
+  const session = await getServerSession(authOptions);
   const formData = new FormData();
   formData.append("name", data.get("name"));
   formData.append("picture", data.get("picture"));
@@ -38,6 +41,9 @@ export const addCategory = async (data) => {
       method: "POST",
       body: formData,
       cache: "no-cache",
+      headers: {
+        Authorization: `Bearer ${session.user?.accessToken}`,
+      },
     });
 
     revalidatePath("/admin/categories");
@@ -49,6 +55,7 @@ export const addCategory = async (data) => {
 //update categroy
 export const updateCategory = async (slug, data) => {
   "use server";
+  const session = await getServerSession(authOptions);
   const formData = new FormData();
   formData.append("name", data.get("name"));
   if (data.get("picture").name !== "undefined") {
@@ -60,6 +67,9 @@ export const updateCategory = async (slug, data) => {
       method: "PATCH",
       body: formData,
       cache: "no-cache",
+      headers: {
+        Authorization: `Bearer ${session.user?.accessToken}`,
+      },
     });
 
     revalidatePath("/admin/categories");
@@ -71,12 +81,16 @@ export const updateCategory = async (slug, data) => {
 //delete a category
 export const deleteCategory = async (formData) => {
   "use server";
+  const session = await getServerSession(authOptions);
   const categoryId = formData.get("categoryId");
 
   try {
     await fetch(`${process.env.BASE_URL}/category/delete/${categoryId}`, {
       method: "DELETE",
       cache: "no-cache",
+      headers: {
+        Authorization: `Bearer ${session.user?.accessToken}`,
+      },
     });
 
     revalidatePath("/admin/categories");

@@ -1,11 +1,22 @@
 import { addBlog } from "@/actions/blog/blogActions";
 import { allCategory } from "@/actions/category/categoryActions";
+import AddBlogButton from "@/components/admin/Blogs/AddBlogButton";
 import TextEditor from "@/components/admin/Blogs/TextEditor";
+import { redirect } from "next/navigation";
 import { Suspense } from "react";
 
 const AddBlog = async () => {
   //get all category
   const categories = await allCategory();
+
+  //handle submit
+  const handleSubmit = async (formData) => {
+    "use server";
+    const result = await addBlog(formData);
+    if (result?._id) {
+      redirect("/admin/all-blogs");
+    }
+  };
   return (
     <div>
       <div className="rounded bg-gray-100 py-3 text-center">
@@ -13,7 +24,7 @@ const AddBlog = async () => {
       </div>
       <div className="my-5 flex w-full justify-center">
         <div className="w-full max-w-[650px] rounded bg-gray-100 p-2 py-5 shadow-md">
-          <form action={addBlog}>
+          <form action={handleSubmit}>
             <div className="space-y-3">
               <div className="space-y-1">
                 <div>
@@ -96,12 +107,7 @@ const AddBlog = async () => {
               </div>
 
               <div>
-                <button
-                  type="submit"
-                  className="w-full rounded border border-[#00AAA1] bg-[#00AAA1] px-5 py-2 text-gray-200 duration-150 ease-linear hover:bg-sky-500 hover:text-white "
-                >
-                  Add
-                </button>
+                <AddBlogButton />
               </div>
             </div>
           </form>

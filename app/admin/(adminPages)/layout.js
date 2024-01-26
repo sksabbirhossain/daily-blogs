@@ -12,12 +12,12 @@ export default function AdminLayout({ children }) {
   return (
     <div>
       <Providers>
-        <Toaster position="top-right" />
         <Header />
         <Sidebar />
         <div className="mt-[50px] px-2 sm:ml-64">
           <div className="container mx-auto pt-5">{children}</div>
         </div>
+        <Toaster position="top-right" />
       </Providers>
     </div>
   );

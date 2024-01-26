@@ -1,5 +1,8 @@
 "use server";
+import { authOptions } from "@/utils/authOptions";
+import { getServerSession } from "next-auth";
 import { revalidatePath } from "next/cache";
+import toast from "react-hot-toast";
 
 // get all blogs
 export const allBlogs = async (page) => {
@@ -91,20 +94,25 @@ export const searchBlogs = async (page, searchQuery) => {
 //add a blog
 export const addBlog = async (data) => {
   "use server";
+  const session = await getServerSession(authOptions);
   const formData = new FormData();
   formData.append("title", data.get("title"));
+  formData.append("metaTitle", data.get("metaTitle"));
   formData.append("description", data.get("description"));
   formData.append("details", data.get("details"));
   formData.append("category", data.get("category"));
   formData.append("picture", data.get("picture"));
 
   try {
-    await fetch(`${process.env.BASE_URL}/add-blog`, {
+    const res = await fetch(`${process.env.BASE_URL}/add-blog`, {
       method: "POST",
       body: formData,
+      headers: {
+        Authorization: `Bearer ${session.user?.accessToken}`,
+      },
     });
-
     revalidatePath("/admin/all-blogs");
+    return res.json();
   } catch (err) {
     console.log(err);
   }
@@ -113,6 +121,7 @@ export const addBlog = async (data) => {
 //update a blog
 export const updateBlog = async (slug, data) => {
   "use server";
+  const session = await getServerSession(authOptions);
   const formData = new FormData();
   formData.append("title", data.get("title"));
   formData.append("metaTitle", data.get("metaTitle"));
@@ -128,6 +137,9 @@ export const updateBlog = async (slug, data) => {
       method: "PATCH",
       body: formData,
       cache: "no-cache",
+      headers: {
+        Authorization: `Bearer ${session.user?.accessToken}`,
+      },
     });
 
     revalidatePath("/admin/all-blogs");
@@ -139,6 +151,7 @@ export const updateBlog = async (slug, data) => {
 //featured a blog
 export const featuredBlog = async (formData) => {
   "use server";
+  const session = await getServerSession(authOptions);
   const blogId = formData.get("blogId");
   const featuredData = formData.get("featured");
 
@@ -153,6 +166,7 @@ export const featuredBlog = async (formData) => {
       cache: "no-cache",
       headers: {
         "Content-Type": "application/json",
+        Authorization: `Bearer ${session.user?.accessToken}`,
       },
     });
 
@@ -165,12 +179,16 @@ export const featuredBlog = async (formData) => {
 //delete a blog
 export const deleteBlog = async (formData) => {
   "use server";
+  const session = await getServerSession(authOptions);
   const blogId = formData.get("blogId");
 
   try {
     await fetch(`${process.env.BASE_URL}/blog/delete-blog/${blogId}`, {
       method: "DELETE",
       cache: "no-cache",
+      headers: {
+        Authorization: `Bearer ${session.user?.accessToken}`,
+      },
     });
 
     revalidatePath("/admin/all-blogs");
