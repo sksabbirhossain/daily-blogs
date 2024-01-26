@@ -1,4 +1,5 @@
-import logo1 from "@/public/logo1.png";
+import logo1 from "@/public/logo.png";
+// import logo1 from "@/public/logo1.png";
 import mobileLogo from "@/public/mobile-logo.png";
 import Image from "next/image";
 import Link from "next/link";
@@ -15,7 +16,7 @@ const MainHeader = () => {
           {/* logo */}
           <div className="hidden sm:flex">
             <Link href="/">
-              <Image src={logo1} width={200} height={50} alt="logo" />
+              <Image src={logo1} width={190} height={150} alt="logo" className="h-[45px] object-cover" />
             </Link>
           </div>
           {/* mobile logo */}
