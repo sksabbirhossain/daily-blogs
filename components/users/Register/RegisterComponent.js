@@ -1,4 +1,5 @@
 "use client";
+import { BASE_URL } from "@/utils/baseUrl";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import React, { useState } from "react";
@@ -21,21 +22,18 @@ const RegisterComponent = () => {
     try {
       setCommonError("");
       setError("");
-      const res = await fetch(
-        `https://daily-blogs-server.vercel.app/api/user/register`,
-        {
-          method: "POST",
-          body: JSON.stringify({
-            name,
-            email,
-            password,
-          }),
-          headers: {
-            "Content-Type": "application/json",
-          },
-          cache: "no-cache",
-        }
-      );
+      const res = await fetch(`${BASE_URL}/user/register`, {
+        method: "POST",
+        body: JSON.stringify({
+          name,
+          email,
+          password,
+        }),
+        headers: {
+          "Content-Type": "application/json",
+        },
+        cache: "no-cache",
+      });
       const result = await res.json();
       if (result.status === 200) {
         router.push("/login");
