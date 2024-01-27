@@ -1,4 +1,5 @@
 "use client";
+import { BASE_URL } from "@/utils/baseUrl";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import React, { useState } from "react";
@@ -21,7 +22,7 @@ const RegisterComponent = () => {
     try {
       setCommonError("");
       setError("");
-      const res = await fetch(`http://localhost:5000/api/user/register`, {
+      const res = await fetch(`${BASE_URL}/user/register`, {
         method: "POST",
         body: JSON.stringify({
           name,
