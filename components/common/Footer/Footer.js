@@ -48,17 +48,17 @@ const Footer = async () => {
                   quick links
                 </h2>
                 <div className="space-y-2 text-sm text-[#555] dark:text-gray-300">
-                  <p className="duration-150 ease-out hover:text-[#00AAA1]">
+                  <p className="duration-150 ease-out hover:text-[#00AAA1] capitalize">
                     <Link href={"/asked-question"}>FAQ</Link>
                   </p>
-                  <p className="duration-150 ease-out hover:text-[#00AAA1]">
+                  <p className="duration-150 ease-out hover:text-[#00AAA1] capitalize">
                     <Link href={"/contact-us"}>Terms & conditions</Link>
                   </p>
-                  <p className="duration-150 ease-out hover:text-[#00AAA1]">
+                  <p className="duration-150 ease-out hover:text-[#00AAA1] capitalize">
                     <Link href={"/contact-us"}>support</Link>
                   </p>
-                  <p className="duration-150 ease-out hover:text-[#00AAA1]">
-                    <Link href={"/contact-us"}>privacy policy</Link>
+                  <p className="duration-150 ease-out hover:text-[#00AAA1] capitalize">
+                    <Link href={"/privacy-policy"}>privacy policy</Link>
                   </p>
                 </div>
               </div>
@@ -97,7 +97,7 @@ const Footer = async () => {
         </div>
       </footer>
       <div className="flex h-[50px] w-full items-center justify-center border-t border-gray-300 bg-[#cbf1f1] text-sm text-[#222] dark:border-gray-700 dark:bg-slate-900 dark:text-gray-100">
-        <p>Copyright © 2023 . All rights reserved.</p>
+        <p>Copyright © 2024 . All rights reserved.</p>
       </div>
     </section>
   );
