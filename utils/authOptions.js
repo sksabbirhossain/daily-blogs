@@ -1,5 +1,6 @@
 import CredentialsProvider from "next-auth/providers/credentials";
 import GoogleProvider from "next-auth/providers/google";
+import { signOut } from "next-auth/react";
 import { BASE_URL } from "./baseUrl";
 
 //cll refresh token
@@ -10,19 +11,29 @@ async function refreshTokenHandler(token) {
       Authorization: `Refresh ${token.refreshToken}`,
     },
   });
+  // Check if the response is unauthorized (status code 401)
+  if (res.status === 401) {
+    await signOut({ redirect: false, callbackUrl: "/login" });
+    return null;
+  }
+
   const response = await res.json();
-  return {
-    ...token,
-    accessToken: response.accessToken,
-    refreshToken: response.refreshToken,
-    expiresIn: response.expiresIn,
-  };
+  if (response.status === 200) {
+    return {
+      ...token,
+      accessToken: response.accessToken,
+      refreshToken: response.refreshToken,
+      expiresIn: response.expiresIn,
+    };
+  } else {
+    await signOut({ redirect: false, callbackUrl: "/login" });
+    return null;
+  }
 }
 
 export const authOptions = {
   pages: {
     signIn: "/login",
-    signOut: "/",
   },
   session: {
     strategy: "jwt",

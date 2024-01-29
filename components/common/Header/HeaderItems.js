@@ -15,8 +15,8 @@ const HeaderItems = () => {
 
   //user signout handler
   const signOutHandler = async () => {
-    router.push("/");
-    await signOut();
+    await signOut({ redirect: false, callbackUrl: "/login" });
+    router.push("/login");
     toast.success("User Signout SuccessFull");
   };
 
