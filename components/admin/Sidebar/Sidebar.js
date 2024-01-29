@@ -26,8 +26,7 @@ function Sidebar() {
   // signout handler
   const signOutHandler = () => {
     toast.success("Logout successfull");
-    router.push("/login");
-    signOut();
+    signOut({ callbackUrl: "/login" });
   };
 
   return (

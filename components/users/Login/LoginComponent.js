@@ -2,7 +2,7 @@
 import GithubLogin from "@/components/users/Login/GithubLogin";
 import { signIn } from "next-auth/react";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import { useState } from "react";
 import toast from "react-hot-toast";
 
@@ -14,6 +14,8 @@ const LoginComponent = () => {
   const [loading, setLoading] = useState(false);
 
   const router = useRouter();
+  const searchParams = useSearchParams();
+  const callBack = searchParams.get("callbackUrl");
 
   const loginHandler = async (e) => {
     e.preventDefault();
@@ -28,7 +30,7 @@ const LoginComponent = () => {
       });
       if (user.ok && user.status === 200) {
         toast.success("User Login Successfully");
-        router.push("/");
+        router.replace(callBack || "/");
         setLoading(false);
       } else {
         setCommonError("Invalid credentials!");
