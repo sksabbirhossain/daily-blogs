@@ -7,7 +7,7 @@ export async function generateMetadata({ searchParams }) {
   const { q } = searchParams;
   const searchQuery = decodeURIComponent(q);
   return {
-    title: `${searchQuery} - Search | Daily Blogs`,
+    title: `${searchQuery} - Search | Fastribo Blogs`,
   };
 }
 

@@ -11,9 +11,9 @@ const poppins = Poppins({
 });
 
 export const metadata = {
-  title: "Daily Blogs - Uncover Daily Insights, Inspiration, and Knowledge",
+  title: "Fastribo Blogs - Uncover Daily Insights, Inspiration, and Knowledge",
   description:
-    "Explore a world of daily wonders with 'Daily Blogs.' Immerse yourself in a diverse range of articles, from insightful reflections to practical tips. Stay informed, inspired, and engaged every day with our thoughtfully curated content. Join us on a journey of continuous learning and discovery. Your daily dose of knowledge and inspiration awaits. Start exploring now!",
+    "Explore a world of daily wonders with Fastribo Blogs. Immerse yourself in a diverse range of articles, from insightful reflections to practical tips. Stay informed, inspired, and engaged every day with our thoughtfully curated content. Join us on a journey of continuous learning and discovery. Your daily dose of knowledge and inspiration awaits. Start exploring now!",
 };
 
 export default function RootLayout({ children }) {

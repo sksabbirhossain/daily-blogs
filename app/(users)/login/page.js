@@ -4,7 +4,7 @@ import { getServerSession } from "next-auth";
 import { redirect } from "next/navigation";
 
 export const metadata = {
-  title: "Login - Daily blogs",
+  title: "Login - Fastribo Blogs",
 };
 
 const LoginPage = async () => {

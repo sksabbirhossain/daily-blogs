@@ -2,7 +2,7 @@ import { allCategory } from "@/actions/category/categoryActions";
 import Link from "next/link";
 
 export const metadata = {
-  title: "Categories - Daily Blogs",
+  title: "Categories - Fastribo Blogs",
 };
 
 const Categories = async () => {
@@ -11,7 +11,9 @@ const Categories = async () => {
   return (
     <section className="mb-10 bg-[#F2F8F7] dark:bg-slate-800">
       <div className="container mx-auto py-5 sm:py-14">
-        <h1 className="text-center text-2xl capitalize sm:pb-4 dark:text-gray-100">categories</h1>
+        <h1 className="text-center text-2xl capitalize sm:pb-4 dark:text-gray-100">
+          categories
+        </h1>
         <div className="flex w-full items-center justify-center py-5">
           <div className="w-full max-w-[900px]">
             <div className="flex w-full flex-wrap justify-center gap-4">
@@ -35,7 +37,7 @@ const Categories = async () => {
                         />
                       </svg>
                     </span>
-                    <h1 className="text-sm font-medium capitalize text-[#222] dark:text-gray-100 group-hover:text-white">
+                    <h1 className="text-sm font-medium capitalize text-[#222] group-hover:text-white dark:text-gray-100">
                       {category.name}
                     </h1>
                   </div>

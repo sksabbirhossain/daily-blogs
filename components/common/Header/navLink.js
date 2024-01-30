@@ -8,8 +8,8 @@ const navlink = [
     link: "/categories",
   },
   {
-    name: "About",
-    link: "/about",
+    name: "About Us",
+    link: "/about-us",
   },
   {
     name: "contact Us",

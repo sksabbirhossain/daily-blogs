@@ -6,9 +6,9 @@ import RecentPostCard from "@/components/users/Home/RecentlyPosted/RecentPostCar
 
 //generate Meta data
 export async function generateMetadata({ params: { slug } }) {
-  const blogs = await getBlogsByCategory(slug);
+  const { blogs } = await getBlogsByCategory(slug);
   return {
-    title: `${blogs[0]?.category?.name} - Daily Blogs`,
+    title: `${blogs[0]?.category?.name} - Fastribo Blogs`,
   };
 }
 
