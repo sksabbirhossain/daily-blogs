@@ -5,7 +5,8 @@ import Link from "next/link";
 import defaultPic from "@/public/default.jpg";
 
 const RecentPostCard = ({ blog }) => {
-  const { title, slug, picture, description, category, updatedAt } = blog || {};
+  const { title, slug, picture, description, category, updatedAt, createdBy } =
+    blog || {};
   return (
     <div>
       <Link href={`/blogs/${slug}`}>
@@ -36,7 +37,9 @@ const RecentPostCard = ({ blog }) => {
                     alt="user"
                   />
                 </span>
-                <span className="ml-1">Admin</span>
+                <span className="ml-1 capitalize">
+                  {createdBy?.name?.substr(0, 5)}
+                </span>
               </span>
               <span className="flex items-center">
                 <span className="pr-1">

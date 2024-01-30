@@ -1,5 +1,5 @@
 export const metadata = {
-  title: "Dashboard - Daily Blogs",
+  title: "Dashboard - Fastribo Blogs",
 };
 
 const Dashboard = () => {

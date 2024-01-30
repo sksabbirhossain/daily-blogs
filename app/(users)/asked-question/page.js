@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 export const metadata = {
-  title: "FAQ - Daily Blogs",
+  title: "FAQ - Fastribo Blogs",
 };
 
 const Faq = () => {
@@ -44,8 +44,8 @@ const Faq = () => {
                 </span>
               </div>
               <p className=" sm:tex-xs px-2 py-2 text-[12px] font-normal text-[#666] dark:text-gray-400">
-                Yes, You can write your own blogs in daily blogs. this Feature
-                is comming soon.
+                Yes, You can write your own blogs in Fastribo Blogs. this
+                Feature is comming soon.
               </p>
             </div>
             {/* 2 */}

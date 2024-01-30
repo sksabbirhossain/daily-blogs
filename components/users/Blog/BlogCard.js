@@ -5,7 +5,8 @@ import Link from "next/link";
 import defaultPic from "@/public/default.jpg";
 
 const BlogCard = ({ blog }) => {
-  const { title, slug, picture, description, category, updatedAt } = blog || {};
+  const { title, slug, picture, description, category, updatedAt, createdBy } =
+    blog || {};
   return (
     <div className=" w-full max-w-[350px]">
       <Link href={`/blogs/${slug}`}>
@@ -33,7 +34,9 @@ const BlogCard = ({ blog }) => {
                     alt="user"
                   />
                 </span>
-                <span className="ml-1">Admin</span>
+                <span className="ml-1 capitalize">
+                  {createdBy?.name?.substr(0, 5)}
+                </span>
               </span>
               <span className="flex items-center">
                 <span className="pr-1">

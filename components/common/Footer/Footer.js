@@ -17,7 +17,7 @@ const Footer = async () => {
                   <Image src={logo} width={200} height={50} alt="logo" />
                 </div>
                 <p className="text-sm text-[#555] dark:text-gray-300">
-                  Explore a world of daily wonders with Daily Blogs. Immerse
+                  Explore a world of daily wonders with Fastribo Blogs. Immerse
                   yourself in a diverse range of articles, from insightful
                   reflections to practical tips.
                 </p>
@@ -48,16 +48,16 @@ const Footer = async () => {
                   quick links
                 </h2>
                 <div className="space-y-2 text-sm text-[#555] dark:text-gray-300">
-                  <p className="duration-150 ease-out hover:text-[#00AAA1] capitalize">
+                  <p className="capitalize duration-150 ease-out hover:text-[#00AAA1]">
                     <Link href={"/asked-question"}>FAQ</Link>
                   </p>
-                  <p className="duration-150 ease-out hover:text-[#00AAA1] capitalize">
+                  <p className="capitalize duration-150 ease-out hover:text-[#00AAA1]">
                     <Link href={"/contact-us"}>Terms & conditions</Link>
                   </p>
-                  <p className="duration-150 ease-out hover:text-[#00AAA1] capitalize">
+                  <p className="capitalize duration-150 ease-out hover:text-[#00AAA1]">
                     <Link href={"/contact-us"}>support</Link>
                   </p>
-                  <p className="duration-150 ease-out hover:text-[#00AAA1] capitalize">
+                  <p className="capitalize duration-150 ease-out hover:text-[#00AAA1]">
                     <Link href={"/privacy-policy"}>privacy policy</Link>
                   </p>
                 </div>
@@ -97,7 +97,7 @@ const Footer = async () => {
         </div>
       </footer>
       <div className="flex h-[50px] w-full items-center justify-center border-t border-gray-300 bg-[#cbf1f1] text-sm text-[#222] dark:border-gray-700 dark:bg-slate-900 dark:text-gray-100">
-        <p>Copyright © 2024 . All rights reserved.</p>
+        <p>Copyright © 2024 Fastribo. All rights reserved.</p>
       </div>
     </section>
   );

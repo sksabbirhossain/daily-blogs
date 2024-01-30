@@ -29,7 +29,8 @@ const Blog = async ({ params: { slug } }) => {
 
   const blog = await blogPromise;
 
-  const { _id, title, category, details, picture, updatedAt } = blog || {};
+  const { _id, title, category, details, picture, updatedAt, createdBy } =
+    blog || {};
 
   return (
     <section className="container mx-auto py-10">
@@ -55,7 +56,7 @@ const Blog = async ({ params: { slug } }) => {
                       alt="user"
                     />
                   </span>
-                  <span className="ml-1">Admin</span>
+                  <span className="ml-1 capitalize">{createdBy?.name}</span>
                 </span>
                 <span className="flex items-center">
                   <span className="pr-1">

@@ -5,7 +5,8 @@ import Link from "next/link";
 import defaultPic from "@/public/default.jpg";
 
 const Card = ({ blog }) => {
-  const { title, slug, category, description, picture, updatedAt } = blog || {};
+  const { title, slug, category, description, picture, updatedAt, createdBy } =
+    blog || {};
   return (
     <Link href={`/blogs/${slug}`}>
       <div className="space-y-1 py-5 md:py-0">
@@ -32,7 +33,9 @@ const Card = ({ blog }) => {
                 alt="user"
               />
             </span>
-            <span className="ml-1">Admin</span>
+            <span className="ml-1 capitalize">
+              {createdBy?.name?.substr(0, 5)}
+            </span>
           </span>
           <span className="flex items-center">
             <span className="pr-1">

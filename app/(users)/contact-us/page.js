@@ -1,7 +1,7 @@
 import SocialIcon from "@/components/common/SocialIcon/SocialIcon";
 
 export const metadata = {
-  title: "Contact Us - Daily Blogs",
+  title: "Contact Us - Fastribo Blogs",
 };
 
 const ContactUs = () => {
@@ -123,7 +123,9 @@ const ContactUs = () => {
                 <p>soon {"->"}</p>
               </div>
               <div className="space-y-3">
-                <h4 className="text-sm font-semibold text-[#222] dark:text-gray-300">Follow on:</h4>
+                <h4 className="text-sm font-semibold text-[#222] dark:text-gray-300">
+                  Follow on:
+                </h4>
                 <SocialIcon />
               </div>
             </div>
