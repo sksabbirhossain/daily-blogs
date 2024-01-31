@@ -1,12 +1,15 @@
 import Link from "next/link";
-import React from "react";
+
+export const metadata = {
+  title: "Terms & Conditions - Fastribo Blogs",
+};
 
 const Terms = () => {
   return (
-    <div className="container mx-auto px-2 py-5 sm:px-0">
+    <div className="container mx-auto px-2 py-5 sm:px-0 sm:py-10">
       <div className="space-y-5">
         <div>
-          <h1 className="text-2xl font-semibold">
+          <h1 className="text-xl font-semibold sm:text-3xl">
             <span className="text-[#00AAA1]">Fastribo Blogs</span> - Terms and
             Conditions
           </h1>
