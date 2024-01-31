@@ -118,13 +118,49 @@ const ContactUs = () => {
                   to connecting with you and fostering meaningful conversations.
                 </p>
               </div>
-              <div className="space-y-1 text-sm">
-                <p>notavailable@gmail.com</p>
-                <p>soon {"->"}</p>
+              <div className="space-y-2 text-sm">
+                <div className="flex items-center gap-x-1">
+                  <span>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      strokeWidth={1.5}
+                      stroke="currentColor"
+                      className="h-5 w-5"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75"
+                      />
+                    </svg>
+                  </span>
+                  <p>info@fastribo.com</p>
+                </div>
+                <div className="flex items-center gap-x-1">
+                  <span>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      strokeWidth={1.5}
+                      stroke="currentColor"
+                      className="h-5 w-5"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M2.25 21h19.5m-18-18v18m10.5-18v18m6-13.5V21M6.75 6.75h.75m-.75 3h.75m-.75 3h.75m3-6h.75m-.75 3h.75m-.75 3h.75M6.75 21v-3.375c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21M3 3h12m-.75 4.5H21m-3.75 3.75h.008v.008h-.008v-.008Zm0 3h.008v.008h-.008v-.008Zm0 3h.008v.008h-.008v-.008Z"
+                      />
+                    </svg>
+                  </span>
+                  <p>Jessore, Khulna, Bangladesh</p>
+                </div>
               </div>
-              <div className="space-y-3">
+              <div className="space-y-2">
                 <h4 className="text-sm font-semibold text-[#222] dark:text-gray-300">
-                  Follow on:
+                  Follow & Contact:
                 </h4>
                 <SocialIcon />
               </div>

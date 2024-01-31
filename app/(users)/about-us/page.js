@@ -10,41 +10,72 @@ const About = () => {
       <div className="mb-10 flex w-full flex-col items-center justify-center bg-[#F2F8F7] px-2 py-10 md:px-0 dark:bg-slate-800">
         <div className="w-full max-w-[665px] space-y-5 text-center">
           <h1 className="text-3xl font-semibold text-[#222] dark:text-gray-200">
-            Fastribo Blogs is a place where you can find your perfect blogs.
+            <span className="text-[#00AAA1]">Fastribo Blogs</span> is a place
+            where you can find your perfect blogs.
           </h1>
 
           <div className="space-y-3 text-sm font-normal text-gray-800 dark:text-gray-300">
             <p>
-              Explore a world of daily wonders with{" "}
+              Welcome to{" "}
               <span className="font-semibold text-[#00AAA1]">
                 Fastribo Blogs
               </span>
-              . Immerse yourself in a diverse range of articles, from insightful
-              reflections to practical tips. Stay informed, inspired, and
-              engaged every day with our thoughtfully curated content. Join us
-              on a journey of continuous learning and discovery. Your daily dose
-              of knowledge and inspiration awaits. Start exploring now!
+              , where we strive to be your go-to destination for insightful and
+              engaging content. Our journey began with a passion for sharing
+              knowledge and creating a platform where individuals can discover
+              valuable information.
             </p>
-            <h3 className="text-lg font-medium">
-              The best ideas can change who we are.
-            </h3>
+            <h3 className="text-lg font-medium">Our Mission</h3>
             <p>
-              In the ever-evolving tapestry of human existence, the power of
-              ideas stands as a transformative force, reshaping the very essence
-              of who we are. This profound statement encapsulates the profound
-              impact that innovative and groundbreaking ideas can have on
-              individuals and society at large. Ideas are the seeds of progress,
-              capable of sprouting into revolutions that redefine our
-              perspectives, beliefs, and aspirations.
+              At{" "}
+              <span className="font-semibold text-[#00AAA1]">
+                Fastribo Blogs
+              </span>
+              , our mission is simple – to provide our audience with
+              high-quality, informative, and entertaining blog posts. We believe
+              in the power of knowledge to inspire, educate, and connect people
+              from all walks of life.
+            </p>
+            <h3 className="text-lg font-medium">The Team</h3>
+            <p>
+              Our dedicated team of writers, editors, and technical experts work
+              collaboratively to bring you content that covers a wide range of
+              topics. We are committed to maintaining the highest standards of
+              accuracy and integrity in all our publications.
+            </p>
+            <h3 className="text-lg font-medium">Transparency</h3>
+            <p>
+              We believe in transparency and want our readers to feel confident
+              in the information they find on our site. Our content is free from
+              bias, and we clearly disclose any affiliate relationships to
+              maintain trust with our audience.
+            </p>
+            <h3 className="text-lg font-medium">Community Engagement</h3>
+            <p>
+              <span className="text-[#00AAA1]">Fastribo Blogs</span> is not just a platform; it's a community. We
+              encourage our readers to share their thoughts, ask questions, and
+              engage with our content. Your feedback is invaluable and helps us
+              continuously improve.
+            </p>
+            <h3 className="text-lg font-medium">Join Us on Our Journey</h3>
+            <p>
+              Whether you're a seasoned reader or a first-time visitor, we
+              invite you to join us on our journey of exploration and discovery.
+              <span className="text-[#00AAA1]">Fastribo Blogs</span> is more than just a website; it's a place where
+              knowledge meets curiosity, and connections are made.
+            </p>{" "}
+            <p>
+              Thank you for being part of the Fastribo community. We look
+              forward to sharing more exciting content with you!
             </p>
           </div>
         </div>
       </div>
 
       <div className="flex items-center justify-center">
-        <div className="mb-10 flex w-full max-w-[1076px] flex-col items-center justify-center space-y-3 rounded-md bg-[#F2F8F7] px-2 py-10 md:px-0 dark:bg-slate-800 text-center">
+        <div className="mb-10 flex w-full max-w-[1076px] flex-col items-center justify-center space-y-3 rounded-md bg-[#F2F8F7] px-2 py-10 text-center md:px-0 dark:bg-slate-800">
           <h1 className="text-3xl font-semibold capitalize text-[#222] dark:text-gray-200">
-            want to write on Fastribo Blogs?
+            want to write on <span className="text-[#00AAA1]">Fastribo Blogs</span>?
           </h1>
           <p className="text-sm font-medium capitalize text-[#555] dark:text-gray-400">
             there have some simple steps, by following these steps you can be a
