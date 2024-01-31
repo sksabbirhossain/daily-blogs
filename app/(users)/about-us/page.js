@@ -52,17 +52,18 @@ const About = () => {
             </p>
             <h3 className="text-lg font-medium">Community Engagement</h3>
             <p>
-              <span className="text-[#00AAA1]">Fastribo Blogs</span> is not just a platform; it's a community. We
-              encourage our readers to share their thoughts, ask questions, and
-              engage with our content. Your feedback is invaluable and helps us
-              continuously improve.
+              <span className="text-[#00AAA1]">Fastribo Blogs</span> is not just
+              a platform; it`&apos;`s a community. We encourage our readers to
+              share their thoughts, ask questions, and engage with our content.
+              Your feedback is invaluable and helps us continuously improve.
             </p>
             <h3 className="text-lg font-medium">Join Us on Our Journey</h3>
             <p>
-              Whether you're a seasoned reader or a first-time visitor, we
+              Whether you`&apos;`re a seasoned reader or a first-time visitor, we
               invite you to join us on our journey of exploration and discovery.
-              <span className="text-[#00AAA1]">Fastribo Blogs</span> is more than just a website; it's a place where
-              knowledge meets curiosity, and connections are made.
+              <span className="text-[#00AAA1]">Fastribo Blogs</span> is more
+              than just a website; it`&apos;`s a place where knowledge meets curiosity,
+              and connections are made.
             </p>{" "}
             <p>
               Thank you for being part of the Fastribo community. We look
@@ -75,7 +76,8 @@ const About = () => {
       <div className="flex items-center justify-center">
         <div className="mb-10 flex w-full max-w-[1076px] flex-col items-center justify-center space-y-3 rounded-md bg-[#F2F8F7] px-2 py-10 text-center md:px-0 dark:bg-slate-800">
           <h1 className="text-3xl font-semibold capitalize text-[#222] dark:text-gray-200">
-            want to write on <span className="text-[#00AAA1]">Fastribo Blogs</span>?
+            want to write on{" "}
+            <span className="text-[#00AAA1]">Fastribo Blogs</span>?
           </h1>
           <p className="text-sm font-medium capitalize text-[#555] dark:text-gray-400">
             there have some simple steps, by following these steps you can be a
