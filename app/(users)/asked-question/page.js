@@ -221,7 +221,7 @@ const Faq = () => {
                 </span>
               </div>
               <p className="px-2 py-2 text-[15px] font-normal text-[#666] dark:text-gray-300">
-                We welcome guest contributions. If you're interested in
+                We welcome guest contributions. If you`&apos;`re interested in
                 submitting a guest post, please review our Guest Post Guidelines
                 for details on the submission process and requirements.
               </p>

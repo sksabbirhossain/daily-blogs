@@ -65,10 +65,10 @@ const Terms = () => {
           <p className="dark:text-gray-300">
             <span className="text-[#00AAA1]">Fastribo Blogs</span> may display
             Google Ads on its website. These ads are provided by Google and are
-            subject to Google's terms and privacy policies. We do not endorse
-            the products or services advertised in these ads. Your interactions
-            with third-party advertisers on our website are solely between you
-            and the advertiser.
+            subject to Google`&apos;`s terms and privacy policies. We do not
+            endorse the products or services advertised in these ads. Your
+            interactions with third-party advertisers on our website are solely
+            between you and the advertiser.
           </p>
         </div>
 
