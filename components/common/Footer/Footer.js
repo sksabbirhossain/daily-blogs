@@ -52,7 +52,7 @@ const Footer = async () => {
                     <Link href={"/asked-question"}>FAQ</Link>
                   </p>
                   <p className="capitalize duration-150 ease-out hover:text-[#00AAA1]">
-                    <Link href={"/contact-us"}>Terms & conditions</Link>
+                    <Link href={"/terms"}>Terms & conditions</Link>
                   </p>
                   <p className="capitalize duration-150 ease-out hover:text-[#00AAA1]">
                     <Link href={"/contact-us"}>support</Link>
