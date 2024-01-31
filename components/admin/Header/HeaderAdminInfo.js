@@ -7,7 +7,7 @@ const HeaderAdminInfo = () => {
   const { data: session } = useSession();
   return (
     <div className="flex items-center gap-2">
-      <h1 className="font-medium capitalize dark:text-black">
+      <h1 className="font-semibold text-sm capitalize dark:text-black">
         {session?.user?.name}
       </h1>
       <Image
@@ -15,7 +15,7 @@ const HeaderAdminInfo = () => {
         alt="user"
         width={100}
         height={100}
-        className="h-10 w-10 rounded-full ring-2"
+        className="h-8 w-8 rounded-full ring-2 ring-[#00AAA1]"
       />
     </div>
   );
