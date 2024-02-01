@@ -10,6 +10,7 @@ import moment from "moment";
 import Image from "next/image";
 import { Suspense } from "react";
 
+import CommentSection from "@/components/users/Blog/Comment/CommentSection";
 import defaultPic from "@/public/default.jpg";
 
 //generate Meta data
@@ -36,7 +37,7 @@ const Blog = async ({ params: { slug } }) => {
     <section className="container mx-auto py-10">
       <div className="md:gird-cols-2 grid grid-cols-1 gap-5 px-2 sm:px-0 md:gap-7 lg:grid-cols-3">
         <div className="md:col-span-2">
-          <div className="space-y-5 sm:space-y-8">
+          <div className="w-full space-y-5 sm:space-y-8">
             {/* heading */}
             <div className="space-y-2">
               <p className="text-xs font-semibold text-[#00AAA1]">
@@ -103,6 +104,10 @@ const Blog = async ({ params: { slug } }) => {
             </div>
             {/* google adds */}
             {/* <div className="h-44 w-full rounded-md bg-[#00AAA1]"></div> */}
+
+            {/* all comments for this blog */}
+            <CommentSection slug={slug} />
+
             {/* related Blogs */}
             <Suspense fallback="<h1>Related Blogs is Loading...</h1>">
               <RelatedBlogs
