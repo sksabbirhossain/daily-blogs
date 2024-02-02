@@ -4,31 +4,22 @@ import { authOptions } from "@/utils/authOptions";
 import { getServerSession } from "next-auth";
 import { revalidatePath } from "next/cache";
 
-//get all category
-export const allCategory = async () => {
+//get comments by blogId
+export const getComments = async (blogId, page) => {
   try {
-    const res = await fetch(`${process.env.BASE_URL}/categories`, {
-      next: { revalidate: 3600 },
-    });
+    const res = await fetch(
+      `${process.env.BASE_URL}/comments?blogId=${blogId}&page=${page}&limit=${"5"}`,
+      {
+        cache: "no-cache",
+      },
+    );
     return res.json();
   } catch (err) {
     console.log(err);
   }
 };
 
-//get a category
-export const getComments = async (blogId) => {
-  try {
-    const res = await fetch(`${process.env.BASE_URL}/comments/${blogId}`, {
-      next: { revalidate: 3600 },
-    });
-    return res.json();
-  } catch (err) {
-    console.log(err);
-  }
-};
-
-// add a category
+// add a comments
 export const addComment = async (data) => {
   const session = await getServerSession(authOptions);
   try {
@@ -47,7 +38,7 @@ export const addComment = async (data) => {
   }
 };
 
-//update categroy
+//update comments
 export const updateComment = async (slug, data) => {
   "use server";
   const session = await getServerSession(authOptions);
@@ -73,7 +64,7 @@ export const updateComment = async (slug, data) => {
   }
 };
 
-//delete a category
+//delete a comments
 export const deleteComment = async (formData) => {
   "use server";
   const session = await getServerSession(authOptions);

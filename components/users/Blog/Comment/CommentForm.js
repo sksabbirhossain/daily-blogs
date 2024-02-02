@@ -5,6 +5,7 @@ import defaultPic from "@/public/default.jpg";
 import { useSession } from "next-auth/react";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 import toast from "react-hot-toast";
 
@@ -12,6 +13,8 @@ const CommentForm = ({ slug, blogId }) => {
   const { data: session } = useSession();
   const [comment, setComment] = useState("");
   const [loading, setLoading] = useState(false);
+
+  const router = useRouter();
 
   //add comment handler
   const handleSubmit = async (e) => {
@@ -26,9 +29,11 @@ const CommentForm = ({ slug, blogId }) => {
       if (result._id) {
         setLoading(false);
         setComment("");
+        router.refresh();
         toast.success("Comment Added Successfull!");
       }
     } catch (err) {
+      console.log(err);
       setLoading(false);
       toast.error("Please Try Again!");
     }

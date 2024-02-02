@@ -4,7 +4,7 @@ const Pagination = ({ totalPage, currentPage }) => {
   return (
     <div className="flex w-full justify-center py-7 sm:py-10">
       <div className="flex">
-        <Link href={`?page=${currentPage - 1}`}>
+        <Link href={`?page=${currentPage - 1}`} scroll={false}>
           <button
             disabled={currentPage == 1}
             className="me-3 flex h-8 items-center justify-center rounded-md border border-gray-300 bg-white px-3 text-sm font-medium text-gray-500 hover:bg-[#00AAA1] hover:text-white disabled:bg-gray-100 disabled:text-gray-300 dark:border-gray-700 dark:bg-slate-800 dark:text-gray-200 dark:disabled:bg-gray-500"
@@ -33,6 +33,7 @@ const Pagination = ({ totalPage, currentPage }) => {
         {[...Array(totalPage)].map((_, i) => (
           <Link
             href={`?page=${i + 1}`}
+            scroll={false}
             className={`${
               currentPage == i + 1
                 ? "bg-[#00AAA1] text-white"
@@ -44,7 +45,7 @@ const Pagination = ({ totalPage, currentPage }) => {
           </Link>
         ))}
 
-        <Link href={`?page=${currentPage + 1}`}>
+        <Link href={`?page=${currentPage + 1}`} scroll={false}>
           <button
             disabled={currentPage === totalPage}
             className="me-3 flex h-8 items-center justify-center rounded-md border border-gray-300 bg-white px-3 text-sm font-medium text-gray-500 hover:bg-[#00AAA1] hover:text-white disabled:bg-gray-100 disabled:text-gray-300 dark:border-gray-700 dark:bg-slate-800 dark:text-gray-200 dark:disabled:bg-gray-500"

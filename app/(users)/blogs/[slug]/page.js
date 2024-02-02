@@ -22,7 +22,7 @@ export async function generateMetadata({ params: { slug } }) {
   };
 }
 
-const Blog = async ({ params: { slug } }) => {
+const Blog = async ({ params: { slug }, searchParams }) => {
   //get a blog
   const blogPromise = getBlog(slug);
   // get related blogs
@@ -106,7 +106,11 @@ const Blog = async ({ params: { slug } }) => {
             {/* <div className="h-44 w-full rounded-md bg-[#00AAA1]"></div> */}
 
             {/* all comments for this blog */}
-            <CommentSection slug={slug} blogId={_id} />
+            <CommentSection
+              slug={slug}
+              blogId={_id}
+              searchParams={searchParams}
+            />
 
             {/* related Blogs */}
             <Suspense fallback="<h1>Related Blogs is Loading...</h1>">
