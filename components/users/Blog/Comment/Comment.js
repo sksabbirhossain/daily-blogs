@@ -11,12 +11,15 @@ const Comment = () => {
         alt="user image"
         className="mt-1 h-10 w-10 rounded-full ring-2 ring-[#00AAA1] "
       />
-      <p className="text-sm dark:text-gray-300">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi voluptate
-        iste inventore dolorum, minima reprehenderit vero nobis doloremque hic
-        perspiciatis soluta eveniet sequi cupiditate distinctio, impedit quis
-        sunt adipisci velit!
-      </p>
+      <div className="space-y-1">
+        <h3 className="text-sm font-semibold capitalize">Sk sabbir hossain</h3>
+        <p className="text-sm dark:text-gray-300">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi
+          voluptate iste inventore dolorum, minima reprehenderit vero nobis
+          doloremque hic perspiciatis soluta eveniet sequi cupiditate
+          distinctio, impedit quis sunt adipisci velit!
+        </p>
+      </div>
     </div>
   );
 };

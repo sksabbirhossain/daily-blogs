@@ -106,7 +106,7 @@ const Blog = async ({ params: { slug } }) => {
             {/* <div className="h-44 w-full rounded-md bg-[#00AAA1]"></div> */}
 
             {/* all comments for this blog */}
-            <CommentSection slug={slug} />
+            <CommentSection slug={slug} blogId={_id} />
 
             {/* related Blogs */}
             <Suspense fallback="<h1>Related Blogs is Loading...</h1>">
