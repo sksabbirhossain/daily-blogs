@@ -33,7 +33,9 @@ const CommentSection = async ({ slug, blogId, searchParams }) => {
           </div>
         )}
         <div>
-          <Pagination currentPage={currentPage} totalPage={totalPages} />
+          {totalComments > 0 && (
+            <Pagination currentPage={currentPage} totalPage={totalPages} />
+          )}
         </div>
       </div>
     </div>
