@@ -4,6 +4,7 @@ import Providers from "@/utils/Providers";
 import { Poppins } from "next/font/google";
 import { Toaster } from "react-hot-toast";
 import "../globals.css";
+import ScrollTop from "@/components/common/ScrollTop/ScrollTop";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -24,6 +25,7 @@ export default function RootLayout({ children }) {
           <Toaster position="top-right" />
           <MainHeader />
           {children}
+          <ScrollTop/>
           <Footer />
         </Providers>
       </body>
