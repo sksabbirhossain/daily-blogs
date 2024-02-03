@@ -97,7 +97,13 @@ const Footer = async () => {
         </div>
       </footer>
       <div className="flex h-[50px] w-full items-center justify-center border-t border-gray-300 bg-[#cbf1f1] text-sm text-[#222] dark:border-gray-700 dark:bg-slate-900 dark:text-gray-100">
-        <p>Copyright © 2024 Fastribo. All rights reserved.</p>
+        <p>
+          Copyright © 2024{" "}
+          <a href="https://fastribo.com" target="_blank">
+            <span className="text-[#00AAA1]">Fastribo</span>
+          </a>
+          . All rights reserved.
+        </p>
       </div>
     </section>
   );
