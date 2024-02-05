@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 export const metadata = {
-  title: "FAQ - Fastribo Blogs",
+  title: "FAQ - fastrebo Blogs",
 };
 
 const Faq = () => {
@@ -24,7 +24,7 @@ const Faq = () => {
             <div className="rounded-md bg-[#F2F8F7] dark:bg-slate-800">
               <div className="flex items-center justify-between rounded-ss-md rounded-tr-md bg-[#DFF1F0] px-2 py-2 dark:bg-slate-700 ">
                 <h2 className="text-xl font-bold capitalize text-[#222] sm:text-lg sm:font-medium dark:text-gray-200">
-                  What is Fastribo Blogs about?
+                  What is fastrebo Blogs about?
                 </h2>
                 <span className="cursor-pointer pe-3 font-bold text-[#00AAA1]">
                   <svg
@@ -44,7 +44,7 @@ const Faq = () => {
                 </span>
               </div>
               <p className="px-2 py-2 text-[15px] font-normal text-[#666] dark:text-gray-300">
-                Fastribo Blogs is a platform that focuses on delivering
+                fastrebo Blogs is a platform that focuses on delivering
                 informative and engaging blog posts. We cover a variety of
                 topics, including [provide specific categories or topics your
                 blog covers].
@@ -54,7 +54,7 @@ const Faq = () => {
             <div className="rounded-md bg-[#F2F8F7] dark:bg-slate-800">
               <div className="flex items-center justify-between rounded-ss-md rounded-tr-md bg-[#DFF1F0] px-2 py-2 dark:bg-slate-700 ">
                 <h2 className="text-xl font-bold capitalize text-[#222] sm:text-lg sm:font-medium dark:text-gray-200">
-                  How does affiliate marketing work on Fastribo Blogs?
+                  How does affiliate marketing work on fastrebo Blogs?
                 </h2>
                 <span className="cursor-pointer pe-3 font-bold text-[#00AAA1]">
                   <svg
@@ -74,7 +74,7 @@ const Faq = () => {
                 </span>
               </div>
               <p className="px-2 py-2 text-[15px] font-normal text-[#666] dark:text-gray-300">
-                Fastribo Blogs participates in affiliate marketing programs.
+                fastrebo Blogs participates in affiliate marketing programs.
                 When you click on an affiliate link on our site and make a
                 purchase, we may earn a commission. This commission helps
                 support the maintenance and improvement of our website.
@@ -144,7 +144,7 @@ const Faq = () => {
             <div className="rounded-md bg-[#F2F8F7] dark:bg-slate-800">
               <div className="flex items-center justify-between rounded-ss-md rounded-tr-md bg-[#DFF1F0] px-2 py-2 dark:bg-slate-700 ">
                 <h2 className="text-xl font-bold capitalize text-[#222] sm:text-lg sm:font-medium dark:text-gray-200">
-                  How can I disable cookies on Fastribo Blogs?
+                  How can I disable cookies on fastrebo Blogs?
                 </h2>
                 <span className="cursor-pointer pe-3 font-bold text-[#00AAA1]">
                   <svg
@@ -172,7 +172,7 @@ const Faq = () => {
             <div className="rounded-md bg-[#F2F8F7] dark:bg-slate-800">
               <div className="flex items-center justify-between rounded-ss-md rounded-tr-md bg-[#DFF1F0] px-2 py-2 dark:bg-slate-700 ">
                 <h2 className="text-xl font-bold capitalize text-[#222] sm:text-lg sm:font-medium dark:text-gray-200">
-                  Can I advertise on Fastribo Blogs?
+                  Can I advertise on fastrebo Blogs?
                 </h2>
                 <span className="cursor-pointer pe-3 font-bold text-[#00AAA1]">
                   <svg
@@ -193,7 +193,7 @@ const Faq = () => {
               </div>
               <p className="px-2 py-2 text-[15px] font-normal text-[#666] dark:text-gray-300">
                 For information about advertising opportunities, please contact
-                us at [advertise@fastribo.com]. We offer various advertising
+                us at [advertise@fastrebo.com]. We offer various advertising
                 options, including Google Ads, to reach our audience.
               </p>
             </div>
@@ -252,7 +252,7 @@ const Faq = () => {
               <p className="px-2 py-2 text-[15px] font-normal text-[#666] dark:text-gray-300">
                 If you encounter any technical issues or have suggestions for
                 improvement, please reach out to our technical support team at
-                [techsupport@fastribo.com].
+                [techsupport@fastrebo.com].
               </p>
             </div>
 
@@ -279,7 +279,7 @@ const Faq = () => {
                 </span>
               </div>
               <p className="px-2 py-2 text-[15px] font-normal text-[#666] dark:text-gray-300">
-                Currently, Fastribo Blogs is accessible through web browsers on
+                Currently, fastrebo Blogs is accessible through web browsers on
                 mobile devices. We do not have a dedicated mobile app at this
                 time.
               </p>
@@ -288,7 +288,7 @@ const Faq = () => {
             <div className="rounded-md bg-[#F2F8F7] dark:bg-slate-800">
               <div className="flex items-center justify-between rounded-ss-md rounded-tr-md bg-[#DFF1F0] px-2 py-2 dark:bg-slate-700 ">
                 <h2 className="text-xl font-bold capitalize text-[#222] sm:text-lg sm:font-medium dark:text-gray-200">
-                  How can I contact Fastribo Blogs for further assistance?
+                  How can I contact fastrebo Blogs for further assistance?
                 </h2>
                 <span className="cursor-pointer pe-3 font-bold text-[#00AAA1]">
                   <svg
@@ -308,7 +308,7 @@ const Faq = () => {
                 </span>
               </div>
               <p className="px-2 py-2 text-[15px] font-normal text-[#666] dark:text-gray-300">
-                For general inquiries, you can reach us at [info@fastribo.com].
+                For general inquiries, you can reach us at [info@fastrebo.com].
                 Visit our{" "}
                 <Link href={"/contact-us"} className="text-[#00AAA1]">
                   Contact Us
@@ -319,7 +319,7 @@ const Faq = () => {
           </div>
 
           {/* another question */}
-          <div className="space-y-3 rounded-md bg-[#F2F8F7] dark:bg-slate-700 py-5 text-center sm:py-10">
+          <div className="space-y-3 rounded-md bg-[#F2F8F7] py-5 text-center sm:py-10 dark:bg-slate-700">
             <h2 className="text-lg font-medium text-[#222] sm:text-xl dark:text-gray-300">
               Cant find an answer to your question?
             </h2>

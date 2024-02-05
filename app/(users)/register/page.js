@@ -4,7 +4,7 @@ import { getServerSession } from "next-auth";
 import { redirect } from "next/navigation";
 
 export const metadata = {
-  title: "Register Accout - Fastribo Blogs",
+  title: "Register Accout - fastrebo Blogs",
 };
 
 const Register = async () => {

@@ -23,7 +23,7 @@ const Logo = () => {
             width={190}
             height={150}
             alt="logo"
-            className="h-[45px] object-cover"
+            className="h-[40px] object-contain"
           />
         ) : (
           <Image
@@ -31,7 +31,7 @@ const Logo = () => {
             width={190}
             height={150}
             alt="logo"
-            className="h-[45px] object-cover"
+            className="h-[40px] object-contain"
           />
         )}
       </Link>

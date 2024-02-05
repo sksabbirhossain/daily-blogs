@@ -12,6 +12,7 @@ import { Suspense } from "react";
 
 import CommentSection from "@/components/users/Blog/Comment/CommentSection";
 import defaultPic from "@/public/default.jpg";
+import { notFound, redirect } from "next/navigation";
 
 //generate Meta data
 export async function generateMetadata({ params: { slug } }) {
@@ -19,6 +20,13 @@ export async function generateMetadata({ params: { slug } }) {
   return {
     title: blog?.metaTitle,
     description: blog?.description,
+    openGraph: {
+      images: [
+        {
+          url: blog?.picture,
+        },
+      ],
+    },
   };
 }
 
@@ -29,6 +37,10 @@ const Blog = async ({ params: { slug }, searchParams }) => {
   const relatedBlogsPromise = getRelatedBlogs(slug);
 
   const blog = await blogPromise;
+
+  if (blog?.status === 404) {
+    redirect("/");
+  }
 
   const { _id, title, category, details, picture, updatedAt, createdBy } =
     blog || {};

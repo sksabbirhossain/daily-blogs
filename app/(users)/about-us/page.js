@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 export const metadata = {
-  title: "About Us - Fastribo Blogs",
+  title: "About Us - fastrebo Blogs",
 };
 
 const About = () => {
@@ -10,7 +10,7 @@ const About = () => {
       <div className="mb-10 flex w-full flex-col items-center justify-center bg-[#F2F8F7] px-2 py-10 md:px-0 dark:bg-slate-800">
         <div className="w-full max-w-[665px] space-y-5 text-center">
           <h1 className="text-3xl font-semibold text-[#222] dark:text-gray-200">
-            <span className="text-[#00AAA1]">Fastribo Blogs</span> is a place
+            <span className="text-[#00AAA1]">fastrebo Blogs</span> is a place
             where you can find your perfect blogs.
           </h1>
 
@@ -18,7 +18,7 @@ const About = () => {
             <p>
               Welcome to{" "}
               <span className="font-semibold text-[#00AAA1]">
-                Fastribo Blogs
+                fastrebo Blogs
               </span>
               , where we strive to be your go-to destination for insightful and
               engaging content. Our journey began with a passion for sharing
@@ -29,7 +29,7 @@ const About = () => {
             <p>
               At{" "}
               <span className="font-semibold text-[#00AAA1]">
-                Fastribo Blogs
+                fastrebo Blogs
               </span>
               , our mission is simple – to provide our audience with
               high-quality, informative, and entertaining blog posts. We believe
@@ -52,21 +52,22 @@ const About = () => {
             </p>
             <h3 className="text-lg font-medium">Community Engagement</h3>
             <p>
-              <span className="text-[#00AAA1]">Fastribo Blogs</span> is not just
+              <span className="text-[#00AAA1]">fastrebo Blogs</span> is not just
               a platform; it`&apos;`s a community. We encourage our readers to
               share their thoughts, ask questions, and engage with our content.
               Your feedback is invaluable and helps us continuously improve.
             </p>
             <h3 className="text-lg font-medium">Join Us on Our Journey</h3>
             <p>
-              Whether you`&apos;`re a seasoned reader or a first-time visitor, we
-              invite you to join us on our journey of exploration and discovery.
-              <span className="text-[#00AAA1]">Fastribo Blogs</span> is more
-              than just a website; it`&apos;`s a place where knowledge meets curiosity,
-              and connections are made.
+              Whether you`&apos;`re a seasoned reader or a first-time visitor,
+              we invite you to join us on our journey of exploration and
+              discovery.
+              <span className="text-[#00AAA1]">fastrebo Blogs</span> is more
+              than just a website; it`&apos;`s a place where knowledge meets
+              curiosity, and connections are made.
             </p>{" "}
             <p>
-              Thank you for being part of the Fastribo community. We look
+              Thank you for being part of the fastrebo community. We look
               forward to sharing more exciting content with you!
             </p>
           </div>
@@ -77,14 +78,14 @@ const About = () => {
         <div className="mb-10 flex w-full max-w-[1076px] flex-col items-center justify-center space-y-3 rounded-md bg-[#F2F8F7] px-2 py-10 text-center md:px-0 dark:bg-slate-800">
           <h1 className="text-3xl font-semibold capitalize text-[#222] dark:text-gray-200">
             want to write on{" "}
-            <span className="text-[#00AAA1]">Fastribo Blogs</span>?
+            <span className="text-[#00AAA1]">fastrebo Blogs</span>?
           </h1>
           <p className="text-sm font-medium capitalize text-[#555] dark:text-gray-400">
             there have some simple steps, by following these steps you can be a
             regular author in
             <span className="font-semibold text-[#00AAA1]">
               {" "}
-              Fastribo Blogs
+              fastrebo Blogs
             </span>
             .
           </p>
@@ -104,7 +105,7 @@ const About = () => {
                   d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6H10"
                 />
               </svg>
-              <span>Write on Fastribo Bolgs</span>
+              <span>Write on fastrebo Bolgs</span>
             </button>
           </Link>
         </div>

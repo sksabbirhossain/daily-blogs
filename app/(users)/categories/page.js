@@ -2,7 +2,7 @@ import { allCategory } from "@/actions/category/categoryActions";
 import Link from "next/link";
 
 export const metadata = {
-  title: "Categories - Fastribo Blogs",
+  title: "Categories - fastrebo Blogs",
 };
 
 const Categories = async () => {

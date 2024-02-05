@@ -1,10 +1,10 @@
 import Footer from "@/components/common/Footer/Footer";
 import MainHeader from "@/components/common/Header/MainHeader";
+import ScrollTop from "@/components/common/ScrollTop/ScrollTop";
 import Providers from "@/utils/Providers";
 import { Poppins } from "next/font/google";
 import { Toaster } from "react-hot-toast";
 import "../globals.css";
-import ScrollTop from "@/components/common/ScrollTop/ScrollTop";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -12,9 +12,16 @@ const poppins = Poppins({
 });
 
 export const metadata = {
-  title: "Fastribo Blogs - Uncover Daily Insights, Inspiration, and Knowledge",
+  title: {
+    default:
+      "fastrebo Blogs - Uncover Daily Insights, Inspiration, and Knowledge",
+    template: "%s - fastrebo Blogs",
+  },
   description:
-    "Explore a world of daily wonders with Fastribo Blogs. Immerse yourself in a diverse range of articles, from insightful reflections to practical tips. Stay informed, inspired, and engaged every day with our thoughtfully curated content. Join us on a journey of continuous learning and discovery. Your daily dose of knowledge and inspiration awaits. Start exploring now!",
+    "Explore a world of daily wonders with fastrebo Blogs. Immerse yourself in a diverse range of articles, from insightful reflections to practical tips. Stay informed, inspired, and engaged every day with our thoughtfully curated content. Join us on a journey of continuous learning and discovery. Your daily dose of knowledge and inspiration awaits. Start exploring now!",
+  twitter: {
+    card: "summary_large_image",
+  },
 };
 
 export default function RootLayout({ children }) {
@@ -25,7 +32,7 @@ export default function RootLayout({ children }) {
           <Toaster position="top-right" />
           <MainHeader />
           {children}
-          <ScrollTop/>
+          <ScrollTop />
           <Footer />
         </Providers>
       </body>

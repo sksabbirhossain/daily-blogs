@@ -27,7 +27,7 @@ const CommentSection = async ({ slug, blogId, searchParams }) => {
         {comments?.map((comment) => (
           <Comment key={comment._id} comment={comment} />
         ))}
-        {comments.length <= 0 && (
+        {comments?.length <= 0 && (
           <div className="text-center text-sm capitalize">
             <p>please write your comment !!</p>
           </div>
