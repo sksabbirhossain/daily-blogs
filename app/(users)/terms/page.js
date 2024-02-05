@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 export const metadata = {
-  title: "Terms & Conditions - Fastribo Blogs",
+  title: "Terms & Conditions - fastrebo Blogs",
 };
 
 const Terms = () => {
@@ -10,16 +10,16 @@ const Terms = () => {
       <div className="space-y-5">
         <div>
           <h1 className="text-xl font-semibold sm:text-3xl">
-            <span className="text-[#00AAA1]">Fastribo Blogs</span> - Terms and
+            <span className="text-[#00AAA1]">fastrebo Blogs</span> - Terms and
             Conditions
           </h1>
         </div>
 
         <div>
           <p className="dark:text-gray-300">
-            Welcome to <span className="text-[#00AAA1]">Fastribo Blogs</span>!
+            Welcome to <span className="text-[#00AAA1]">fastrebo Blogs</span>!
             By accessing and using our website (
-            <span className="text-[#00AAA1]">https://blog.fastribo.com</span>),
+            <span className="text-[#00AAA1]">https://blog.fastrebo.com</span>),
             you agree to comply with and be bound by the following terms and
             conditions. Please read the following carefully:
           </p>
@@ -29,7 +29,7 @@ const Terms = () => {
           <h2 className="text-xl font-semibold">1. Acceptance of Terms</h2>
           <p className="dark:text-gray-300">
             By accessing and using{" "}
-            <span className="text-[#00AAA1]">Fastribo Blogs</span>, you
+            <span className="text-[#00AAA1]">fastrebo Blogs</span>, you
             acknowledge that you have read, understood, and agree to be bound by
             these Terms and Conditions. If you do not agree with any part of
             these terms, please do not use our website.
@@ -39,7 +39,7 @@ const Terms = () => {
         <div className="space-y-2">
           <h2 className="text-xl font-semibold">2. Affiliate Marketing</h2>
           <p className="dark:text-gray-300">
-            <span className="text-[#00AAA1]">Fastribo Blogs</span> engages in
+            <span className="text-[#00AAA1]">fastrebo Blogs</span> engages in
             affiliate marketing, wherein we may earn a commission for products
             or services purchased through our affiliate links. The inclusion of
             affiliate links in our blog posts does not affect the integrity of
@@ -63,7 +63,7 @@ const Terms = () => {
         <div className="space-y-2">
           <h2 className="text-xl font-semibold">4. Google Ads</h2>
           <p className="dark:text-gray-300">
-            <span className="text-[#00AAA1]">Fastribo Blogs</span> may display
+            <span className="text-[#00AAA1]">fastrebo Blogs</span> may display
             Google Ads on its website. These ads are provided by Google and are
             subject to Google`&apos;`s terms and privacy policies. We do not
             endorse the products or services advertised in these ads. Your
@@ -75,7 +75,7 @@ const Terms = () => {
         <div className="space-y-2">
           <h2 className="text-xl font-semibold">5. User Conduct</h2>
           <p className="dark:text-gray-300">
-            When using <span className="text-[#00AAA1]">Fastribo Blogs</span>,
+            When using <span className="text-[#00AAA1]">fastrebo Blogs</span>,
             you agree not to engage in any unlawful or prohibited activities.
             This includes, but is not limited to, the following:
           </p>
@@ -105,7 +105,7 @@ const Terms = () => {
             7. Changes to Terms and Conditions
           </h2>
           <p className="dark:text-gray-300">
-            <span className="text-[#00AAA1]">Fastribo Blogs</span> reserves the
+            <span className="text-[#00AAA1]">fastrebo Blogs</span> reserves the
             right to update or modify these Terms and Conditions at any time
             without prior notice. It is your responsibility to review these
             terms periodically for changes.
@@ -123,7 +123,7 @@ const Terms = () => {
             .
           </p>
           <p className="dark:text-gray-300">
-            By using <span className="text-[#00AAA1]">Fastribo Blogs</span>, you
+            By using <span className="text-[#00AAA1]">fastrebo Blogs</span>, you
             agree to abide by these Terms and Conditions. Thank you for visiting
             and being part of our community!
           </p>

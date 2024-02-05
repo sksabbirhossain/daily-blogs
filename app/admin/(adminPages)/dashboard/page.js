@@ -1,7 +1,7 @@
 import TopSection from "@/components/admin/Dashboard/TopSection";
 
 export const metadata = {
-  title: "Dashboard - Fastribo Blogs",
+  title: "Dashboard - fastrebo Blogs",
 };
 
 const Dashboard = () => {

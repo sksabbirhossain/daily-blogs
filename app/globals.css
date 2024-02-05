@@ -70,3 +70,23 @@
 .blogDetails p {
   @apply text-[15px] font-normal;
 }
+
+.blogDetails img {
+  @apply mt-3 h-[400px] max-h-max w-full rounded object-cover;
+}
+
+.blogDetails table {
+  @apply my-3 w-full overflow-x-auto text-left text-sm text-gray-500 rtl:text-right;
+}
+
+.blogDetails table tbody tr:first-child {
+  @apply font-bold uppercase;
+}
+
+.blogDetails table tbody tr {
+  @apply border-b bg-gray-200 text-xs text-gray-700 odd:bg-white even:bg-gray-200 dark:border-gray-700 dark:bg-slate-800 dark:text-gray-200  dark:odd:bg-slate-800 dark:even:bg-gray-600;
+}
+
+.blogDetails table tbody tr td {
+  @apply px-6 py-3;
+}

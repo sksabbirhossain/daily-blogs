@@ -1,7 +1,7 @@
 import SocialIcon from "@/components/common/SocialIcon/SocialIcon";
 
 export const metadata = {
-  title: "Contact Us - Fastribo Blogs",
+  title: "Contact Us - fastrebo Blogs",
 };
 
 const ContactUs = () => {
@@ -136,7 +136,7 @@ const ContactUs = () => {
                       />
                     </svg>
                   </span>
-                  <p>info@fastribo.com</p>
+                  <p>info@fastrebo.com</p>
                 </div>
                 <div className="flex items-center gap-x-1">
                   <span>

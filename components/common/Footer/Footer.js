@@ -17,7 +17,7 @@ const Footer = async () => {
                   <Image src={logo} width={200} height={50} alt="logo" />
                 </div>
                 <p className="text-sm text-[#555] dark:text-gray-300">
-                  Explore a world of daily wonders with Fastribo Blogs. Immerse
+                  Explore a world of daily wonders with fastrebo Blogs. Immerse
                   yourself in a diverse range of articles, from insightful
                   reflections to practical tips.
                 </p>
@@ -99,8 +99,8 @@ const Footer = async () => {
       <div className="flex h-[50px] w-full items-center justify-center border-t border-gray-300 bg-[#cbf1f1] text-sm text-[#222] dark:border-gray-700 dark:bg-slate-900 dark:text-gray-100">
         <p>
           Copyright © 2024{" "}
-          <a href="https://fastribo.com" target="_blank">
-            <span className="text-[#00AAA1]">Fastribo</span>
+          <a href="https://fastrebo.com" target="_blank">
+            <span className="text-[#00AAA1]">fastrebo</span>
           </a>
           . All rights reserved.
         </p>

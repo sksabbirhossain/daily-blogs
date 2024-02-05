@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 export const metadata = {
-  title: "Privacy Policy - Fastribo Blogs",
+  title: "Privacy Policy - fastrebo Blogs",
 };
 
 const PrivacyPolicy = () => {
@@ -12,14 +12,14 @@ const PrivacyPolicy = () => {
           <div className="space-y-5">
             <h1 className="text-xl font-semibold sm:text-3xl">
               {" "}
-              <span className="text-[#00AAA1]">Fastribo Blogs</span> - Privacy
+              <span className="text-[#00AAA1]">fastrebo Blogs</span> - Privacy
               Policy
             </h1>
             <p className="dark:text-gray-300">
               Thank you for visiting{" "}
               <Link href="/">
                 <span className="font-medium text-[#00AAA1]">
-                  Fastribo blogs.
+                  fastrebo blogs.
                 </span>
               </Link>{" "}
               This Privacy Policy outlines how we collect, use, and protect the
@@ -139,7 +139,7 @@ const PrivacyPolicy = () => {
               Affiliate Marketing
             </h2>
             <p className="dark:text-gray-300">
-              <span className="text-[#00AAA1]">Fastribo blogs</span>{" "}
+              <span className="text-[#00AAA1]">fastrebo blogs</span>{" "}
               participates in affiliate marketing programs, which means we may
               earn commissions on qualifying purchases made through our
               affiliate links. These links are provided for your convenience and
@@ -151,7 +151,7 @@ const PrivacyPolicy = () => {
               </h3>
               <p className="dark:text-gray-300">
                 When you click on an affiliate link on{" "}
-                <span className="text-[#00AAA1]">Fastribo blogs</span> and make
+                <span className="text-[#00AAA1]">fastrebo blogs</span> and make
                 a purchase, the affiliated companies may pay us a commission for
                 the referral. The price you pay for the product or service is
                 not affected by using our affiliate links. The commission earned
@@ -179,7 +179,7 @@ const PrivacyPolicy = () => {
                 purchase, you will be directed to a third-party website. These
                 external sites have their own privacy policies, and we encourage
                 you to review them.{" "}
-                <span className="text-[#00AAA1]">Fastribo blogs</span> is not
+                <span className="text-[#00AAA1]">fastrebo blogs</span> is not
                 responsible for the privacy practices or content of these
                 third-party websites.
               </p>
@@ -189,7 +189,7 @@ const PrivacyPolicy = () => {
                 Changes to Affiliate Marketing Policy
               </h3>
               <p className="dark:text-gray-300">
-                <span className="text-[#00AAA1]">Fastribo blogs</span> reserves
+                <span className="text-[#00AAA1]">fastrebo blogs</span> reserves
                 the right to modify or update our affiliate marketing policy as
                 needed. Any changes will be reflected in this Privacy Policy.
               </p>
