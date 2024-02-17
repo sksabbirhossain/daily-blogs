@@ -31,7 +31,7 @@
 
 /* blog details page */
 .blogDetails {
-  padding-bottom: 1rem;
+  @apply w-full overflow-x-auto pb-[1rem];
 }
 
 .blogDetails ul {

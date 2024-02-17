@@ -78,7 +78,7 @@ const CommentForm = ({ slug, blogId }) => {
             If you want to comment here you must login first!
           </p>
           <Link href={`/login?callbackUrl=/blogs/${slug}`}>
-            <span className="rounded bg-[#00AAA1] px-4 py-1 text-base font-normal">
+            <span className="rounded bg-[#00AAA1] px-4 py-1 text-base font-normal text-white">
               Login Here
             </span>
           </Link>
