@@ -3,6 +3,7 @@ import {
   getCategory,
   updateCategory,
 } from "@/actions/category/categoryActions";
+import Button from "@/components/common/Button/Button";
 import { redirect } from "next/navigation";
 
 const EditCategory = async ({ params: { slug } }) => {
@@ -48,12 +49,7 @@ const EditCategory = async ({ params: { slug } }) => {
                 />
               </div>
               <div>
-                <button
-                  type="submit"
-                  className="w-full rounded border border-[#00AAA1] bg-[#00AAA1] px-5 py-2 text-gray-200 duration-150 ease-linear hover:bg-sky-500 hover:text-white "
-                >
-                  Update
-                </button>
+                <Button>Update Category</Button>
               </div>
             </div>
           </form>

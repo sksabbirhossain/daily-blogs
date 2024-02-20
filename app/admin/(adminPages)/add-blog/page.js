@@ -1,7 +1,7 @@
 import { addBlog } from "@/actions/blog/blogActions";
 import { allCategory } from "@/actions/category/categoryActions";
-import AddBlogButton from "@/components/admin/Blogs/AddBlogButton";
 import TextEditor from "@/components/admin/Blogs/TextEditor";
+import Button from "@/components/common/Button/Button";
 import { redirect } from "next/navigation";
 import { Suspense } from "react";
 
@@ -107,7 +107,7 @@ const AddBlog = async () => {
               </div>
 
               <div>
-                <AddBlogButton />
+                <Button>Add</Button>
               </div>
             </div>
           </form>

@@ -1,6 +1,7 @@
 import { getAllBlogs, getBlog, updateBlog } from "@/actions/blog/blogActions";
 import { allCategory } from "@/actions/category/categoryActions";
 import TextEditor from "@/components/admin/Blogs/TextEditor";
+import Button from "@/components/common/Button/Button";
 import { redirect } from "next/navigation";
 import { Suspense } from "react";
 
@@ -123,12 +124,7 @@ const EditBlog = async ({ params: { slug } }) => {
 
                   {/* button */}
                   <div>
-                    <button
-                      type="submit"
-                      className="w-full rounded border border-[#00AAA1] bg-[#00AAA1] px-5 py-2 text-gray-50 duration-150 ease-linear hover:bg-sky-500 hover:text-white "
-                    >
-                      Update
-                    </button>
+                    <Button>Update</Button>
                   </div>
                 </div>
               </div>
