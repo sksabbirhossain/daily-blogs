@@ -1,4 +1,5 @@
 import { addCategory } from "@/actions/category/categoryActions";
+import Button from "@/components/common/Button/Button";
 import { redirect } from "next/navigation";
 
 const AddCategory = () => {
@@ -26,7 +27,8 @@ const AddCategory = () => {
                   type="text"
                   name="name"
                   placeholder="Your Category Name Here..."
-                  className="w-full rounded border border-[#00AAA1] px-1 py-2 focus:outline-1 focus:outline-[#00AAA1]"
+                  className="w-full rounded border border-[#00AAA1] bg-transparent px-1 py-2 focus:border-2 focus:outline-none"
+                  required
                 />
               </div>
               <div className="space-y-1">
@@ -37,16 +39,11 @@ const AddCategory = () => {
                   type="file"
                   name="picture"
                   placeholder="Your Category Picture Here..."
-                  className="w-full rounded border border-[#00AAA1] px-1 py-2 focus:outline-1 focus:outline-[#00AAA1]"
+                  className="w-full rounded border border-[#00AAA1] bg-transparent px-1 py-2 focus:border-2 focus:outline-none"
                 />
               </div>
               <div>
-                <button
-                  type="submit"
-                  className="w-full rounded border border-[#00AAA1] bg-[#00AAA1] px-5 py-2 text-gray-200 duration-150 ease-linear hover:bg-sky-500 hover:text-white "
-                >
-                  Add
-                </button>
+                <Button>Add Category</Button>
               </div>
             </div>
           </form>

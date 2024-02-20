@@ -1,17 +1,17 @@
 "use client";
 import { useFormStatus } from "react-dom";
 
-const AddBlogButton = () => {
+const Button = ({ children }) => {
   const { pending } = useFormStatus();
 
   return (
     <button
       type="submit"
       disabled={pending}
-      className={`w-full rounded border border-[#00AAA1] bg-[#00AAA1] px-5 py-2 font-bold text-white duration-150 ease-linear hover:bg-sky-500 hover:text-white ${pending ? "cursor-wait" : ""}`}
+      className={`w-full rounded border border-[#00AAA1] bg-[#00AAA1] px-5 py-2 text-sm font-bold text-white duration-150 ease-linear hover:bg-sky-500 hover:text-white ${pending ? "cursor-wait" : ""}`}
     >
       {pending ? (
-        <p className="flex items-center justify-center gap-x-1">
+        <p className="flex items-center justify-center gap-x-1 text-sm">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -29,10 +29,10 @@ const AddBlogButton = () => {
           Loading...
         </p>
       ) : (
-        "Add"
+        children
       )}
     </button>
   );
 };
 
-export default AddBlogButton;
+export default Button;

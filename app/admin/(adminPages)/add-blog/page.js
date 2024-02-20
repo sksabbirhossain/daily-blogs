@@ -1,7 +1,7 @@
 import { addBlog } from "@/actions/blog/blogActions";
 import { allCategory } from "@/actions/category/categoryActions";
-import AddBlogButton from "@/components/admin/Blogs/AddBlogButton";
 import TextEditor from "@/components/admin/Blogs/TextEditor";
+import Button from "@/components/common/Button/Button";
 import { redirect } from "next/navigation";
 import { Suspense } from "react";
 
@@ -81,7 +81,7 @@ const AddBlog = async () => {
                 </div>
                 <select
                   name="category"
-                  className="w-full rounded border border-[#00AAA1] bg-gray-50 bg-white px-1 py-2 focus:outline-1 focus:outline-[#00AAA1]"
+                  className="w-full rounded border border-[#00AAA1] bg-gray-50 px-1 py-2 focus:outline-1 focus:outline-[#00AAA1]"
                   required
                 >
                   <option value="">Select Category</option>
@@ -107,7 +107,7 @@ const AddBlog = async () => {
               </div>
 
               <div>
-                <AddBlogButton />
+                <Button>Add</Button>
               </div>
             </div>
           </form>
