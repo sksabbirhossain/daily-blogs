@@ -41,6 +41,18 @@ export const getBlog = async (slug) => {
   }
 };
 
+// get a blog for update
+export const getBlogForUpdate = async (slug) => {
+  try {
+    const res = await fetch(`${process.env.BASE_URL}/blogs/${slug}`, {
+      cache: "no-cache",
+    });
+    return res.json();
+  } catch (err) {
+    console.log(err);
+  }
+};
+
 // get related blogs
 export const getRelatedBlogs = async (slug) => {
   try {

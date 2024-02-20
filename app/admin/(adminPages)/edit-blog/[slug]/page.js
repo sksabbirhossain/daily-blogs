@@ -1,4 +1,8 @@
-import { getAllBlogs, getBlog, updateBlog } from "@/actions/blog/blogActions";
+import {
+  getAllBlogs,
+  getBlogForUpdate,
+  updateBlog,
+} from "@/actions/blog/blogActions";
 import { allCategory } from "@/actions/category/categoryActions";
 import TextEditor from "@/components/admin/Blogs/TextEditor";
 import Button from "@/components/common/Button/Button";
@@ -9,7 +13,7 @@ const EditBlog = async ({ params: { slug } }) => {
   //get all category
   const categories = await allCategory();
   //get blog by slug
-  const blog = await getBlog(slug);
+  const blog = await getBlogForUpdate(slug);
 
   //handle update blog form
   const handleSubmit = async (formData) => {
