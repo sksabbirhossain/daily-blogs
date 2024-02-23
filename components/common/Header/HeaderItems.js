@@ -1,6 +1,8 @@
 "use client";
 
+import defaultImage from "@/public/default.jpg";
 import { signOut, useSession } from "next-auth/react";
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import toast from "react-hot-toast";
@@ -12,6 +14,8 @@ const HeaderItems = () => {
   const loginActive = pathName.endsWith("/login");
   const { data: session } = useSession();
   const router = useRouter();
+
+  console.log(session);
 
   //user signout handler
   const signOutHandler = async () => {
@@ -39,12 +43,36 @@ const HeaderItems = () => {
           );
         })}
         {session?.user?.accessToken ? (
-          <li
-            className="text-sm font-semibold text-[#222] duration-150 ease-linear hover:text-[#00AAA1] dark:text-gray-100"
-            onClick={() => signOutHandler()}
-          >
-            <button>LogOut</button>
-          </li>
+          <>
+            <li className="group text-sm font-semibold text-[#222] duration-150 ease-linear hover:text-[#00AAA1] dark:text-gray-100">
+              <div className="relative">
+                <Image
+                  src={
+                    session?.user?.picture
+                      ? session?.user?.picture
+                      : defaultImage
+                  }
+                  width={100}
+                  height={100}
+                  alt="user"
+                  className="h-7 w-7 rounded-full ring-2 ring-[#00AAA1]"
+                />
+                <div className="absolute -right-5 top-6 hidden min-w-[100px] rounded bg-gray-100 p-2 shadow-lg  group-hover:flex dark:bg-slate-900">
+                  <ul className="space-y-3">
+                    <li>
+                      <Link href="/profile">Profile</Link>
+                    </li>
+                    <li
+                      className="text-sm font-semibold text-[#222] duration-150 ease-linear hover:text-[#00AAA1] dark:text-gray-100"
+                      onClick={() => signOutHandler()}
+                    >
+                      <button>LogOut</button>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+          </>
         ) : (
           <li
             className={

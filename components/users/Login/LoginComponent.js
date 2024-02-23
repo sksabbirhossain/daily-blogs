@@ -1,5 +1,5 @@
 "use client";
-import GithubLogin from "@/components/users/Login/GithubLogin";
+import GoogleLogin from "@/components/users/Login/GoogleLogin";
 import { signIn } from "next-auth/react";
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
@@ -118,7 +118,7 @@ const LoginComponent = () => {
               <span> - </span>OR<span> - </span>
             </div>
             <div className="pt-2">
-              <GithubLogin />
+              <GoogleLogin />
             </div>
             <div className="pt-2">
               <p className="text-center text-xs font-medium capitalize text-[#00AAA1]">

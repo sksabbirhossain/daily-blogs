@@ -1,12 +1,12 @@
 "use client";
 import { signIn } from "next-auth/react";
 
-const GithubLogin = () => {
+const GoogleLogin = () => {
   return (
-    <button
-      className="flex w-full items-center justify-center gap-1 rounded border border-[#00AAA1] bg-white py-2 font-medium uppercase duration-150 ease-in hover:bg-[#f0fffe] dark:bg-gray-300"
+    <p
+      className="flex w-full items-center justify-center gap-1 rounded border border-[#00AAA1] py-2 font-medium uppercase duration-150 ease-in hover:bg-[#2f9c97] hover:text-gray-100 cursor-pointer select-none"
       onClick={() =>
-        signIn("github", { callbackUrl: "http://localhost:3000/" })
+        signIn("google", { callbackUrl: "http://localhost:3000/" })
       }
     >
       <svg
@@ -34,8 +34,8 @@ const GithubLogin = () => {
         ></path>
       </svg>
       google
-    </button>
+    </p>
   );
 };
 
-export default GithubLogin;
+export default GoogleLogin;

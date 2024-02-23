@@ -1,7 +1,6 @@
 "use client";
 import useMobileMenu from "@/contexts/mobileMenuContext";
 import { signOut, useSession } from "next-auth/react";
-import { useTheme } from "next-themes";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import ThemeIcons from "./ThemeIcons";
@@ -9,7 +8,6 @@ import navlink from "./navLink";
 
 const MobileMenu = () => {
   const { menuOpen, mobileMenuHandler } = useMobileMenu();
-  const { theme, setTheme } = useTheme();
   const pathName = usePathname();
   const loginActive = pathName.endsWith("/login");
   const { data: session } = useSession();
@@ -45,12 +43,20 @@ const MobileMenu = () => {
             })}
 
             {session?.user?.accessToken ? (
-              <li
-                className="text-sm font-semibold text-[#222] duration-150 ease-linear hover:text-[#00AAA1] dark:text-gray-100"
-                onClick={() => signOutHandler()}
-              >
-                <button onClick={() => mobileMenuHandler()}>LogOut</button>
-              </li>
+              <>
+                <li
+                  className="text-sm font-semibold text-[#222] duration-150 ease-linear hover:text-[#00AAA1] dark:text-gray-100"
+                  onClick={() => mobileMenuHandler()}
+                >
+                  <Link href="/profile">Profile</Link>
+                </li>
+                <li
+                  className="text-sm font-semibold text-[#222] duration-150 ease-linear hover:text-[#00AAA1] dark:text-gray-100"
+                  onClick={() => signOutHandler()}
+                >
+                  <button onClick={() => mobileMenuHandler()}>LogOut</button>
+                </li>
+              </>
             ) : (
               <li
                 className={

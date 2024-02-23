@@ -10,6 +10,12 @@ export default withAuth(
     ) {
       return NextResponse.rewrite(new URL("/login", req.url));
     }
+    if (
+      !req.nextauth.token?.accessToken &&
+      req.nextUrl.pathname.startsWith("/profile")
+    ) {
+      return NextResponse.rewrite(new URL("/login", req.url));
+    }
   },
   {
     callbacks: {
@@ -18,4 +24,4 @@ export default withAuth(
   },
 );
 
-export const config = { matcher: ["/admin/:path*"] };
+export const config = { matcher: ["/admin/:path*", "/profile/:path*"] };
