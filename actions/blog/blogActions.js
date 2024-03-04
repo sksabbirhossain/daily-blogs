@@ -2,7 +2,6 @@
 import { authOptions } from "@/utils/authOptions";
 import { getServerSession } from "next-auth";
 import { revalidatePath } from "next/cache";
-import toast from "react-hot-toast";
 
 // get all blogs
 export const allBlogs = async (page) => {
