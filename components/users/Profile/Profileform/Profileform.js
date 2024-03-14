@@ -81,10 +81,10 @@ const ProfileForm = () => {
   };
 
   return (
-    <div className="">
+    <div>
       <form
         onSubmit={handleSubmit}
-        className="flex w-full justify-center rounded-md p-5 shadow-md"
+        className="flex h-auto w-full justify-center rounded-md p-5 shadow-md"
       >
         <div className="space-y-5">
           <div className="flex justify-center pb-3">
@@ -163,7 +163,7 @@ const ProfileForm = () => {
             />
           </div>
 
-          <div className="space-y-3">
+          <div>
             <button
               type="submit"
               disabled={loading}
