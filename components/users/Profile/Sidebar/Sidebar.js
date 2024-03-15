@@ -7,16 +7,17 @@ import LogoutBtn from "./LogoutBtn";
 const Sidebar = () => {
   const { menuOpen, profileSidebarMenuHandler } = useProfileSidebarMenu();
   return (
-    <div
-      className={
-        menuOpen
-          ? "fixed top-0 z-10 h-full w-full bg-black/55"
-          : "hidden sm:flex"
-      }
-      onClick={() => profileSidebarMenuHandler()}
-    >
+    <div>
+      <div
+        className={
+          menuOpen
+            ? "fixed top-0 z-10 h-screen w-full bg-black/55"
+            : "hidden sm:flex"
+        }
+        onClick={() => profileSidebarMenuHandler()}
+      />
       <aside
-        className={`fixed left-0 top-[50px] z-40 h-screen w-64 -translate-x-full shadow-lg transition-transform sm:sticky sm:top-0 sm:h-auto sm:translate-x-0 sm:shadow-none ${menuOpen && "translate-x-0"}`}
+        className={`fixed left-0 top-[50px] z-40 h-screen w-64 -translate-x-full shadow-lg transition-transform sm:sticky sm:top-0 sm:h-full sm:translate-x-0 sm:shadow-none ${menuOpen && "translate-x-0"}`}
       >
         <div class="h-full overflow-x-auto rounded-md bg-gray-100 px-3 py-4 dark:bg-gray-800">
           <ul class="space-y-2 font-medium">
