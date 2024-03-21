@@ -31,7 +31,7 @@
 
 /* blog details page */
 .blogDetails {
-  @apply w-full overflow-x-auto pb-[1rem];
+  @apply w-full overflow-x-auto;
 }
 
 .blogDetails ul {
@@ -56,19 +56,19 @@
 }
 
 .blogDetails h1 {
-  @apply text-2xl font-semibold capitalize;
+  @apply pb-3 text-3xl font-semibold capitalize;
 }
 
 .blogDetails h2 {
-  @apply text-lg font-semibold capitalize;
+  @apply pb-3 text-2xl font-semibold capitalize;
 }
 
 .blogDetails h3 {
-  @apply text-base font-medium capitalize;
+  @apply pb-3 text-lg font-medium capitalize;
 }
 
 .blogDetails p {
-  @apply text-[15px] font-normal;
+  @apply pb-7 text-[15px] font-normal;
 }
 
 .blogDetails img {
