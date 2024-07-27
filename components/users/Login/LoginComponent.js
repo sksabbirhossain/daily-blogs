@@ -28,9 +28,15 @@ const LoginComponent = () => {
         password,
         redirect: false,
       });
+
       if (user.ok && user.status === 200) {
         toast.success("User Login Successfully");
         router.replace(callBack || "/");
+        setLoading(false);
+      } else if (user.ok === false && user.status === 401) {
+        setCommonError(
+          "Provide valid credentials! or Check Your Email and Verify Your Account!",
+        );
         setLoading(false);
       } else {
         setCommonError("Invalid credentials!");

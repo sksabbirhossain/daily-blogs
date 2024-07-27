@@ -37,7 +37,7 @@ const RegisterComponent = () => {
       const result = await res.json();
       if (result.status === 200) {
         router.push("/login");
-        toast.success("Successfully register. please login your account");
+        toast.success("Successful! Please Ckeck Your Email");
         setLoading(false);
       } else {
         setError(result?.errors);

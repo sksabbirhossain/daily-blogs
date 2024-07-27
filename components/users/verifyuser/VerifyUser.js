@@ -15,7 +15,7 @@ export const VerifyUser = ({ userId, verifyToken }) => {
       const res = await verify.json();
       if (res?.status === 200) {
         toast.success(res?.message);
-        router.push("/");
+        router.push("/login");
       } else {
         toast.success(res?.message);
       }
