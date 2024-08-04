@@ -53,7 +53,6 @@ function Sidebar() {
               <span className="ms-3">Dashboard</span>
             </Link>
           </li>
-
           <li>
             <button
               type="button"
@@ -115,12 +114,63 @@ function Sidebar() {
           </li>
 
           <li>
+            <Link href="/admin/gallery">
+              <button
+                type="button"
+                className="group flex w-full items-center rounded-lg p-2 text-base text-black transition duration-1000 ease-linear hover:bg-gray-300"
+                aria-controls="dropdown-example"
+                data-collapse-toggle="dropdown-example"
+                onClick={() => toggleHandler(2)}
+              >
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  className="h-5 w-5 flex-shrink-0 text-gray-500 transition duration-75 group-hover:text-gray-900"
+                >
+                  <path fill="none" d="M0 0h24v24H0z" />
+                  <path d="M17.409 19c-.776-2.399-2.277-3.885-4.266-5.602A10.954 10.954 0 0120 11V3h1.008c.548 0 .992.445.992.993v16.014a1 1 0 01-.992.993H2.992A.993.993 0 012 20.007V3.993A1 1 0 012.992 3H6V1h2v4H4v7c5.22 0 9.662 2.462 11.313 7h2.096zM18 1v4h-8V3h6V1h2zm-1.5 9a1.5 1.5 0 110-3 1.5 1.5 0 010 3z" />
+                </svg>
+                <span className="ms-3 flex-1 whitespace-nowrap text-left rtl:text-right">
+                  Gallery
+                </span>
+                <svg
+                  className="h-3 w-3"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 10 6"
+                >
+                  <path
+                    stroke="currentColor"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="m1 1 4 4 4-4"
+                  />
+                </svg>
+              </button>
+            </Link>
+
+            <ul
+              className={`space-y-1 rounded bg-gray-100 py-2 ${toggle === 2 ? "block" : "hidden"}`}
+            >
+              <li>
+                <Link
+                  href="/admin/gallery/upload"
+                  className="group flex w-full items-center rounded-lg p-2 pl-11 text-gray-900 transition duration-75 hover:bg-gray-300"
+                >
+                  <span className="whitespace-nowrap">Upload File</span>
+                </Link>
+              </li>
+            </ul>
+          </li>
+          <li>
             <button
               type="button"
               className="group flex w-full items-center rounded-lg p-2 text-base text-black transition duration-75 hover:bg-gray-300"
               aria-controls="dropdown-example"
               data-collapse-toggle="dropdown-example"
-              onClick={() => toggleHandler(2)}
+              onClick={() => toggleHandler(3)}
             >
               <svg
                 className="h-5 w-5 flex-shrink-0 text-gray-500 transition duration-75  group-hover:text-gray-900 "
@@ -153,7 +203,7 @@ function Sidebar() {
             </button>
 
             <ul
-              className={`space-y-1 rounded bg-gray-100 py-2 ${toggle === 2 ? "block" : "hidden"}`}
+              className={`space-y-1 rounded bg-gray-100 py-2 ${toggle === 3 ? "block" : "hidden"}`}
             >
               <li>
                 <Link
