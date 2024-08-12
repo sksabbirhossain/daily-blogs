@@ -1,45 +1,52 @@
 "use client";
-import GoogleLogin from "@/components/users/Login/GoogleLogin";
-import { signIn } from "next-auth/react";
-import Link from "next/link";
-import { useRouter, useSearchParams } from "next/navigation";
+
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 import toast from "react-hot-toast";
 
-const LoginComponent = () => {
-  const [email, setEmail] = useState("");
-  const [password, setpassword] = useState("");
+const UpdatePassword = ({ params, searchParams }) => {
+  const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
   const [error, setError] = useState(null);
   const [commonError, setCommonError] = useState("");
   const [loading, setLoading] = useState(false);
 
   const router = useRouter();
-  const searchParams = useSearchParams();
-  const callBack = searchParams.get("callbackUrl");
 
-  const loginHandler = async (e) => {
+  //get userid and token
+  const { token } = params;
+  const { userId } = searchParams;
+
+  //handle submit
+  const updatePasswordHandler = async (e) => {
     e.preventDefault();
     setLoading(true);
+    if (password !== confirmPassword) {
+      setCommonError("Password and Confirm Password not match!");
+      setLoading(false);
+      return;
+    }
     try {
       setCommonError("");
       setError("");
-      const user = await signIn("credentials", {
-        email,
-        password,
-        redirect: false,
-      });
-
-      if (user.ok && user.status === 200) {
-        toast.success("User Login Successfully");
-        router.replace(callBack || "/");
+      const res = await fetch(
+        `${process.env.NEXT_PUBLIC_BASE_URL}/user/update-password/${token}/${userId}`,
+        {
+          method: "POST",
+          body: JSON.stringify({ password }),
+          headers: {
+            "Content-Type": "application/json",
+          },
+          cache: "no-cache",
+        },
+      );
+      const result = await res.json();
+      if (result.status === 200) {
+        toast.success("Successful! Please Login Your Account");
         setLoading(false);
-      } else if (user.ok === false && user.status === 401) {
-        setCommonError(
-          "Provide valid credentials! or Check Your Email and Verify Your Account!",
-        );
-        setLoading(false);
+        router.push("/login");
       } else {
-        setCommonError("Invalid credentials!");
+        setError(result?.errors);
         setLoading(false);
       }
     } catch (err) {
@@ -52,9 +59,9 @@ const LoginComponent = () => {
     <div className="flex h-screen w-full items-center justify-center">
       <div className="-mt-[50px] max-w-[350px] rounded bg-gray-100 p-3 pb-10 shadow-sm shadow-[#00AAA1]/50 dark:bg-slate-800">
         <h1 className="py-5 text-center text-xl text-[#222] dark:text-gray-200">
-          Login Your Account.
+          Update Your Password.
         </h1>
-        <form onSubmit={loginHandler}>
+        <form onSubmit={updatePasswordHandler}>
           <div className="space-y-3">
             <div className="space-y-2">
               <div>
@@ -62,46 +69,46 @@ const LoginComponent = () => {
                   htmlFor=""
                   className="text-sm font-medium text-[#222] dark:text-gray-200"
                 >
-                  Email
-                </label>
-              </div>
-              <input
-                className="w-full rounded border border-[#00AAA1] px-1 py-2 focus:outline-[#00AAA1] dark:bg-slate-700 dark:text-gray-200"
-                type="email"
-                name="email"
-                placeholder="Your email here..."
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-              />
-            </div>
-            <div className="space-y-2">
-              <div>
-                <label
-                  htmlFor=""
-                  className="text-sm font-medium text-[#222] dark:text-gray-200"
-                >
-                  Password
+                  Your Password
                 </label>
               </div>
               <input
                 className="w-full rounded border border-[#00AAA1] px-1 py-2 focus:outline-[#00AAA1] dark:bg-slate-700 dark:text-gray-200"
                 type="password"
                 name="password"
-                placeholder="Your password here..."
                 value={password}
-                onChange={(e) => setpassword(e.target.value)}
+                onChange={(e) => setPassword(e.target.value)}
+                placeholder="Your password here..."
               />
-              <Link href="/forget-password">
-                <span className="hover:text-[#00AAA1] font-medium block w-full pt-1 text-end text-sm capitalize">
-                  Forget password
-                </span>
-              </Link>
+              <span className="text-sm text-red-500">
+                {error?.password?.msg}
+              </span>
             </div>
-            <div className="pt-2">
+
+            <div className="space-y-2">
+              <div>
+                <label
+                  htmlFor=""
+                  className="text-sm font-medium text-[#222] dark:text-gray-200"
+                >
+                  Confirm Password
+                </label>
+              </div>
+              <input
+                className="w-full rounded border border-[#00AAA1] px-1 py-2 focus:outline-[#00AAA1] dark:bg-slate-700 dark:text-gray-200"
+                type="password"
+                name="confirmPassword"
+                value={confirmPassword}
+                onChange={(e) => setConfirmPassword(e.target.value)}
+                placeholder="Your confirm password here..."
+              />
+            </div>
+
+            <div className="flex w-full justify-end pt-2">
               <button
                 type="submit"
                 disabled={loading}
-                className="w-full rounded border border-[#00AAA1] bg-white py-2 font-medium duration-150 ease-in hover:bg-[#00AAA1] hover:text-white disabled:cursor-not-allowed disabled:border-gray-500/65 disabled:bg-gray-500/65 disabled:text-gray-200 dark:bg-[#00AAA1] dark:text-gray-100 dark:hover:bg-[#329792]"
+                className="rounded border border-[#00AAA1] bg-white px-8 py-2 font-medium duration-150 ease-in hover:bg-[#00AAA1] hover:text-white disabled:cursor-not-allowed disabled:border-gray-500/65 disabled:bg-gray-500/65 disabled:text-gray-200 dark:bg-[#00AAA1] dark:text-gray-100 dark:hover:bg-[#329792]"
               >
                 {loading ? (
                   <p className="flex items-center justify-center">
@@ -121,20 +128,9 @@ const LoginComponent = () => {
                     </svg>
                   </p>
                 ) : (
-                  "Login"
+                  "Update"
                 )}
               </button>
-            </div>
-            <div className="pt-2 text-center font-bold text-[#222] dark:text-gray-200">
-              <span> - </span>OR<span> - </span>
-            </div>
-            <div className="pt-2">
-              <GoogleLogin />
-            </div>
-            <div className="pt-2">
-              <p className="text-center text-xs font-medium capitalize text-[#00AAA1]">
-                <Link href="/register">Create your account</Link>
-              </p>
             </div>
           </div>
         </form>
@@ -153,4 +149,4 @@ const LoginComponent = () => {
   );
 };
 
-export default LoginComponent;
+export default UpdatePassword;
