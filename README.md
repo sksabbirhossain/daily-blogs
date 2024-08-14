@@ -11,14 +11,15 @@ Welcome to **Daily Blogs**! This is an open-source blog platform built with Next
   - [Features](#features)
   - [Technologies Used](#technologies-used)
   - [Installation](#installation)
-      - [1. Clone this repository to your local machine using Git.](#1-clone-this-repository-to-your-local-machine-using-git)
-      - [2. Change to the project directory.](#2-change-to-the-project-directory)
-      - [3. Install dependencies. (recommended to use yarn)](#3-install-dependencies-recommended-to-use-yarn)
-      - [4. Set up environment variables](#4-set-up-environment-variables)
-      - [5. Start the development server using this command:](#5-start-the-development-server-using-this-command)
+    - [1. Clone this repository to your local machine using Git.](#1-clone-this-repository-to-your-local-machine-using-git)
+    - [2. Change to the project directory.](#2-change-to-the-project-directory)
+    - [3. Install dependencies. (recommended to use yarn)](#3-install-dependencies-recommended-to-use-yarn)
+    - [4. Set up environment variables](#4-set-up-environment-variables)
+    - [5. Start the development server using this command:](#5-start-the-development-server-using-this-command)
     - [Usage](#usage)
   - [Contributing](#contributing)
   - [License](#license)
+    - [Summary of Terms:](#summary-of-terms)
   - [Code of Conduct](#code-of-conduct)
   - [Contact](#contact)
 
@@ -93,17 +94,19 @@ If you have any suggestions on how to improve this website, please open an issue
 
 ## License
 
-This project is licensed under the following terms:
+This project is licensed under the terms outlined in the [LICENSE.md](LICENSE.md) file.
+
+### Summary of Terms:
 
 - **Viewing and Studying**: You are free to view, study, and learn from the source code and documentation.
-- **Contributing**: Contributions to this project are welcome. Please adhere to the contribution guidelines provided in the [CONTRIBUTING](CONTRIBUTING.md) file.
+- **Contributing**: Contributions to this project are welcome. Please adhere to the contribution guidelines provided in the [CONTRIBUTING.md](CONTRIBUTING.md) file.
 - **Restrictions**:
   - **Personal Use**: This project cannot be used for personal purposes outside the scope of this open-source project.
   - **Commercial Use**: You are not allowed to sell, distribute, or incorporate any part of this project into other commercial products or services.
 
 **Violation of License Terms**: If any part of this project is copied, used, or distributed in violation of these terms, legal action may be taken to enforce these license terms.
 
-By using this project, you agree to abide by these terms. If you have any questions or need clarification, please reach out via the [Contact](https://github.com/sksabbirhossain).
+By using this project, you agree to abide by these terms. For more details, please refer to the full [LICENSE.md](LICENSE.md) file.
 
 ## Code of Conduct
 
@@ -111,13 +114,14 @@ We adhere to the Contributor Covenant Code of Conduct to ensure a positive and i
 
 For more details, visit the [Code of Conduct](CODE_OF_CONDUCT.md) file.
 
-
 ## Contact
 
 For any questions, feedback, or inquiries, you can reach out through the following:
 
 - **GitHub Issues**: [Submit an issue](https://github.com/sksabbirhossain/daily-blogs/issues)
 - **GitHub Profile**: [sksabbirhossain](https://github.com/sksabbirhossain)
+- **Linkedin Profile**: [sk-sabbir-hossain](https://www.linkedin.com/in/sk-sabbir-hossain/)
+- **Facebook Profile**: [sksabbirhossain4](https://www.facebook.com/sksabbirhossain4)
 
 Feel free to contact me if you have any questions or if you would like to contribute to the project!
 
