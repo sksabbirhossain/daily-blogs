@@ -19,6 +19,7 @@ Welcome to **Daily Blogs**! This is an open-source blog platform built with Next
     - [Usage](#usage)
   - [Contributing](#contributing)
   - [License](#license)
+  - [Code of Conduct](#code-of-conduct)
   - [Contact](#contact)
 
 ## Features
@@ -26,13 +27,17 @@ Welcome to **Daily Blogs**! This is an open-source blog platform built with Next
 My Daily Blogs website includes the following features:
 
 - **Create an Account**: Users can create an account with full role-based authentication to interact with the platform.
+- **Email Verification**: Uses SMTP services to verify email addresses during account creation.
+- **Password Recovery**: Allows users to recover their passwords if they forget them.
 - **Search Blogs**: Easily find blogs by searching for specific keywords.
 - **Comment on Blogs**: Engage with the content by leaving comments on blogs.
+- **Dark Mode**: Provides a dark mode option for improved readability in low-light environments.
 - **Open Source**: The project is open to contributions from anyone interested.
 
 ## Technologies Used
 
 - **Next.js 14:** A React framework for building server-rendered or statically-exported React applications.
+- **Authentication**: Utilizes `next-auth` version 4.24.5 for authentication.
 - **React:** A popular JavaScript library for building user interfaces.
 - **Tailwind CSS:** A utility-first CSS framework for styling the user interface.
 - **Node.js**: JavaScript runtime used for building the REST API.
@@ -99,6 +104,13 @@ This project is licensed under the following terms:
 **Violation of License Terms**: If any part of this project is copied, used, or distributed in violation of these terms, legal action may be taken to enforce these license terms.
 
 By using this project, you agree to abide by these terms. If you have any questions or need clarification, please reach out via the [Contact](https://github.com/sksabbirhossain).
+
+## Code of Conduct
+
+We adhere to the Contributor Covenant Code of Conduct to ensure a positive and inclusive environment for all participants in our community. Please review the full [Code of Conduct](CODE_OF_CONDUCT.md) for details on our standards and enforcement guidelines.
+
+For more details, visit the [Code of Conduct](CODE_OF_CONDUCT.md) file.
+
 
 ## Contact
 
