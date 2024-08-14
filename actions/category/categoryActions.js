@@ -7,7 +7,7 @@ import { revalidatePath } from "next/cache";
 //get all category
 export const allCategory = async () => {
   try {
-    const res = await fetch(`${process.env.BASE_URL}/categories`, {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/categories`, {
       next: { revalidate: 3600 },
     });
     return res.json();
@@ -19,9 +19,12 @@ export const allCategory = async () => {
 //get a category
 export const getCategory = async (slug) => {
   try {
-    const res = await fetch(`${process.env.BASE_URL}/category/${slug}`, {
-      next: { revalidate: 3600 },
-    });
+    const res = await fetch(
+      `${process.env.NEXT_PUBLIC_BASE_URL}/category/${slug}`,
+      {
+        next: { revalidate: 3600 },
+      },
+    );
     return res.json();
   } catch (err) {
     console.log(err);
@@ -37,7 +40,7 @@ export const addCategory = async (data) => {
   formData.append("picture", data.get("picture"));
 
   try {
-    await fetch(`${process.env.BASE_URL}/add-category`, {
+    await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/add-category`, {
       method: "POST",
       body: formData,
       cache: "no-cache",
@@ -63,7 +66,7 @@ export const updateCategory = async (slug, data) => {
   }
 
   try {
-    await fetch(`${process.env.BASE_URL}/update-category/${slug}`, {
+    await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/update-category/${slug}`, {
       method: "PATCH",
       body: formData,
       cache: "no-cache",
@@ -85,13 +88,16 @@ export const deleteCategory = async (formData) => {
   const categoryId = formData.get("categoryId");
 
   try {
-    await fetch(`${process.env.BASE_URL}/category/delete/${categoryId}`, {
-      method: "DELETE",
-      cache: "no-cache",
-      headers: {
-        Authorization: `Bearer ${session.user?.accessToken}`,
+    await fetch(
+      `${process.env.NEXT_PUBLIC_BASE_URL}/category/delete/${categoryId}`,
+      {
+        method: "DELETE",
+        cache: "no-cache",
+        headers: {
+          Authorization: `Bearer ${session.user?.accessToken}`,
+        },
       },
-    });
+    );
 
     revalidatePath("/admin/categories");
   } catch (err) {

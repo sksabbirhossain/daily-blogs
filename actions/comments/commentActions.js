@@ -8,7 +8,7 @@ import { revalidatePath } from "next/cache";
 export const getComments = async (blogId, page) => {
   try {
     const res = await fetch(
-      `${process.env.BASE_URL}/comments?blogId=${blogId}&page=${page}&limit=${"5"}`,
+      `${process.env.NEXT_PUBLIC_BASE_URL}/comments?blogId=${blogId}&page=${page}&limit=${"5"}`,
       {
         cache: "no-cache",
       },
@@ -23,7 +23,7 @@ export const getComments = async (blogId, page) => {
 export const addComment = async (data) => {
   const session = await getServerSession(authOptions);
   try {
-    const res = await fetch(`${process.env.BASE_URL}/add-comment`, {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/add-comment`, {
       method: "POST",
       body: JSON.stringify(data),
       cache: "no-cache",
@@ -49,7 +49,7 @@ export const updateComment = async (slug, data) => {
   }
 
   try {
-    await fetch(`${process.env.BASE_URL}/update-category/${slug}`, {
+    await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/update-category/${slug}`, {
       method: "PATCH",
       body: formData,
       cache: "no-cache",
@@ -71,13 +71,16 @@ export const deleteComment = async (formData) => {
   const categoryId = formData.get("categoryId");
 
   try {
-    await fetch(`${process.env.BASE_URL}/category/delete/${categoryId}`, {
-      method: "DELETE",
-      cache: "no-cache",
-      headers: {
-        Authorization: `Bearer ${session.user?.accessToken}`,
+    await fetch(
+      `${process.env.NEXT_PUBLIC_BASE_URL}/category/delete/${categoryId}`,
+      {
+        method: "DELETE",
+        cache: "no-cache",
+        headers: {
+          Authorization: `Bearer ${session.user?.accessToken}`,
+        },
       },
-    });
+    );
 
     revalidatePath("/admin/categories");
   } catch (err) {

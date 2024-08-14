@@ -7,7 +7,7 @@ import { revalidatePath } from "next/cache";
 export const allBlogs = async (page) => {
   try {
     const res = await fetch(
-      `${process.env.BASE_URL}/blogs?page=${page}&limit=${process.env.BLOG_PAR_PAGE}`,
+      `${process.env.NEXT_PUBLIC_BASE_URL}/blogs?page=${page}&limit=${process.env.BLOG_PAR_PAGE}`,
       { next: { revalidate: 3600 } },
     );
     return res.json();
@@ -19,7 +19,7 @@ export const allBlogs = async (page) => {
 // get all blogs without limit
 export const getAllBlogs = async () => {
   try {
-    const res = await fetch(`${process.env.BASE_URL}/blogs`, {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/blogs`, {
       next: { revalidate: 3600 },
     });
     return res.json();
@@ -31,9 +31,12 @@ export const getAllBlogs = async () => {
 // get a blog
 export const getBlog = async (slug) => {
   try {
-    const res = await fetch(`${process.env.BASE_URL}/blogs/${slug}`, {
-      next: { revalidate: 3600 },
-    });
+    const res = await fetch(
+      `${process.env.NEXT_PUBLIC_BASE_URL}/blogs/${slug}`,
+      {
+        next: { revalidate: 3600 },
+      },
+    );
     return res.json();
   } catch (err) {
     console.log(err);
@@ -43,9 +46,12 @@ export const getBlog = async (slug) => {
 // get a blog for update
 export const getBlogForUpdate = async (slug) => {
   try {
-    const res = await fetch(`${process.env.BASE_URL}/blogs/${slug}`, {
-      cache: "no-cache",
-    });
+    const res = await fetch(
+      `${process.env.NEXT_PUBLIC_BASE_URL}/blogs/${slug}`,
+      {
+        cache: "no-cache",
+      },
+    );
     return res.json();
   } catch (err) {
     console.log(err);
@@ -56,7 +62,7 @@ export const getBlogForUpdate = async (slug) => {
 export const getRelatedBlogs = async (slug) => {
   try {
     const res = await fetch(
-      `${process.env.BASE_URL}/blogs/related-blogs/${slug}`,
+      `${process.env.NEXT_PUBLIC_BASE_URL}/blogs/related-blogs/${slug}`,
       { next: { revalidate: 3600 } },
     );
     return res.json();
@@ -68,7 +74,7 @@ export const getRelatedBlogs = async (slug) => {
 export const getBlogsByCategory = async (slug, page) => {
   try {
     const res = await fetch(
-      `${process.env.BASE_URL}/blogs/category/${slug}?page=${page}&limit=${process.env.BLOG_PAR_PAGE}`,
+      `${process.env.NEXT_PUBLIC_BASE_URL}/blogs/category/${slug}?page=${page}&limit=${process.env.BLOG_PAR_PAGE}`,
       { next: { revalidate: 3600 } },
     );
     return res.json();
@@ -80,9 +86,12 @@ export const getBlogsByCategory = async (slug, page) => {
 // get featured blog
 export const getFeaturedBlogs = async (slug) => {
   try {
-    const res = await fetch(`${process.env.BASE_URL}/blog/featured-blogs`, {
-      next: { revalidate: 3600 },
-    });
+    const res = await fetch(
+      `${process.env.NEXT_PUBLIC_BASE_URL}/blog/featured-blogs`,
+      {
+        next: { revalidate: 3600 },
+      },
+    );
     return res.json();
   } catch (err) {
     console.log(err);
@@ -93,7 +102,7 @@ export const getFeaturedBlogs = async (slug) => {
 export const searchBlogs = async (page, searchQuery) => {
   try {
     const res = await fetch(
-      `${process.env.BASE_URL}/blogs/search?q=${searchQuery}&page=${page}&limit=${process.env.BLOG_PAR_PAGE}`,
+      `${process.env.NEXT_PUBLIC_BASE_URL}/blogs/search?q=${searchQuery}&page=${page}&limit=${process.env.BLOG_PAR_PAGE}`,
       { next: { revalidate: 3600 } },
     );
     return res.json();
@@ -115,7 +124,7 @@ export const addBlog = async (data) => {
   formData.append("picture", data.get("picture"));
 
   try {
-    const res = await fetch(`${process.env.BASE_URL}/add-blog`, {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/add-blog`, {
       method: "POST",
       body: formData,
       headers: {
@@ -144,14 +153,17 @@ export const updateBlog = async (slug, data) => {
   }
 
   try {
-    await fetch(`${process.env.BASE_URL}/blog/update-blog/${slug}`, {
-      method: "PATCH",
-      body: formData,
-      cache: "no-cache",
-      headers: {
-        Authorization: `Bearer ${session.user?.accessToken}`,
+    await fetch(
+      `${process.env.NEXT_PUBLIC_BASE_URL}/blog/update-blog/${slug}`,
+      {
+        method: "PATCH",
+        body: formData,
+        cache: "no-cache",
+        headers: {
+          Authorization: `Bearer ${session.user?.accessToken}`,
+        },
       },
-    });
+    );
 
     revalidatePath("/admin/all-blogs");
   } catch (err) {
@@ -171,15 +183,18 @@ export const featuredBlog = async (formData) => {
   };
 
   try {
-    await fetch(`${process.env.BASE_URL}/blog/featured-blog/${blogId}`, {
-      method: "PATCH",
-      body: JSON.stringify(data),
-      cache: "no-cache",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${session.user?.accessToken}`,
+    await fetch(
+      `${process.env.NEXT_PUBLIC_BASE_URL}/blog/featured-blog/${blogId}`,
+      {
+        method: "PATCH",
+        body: JSON.stringify(data),
+        cache: "no-cache",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${session.user?.accessToken}`,
+        },
       },
-    });
+    );
 
     revalidatePath("/admin/all-blogs");
   } catch (err) {
@@ -194,13 +209,16 @@ export const deleteBlog = async (formData) => {
   const blogId = formData.get("blogId");
 
   try {
-    await fetch(`${process.env.BASE_URL}/blog/delete-blog/${blogId}`, {
-      method: "DELETE",
-      cache: "no-cache",
-      headers: {
-        Authorization: `Bearer ${session.user?.accessToken}`,
+    await fetch(
+      `${process.env.NEXT_PUBLIC_BASE_URL}/blog/delete-blog/${blogId}`,
+      {
+        method: "DELETE",
+        cache: "no-cache",
+        headers: {
+          Authorization: `Bearer ${session.user?.accessToken}`,
+        },
       },
-    });
+    );
 
     revalidatePath("/admin/all-blogs");
   } catch (err) {

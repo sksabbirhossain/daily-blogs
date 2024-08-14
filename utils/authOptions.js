@@ -1,11 +1,10 @@
 import CredentialsProvider from "next-auth/providers/credentials";
 import GoogleProvider from "next-auth/providers/google";
 import { signOut } from "next-auth/react";
-import { BASE_URL } from "./baseUrl";
 
 //cll refresh token
 async function refreshTokenHandler(token) {
-  const res = await fetch(`${BASE_URL}/user/me`, {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/user/me`, {
     method: "POST",
     headers: {
       Authorization: `Refresh ${token.refreshToken}`,
@@ -47,11 +46,14 @@ export const authOptions = {
         password: { label: "Password", type: "password" },
       },
       async authorize(credentials) {
-        const res = await fetch(`${BASE_URL}/user/login`, {
-          method: "POST",
-          body: JSON.stringify(credentials),
-          headers: { "Content-Type": "application/json" },
-        });
+        const res = await fetch(
+          `${process.env.NEXT_PUBLIC_BASE_URL}/user/login`,
+          {
+            method: "POST",
+            body: JSON.stringify(credentials),
+            headers: { "Content-Type": "application/json" },
+          },
+        );
         const user = await res.json();
 
         // If no error and we have user data, return it

@@ -1,6 +1,5 @@
 "use client";
 import Button from "@/components/common/Button/Button";
-import { BASE_URL } from "@/utils/baseUrl";
 import { useRouter } from "next/navigation";
 import toast from "react-hot-toast";
 
@@ -10,7 +9,7 @@ export const VerifyUser = ({ userId, verifyToken }) => {
   const verifyUser = async () => {
     try {
       const verify = await fetch(
-        `${BASE_URL}/user/verify/${userId}/${verifyToken}`,
+        `${process.env.NEXT_PUBLIC_BASE_URL}/user/verify/${userId}/${verifyToken}`,
       );
       const res = await verify.json();
       if (res?.status === 200) {

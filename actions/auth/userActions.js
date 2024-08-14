@@ -8,7 +8,7 @@ export const createUser = async (formData) => {
       email: formData.get("email"),
       password: formData.get("password"),
     };
-    const res = await fetch(`${process.env.BASE_URL}/user/register`, {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/user/register`, {
       method: "POST",
       body: JSON.stringify(data),
       headers: {
@@ -29,7 +29,7 @@ export const loginUser = async (formData) => {
       email: formData.get("email"),
       password: formData.get("password"),
     };
-    const res = await fetch(`${process.env.BASE_URL}/user/login`, {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/user/login`, {
       method: "POST",
       body: JSON.stringify(data),
       headers: {

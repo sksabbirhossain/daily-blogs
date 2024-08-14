@@ -1,5 +1,4 @@
 "use client";
-import { BASE_URL } from "@/utils/baseUrl";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import React, { useState } from "react";
@@ -22,23 +21,26 @@ const RegisterComponent = () => {
     try {
       setCommonError("");
       setError("");
-      const res = await fetch(`${BASE_URL}/user/register`, {
-        method: "POST",
-        body: JSON.stringify({
-          name,
-          email,
-          password,
-        }),
-        headers: {
-          "Content-Type": "application/json",
+      const res = await fetch(
+        `${process.env.NEXT_PUBLIC_BASE_URL}/user/register`,
+        {
+          method: "POST",
+          body: JSON.stringify({
+            name,
+            email,
+            password,
+          }),
+          headers: {
+            "Content-Type": "application/json",
+          },
+          cache: "no-cache",
         },
-        cache: "no-cache",
-      });
+      );
       const result = await res.json();
       if (result.status === 200) {
-        router.push("/login");
         toast.success("Successful! Please Ckeck Your Email");
         setLoading(false);
+        router.push("/login");
       } else {
         setError(result?.errors);
         setLoading(false);

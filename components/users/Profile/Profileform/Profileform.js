@@ -1,5 +1,4 @@
 "use client";
-import { BASE_URL } from "@/utils/baseUrl";
 import { useSession } from "next-auth/react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
@@ -48,13 +47,16 @@ const ProfileForm = () => {
     //send request
     const reqFun = async () => {
       try {
-        const res = await fetch(`${BASE_URL}/user/update`, {
-          method: "PATCH",
-          body: formData,
-          headers: {
-            Authorization: `Bearer ${session.user?.accessToken}`,
+        const res = await fetch(
+          `${process.env.NEXT_PUBLIC_BASE_URL}/user/update`,
+          {
+            method: "PATCH",
+            body: formData,
+            headers: {
+              Authorization: `Bearer ${session.user?.accessToken}`,
+            },
           },
-        });
+        );
         const data = await res.json();
         if (data?._id) {
           router.refresh();
