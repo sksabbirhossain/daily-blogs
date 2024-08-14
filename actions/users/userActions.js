@@ -9,7 +9,7 @@ export const getAllUser = async (page) => {
   const session = await getServerSession(authOptions);
   try {
     const res = await fetch(
-      `${process.env.BASE_URL}/users?page=${page}&limit=${process.env.BLOG_PAR_PAGE}`,
+      `${process.env.NEXT_PUBLIC_BASE_URL}/users?page=${page}&limit=${process.env.BLOG_PAR_PAGE}`,
       {
         next: { revalidate: 3600 },
         headers: {
