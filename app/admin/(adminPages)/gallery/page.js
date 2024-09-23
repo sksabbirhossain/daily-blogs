@@ -1,104 +1,58 @@
-import Image from "next/image";
+"use client";
 
-const page = () => {
-  const images = [
-    {
-      _id: "1",
-      url: "https://images.unsplash.com/photo-1726527612459-54b061d9c48d?q=80&w=1632&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    },
-    {
-      _id: "2",
-      url: "https://images.unsplash.com/photo-1726853522009-8dc4c4e306a3?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    },
-    {
-      _id: "3",
-      url: "https://images.unsplash.com/photo-1726766406089-0308c800b6b2?q=80&w=1469&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    },
-    {
-      _id: "4",
-      url: "https://images.unsplash.com/photo-1725714354969-15e3f95fcb72?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    },
-    {
-      _id: "5",
-      url: "https://images.unsplash.com/photo-1726533815259-8fe320ac2493?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    },
-    {
-      _id: "6",
-      url: "https://images.unsplash.com/photo-1542353436-312f0e1f67ff?q=80&w=1542&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    },
-    {
-      _id: "7",
-      url: "https://images.unsplash.com/photo-1726557116827-5f2a95d57cab?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    },
-    {
-      _id: "8",
-      url: "https://images.unsplash.com/photo-1548679847-1d4ff48016c7?q=80&w=1471&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    },
-    {
-      _id: "9",
-      url: "https://images.unsplash.com/photo-1659363093863-2d84282cae40?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    },
-    {
-      _id: "10",
-      url: "https://images.unsplash.com/photo-1725714354969-15e3f95fcb72?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    },
-    {
-      _id: "1",
-      url: "https://images.unsplash.com/photo-1726527612459-54b061d9c48d?q=80&w=1632&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    },
-    {
-      _id: "2",
-      url: "https://images.unsplash.com/photo-1726853522009-8dc4c4e306a3?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    },
-    {
-      _id: "3",
-      url: "https://images.unsplash.com/photo-1726766406089-0308c800b6b2?q=80&w=1469&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    },
-    {
-      _id: "4",
-      url: "https://images.unsplash.com/photo-1725714354969-15e3f95fcb72?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    },
-    {
-      _id: "5",
-      url: "https://images.unsplash.com/photo-1726533815259-8fe320ac2493?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    },
-    {
-      _id: "6",
-      url: "https://images.unsplash.com/photo-1542353436-312f0e1f67ff?q=80&w=1542&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    },
-    {
-      _id: "7",
-      url: "https://images.unsplash.com/photo-1726557116827-5f2a95d57cab?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    },
-    {
-      _id: "8",
-      url: "https://images.unsplash.com/photo-1548679847-1d4ff48016c7?q=80&w=1471&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    },
-    {
-      _id: "9",
-      url: "https://images.unsplash.com/photo-1659363093863-2d84282cae40?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    },
-    {
-      _id: "10",
-      url: "https://images.unsplash.com/photo-1725714354969-15e3f95fcb72?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    },
-    {
-      _id: "11",
-      url: "https://images.unsplash.com/photo-1726549384623-c7376c784f7a?q=80&w=1376&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    },
-    {
-      _id: "12",
-      url: "https://images.unsplash.com/photo-1548679847-1d4ff48016c7?q=80&w=1471&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    },
-    {
-      _id: "13",
-      url: "https://images.unsplash.com/photo-1721332149371-fa99da451baa?q=80&w=1472&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    },
-    {
-      _id: "14",
-      url: "https://images.unsplash.com/photo-1726855500757-658894d298eb?q=80&w=1471&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    },
-  ];
+import { authOptions } from "@/utils/authOptions";
+import { useSession } from "next-auth/react";
+import Image from "next/image";
+import { useEffect, useState } from "react";
+
+const Gallery = () => {
+  const [images, setImages] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const [copyMessage, setCopyMessage] = useState(false);
+
+  const { data } = useSession(authOptions);
+
+  useEffect(() => {
+    fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/gallery`)
+      .then((res) => res.json())
+      .then((data) => setImages(data));
+  }, [images]);
+
+  // copy clipboard
+  const copyClipBoard = (link) => {
+    navigator.clipboard
+      .writeText(link)
+      .then(() => {
+        setCopyMessage(true);
+      })
+      .catch((err) => alert(err.message))
+      .finally(() => {
+        setTimeout(() => {
+          setCopyMessage(false);
+        }, 2000);
+      });
+  };
+
+  //delete picture
+  const deletePicture = async (id) => {
+    try {
+      const res = await fetch(
+        `${process.env.NEXT_PUBLIC_BASE_URL}/gallery/delete/${id}`,
+        {
+          headers: {
+            Authorization: `Bearer ${data?.user?.accessToken}`,
+          },
+          method: "DELETE",
+        },
+      );
+      await res.json();
+      setLoading(false);
+    } catch (e) {
+      setLoading(false);
+      alert(e.message);
+    }
+  };
+
   return (
     <section className="mb-5 space-y-5">
       <div className="rounded bg-gray-100 px-3 py-2 text-lg font-medium shadow">
@@ -111,30 +65,54 @@ const page = () => {
             key={i}
           >
             <Image
-              src={image.url}
+              src={image.picture}
               width={500}
               height={500}
               alt="Picture of the author"
               className="h-full w-full object-cover"
             />
             <div className="absolute top-0 flex h-full w-full cursor-pointer items-center justify-center gap-2 opacity-0 transition-all duration-700 ease-in-out group-hover:bg-black/50 group-hover:opacity-100">
-              <button className="rounded bg-[#00AAA1] px-3 py-1 font-medium capitalize text-white hover:bg-[#0bb4ac]">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth={1.5}
-                  stroke="currentColor"
-                  className="h-5 w-5"
+              <div className="relative">
+                <div className="absolute -top-6 right-0 w-full gap-1 whitespace-nowrap text-xs capitalize">
+                  <p className="inline-flex items-center gap-1 text-white transition-all duration-150 ease-in-out">
+                    {copyMessage && (
+                      <>
+                        <span> link copied</span>
+                        <span className="flex h-3 w-3 items-center justify-center rounded-full bg-[#00AAA1]">
+                          &#10003;
+                        </span>
+                      </>
+                    )}
+                  </p>
+                </div>
+                <button
+                  className="rounded bg-green-600 px-3 py-1 font-medium capitalize text-white hover:bg-green-700"
+                  onClick={() => copyClipBoard(image?.picture)}
                 >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M15.75 17.25v3.375c0 .621-.504 1.125-1.125 1.125h-9.75a1.125 1.125 0 0 1-1.125-1.125V7.875c0-.621.504-1.125 1.125-1.125H6.75a9.06 9.06 0 0 1 1.5.124m7.5 10.376h3.375c.621 0 1.125-.504 1.125-1.125V11.25c0-4.46-3.243-8.161-7.5-8.876a9.06 9.06 0 0 0-1.5-.124H9.375c-.621 0-1.125.504-1.125 1.125v3.5m7.5 10.375H9.375a1.125 1.125 0 0 1-1.125-1.125v-9.25m12 6.625v-1.875a3.375 3.375 0 0 0-3.375-3.375h-1.5a1.125 1.125 0 0 1-1.125-1.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H9.75"
-                  />
-                </svg>
-              </button>
-              <button className="rounded bg-red-500 px-3 py-1 font-medium capitalize text-white hover:bg-red-600">
+                  <span>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      strokeWidth={1.5}
+                      stroke="currentColor"
+                      className="h-5 w-5"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M13.19 8.688a4.5 4.5 0 0 1 1.242 7.244l-4.5 4.5a4.5 4.5 0 0 1-6.364-6.364l1.757-1.757m13.35-.622 1.757-1.757a4.5 4.5 0 0 0-6.364-6.364l-4.5 4.5a4.5 4.5 0 0 0 1.242 7.244"
+                      />
+                    </svg>
+                  </span>
+                </button>
+              </div>
+
+              <button
+                className="rounded bg-red-500 px-3 py-1 font-medium capitalize text-white hover:bg-red-600 disabled:cursor-wait"
+                onClick={() => deletePicture(image?._id)}
+                disabled={loading}
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -158,4 +136,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Gallery;
