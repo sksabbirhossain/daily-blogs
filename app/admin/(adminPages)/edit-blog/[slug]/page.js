@@ -49,6 +49,21 @@ const EditBlog = async ({ params: { slug } }) => {
                     />
                   </div>
 
+                  {/* slug */}
+                  <div className="space-y-1">
+                    <div>
+                      <label htmlFor="">Blog Slug</label>
+                    </div>
+                    <input
+                      type="text"
+                      name="slug"
+                      placeholder="Your Blog Slug Here..."
+                      className="w-full rounded border border-[#00AAA1] bg-gray-50 px-1 py-2 focus:outline-1 focus:outline-[#00AAA1]"
+                      defaultValue={blog?.slug}
+                      required
+                    />
+                  </div>
+
                   {/* meta title */}
                   <div className="space-y-1">
                     <div>
