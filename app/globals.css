@@ -72,7 +72,7 @@
 }
 
 .blogDetails img {
-  @apply mt-3 h-[400px] max-h-max w-full rounded object-cover;
+  @apply h-[350px] max-h-max w-full rounded object-contain;
 }
 
 .blogDetails table {
