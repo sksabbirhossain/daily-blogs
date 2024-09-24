@@ -117,6 +117,7 @@ export const addBlog = async (data) => {
   const session = await getServerSession(authOptions);
   const formData = new FormData();
   formData.append("title", data.get("title"));
+  formData.append("slug", data.get("slug"));
   formData.append("metaTitle", data.get("metaTitle"));
   formData.append("description", data.get("description"));
   formData.append("details", data.get("details"));
@@ -144,6 +145,7 @@ export const updateBlog = async (slug, data) => {
   const session = await getServerSession(authOptions);
   const formData = new FormData();
   formData.append("title", data.get("title"));
+  formData.append("slug", data.get("slug"));
   formData.append("metaTitle", data.get("metaTitle"));
   formData.append("description", data.get("description"));
   formData.append("details", data.get("details"));
